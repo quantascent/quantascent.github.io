@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>I had Claude design a stock strategy. Then I tested it the honest way.</title>
+<meta name="description" content="One unscripted 75-minute session: Claude picks the rules, a backtest and a two-year holdout judge them, then a paper account runs them.">
+<link rel="canonical" href="https://quantascent.github.io/i-had-claude-design-a-stock-strategy/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="QuantAscent">
+<meta property="og:title" content="I had Claude design a stock strategy. Then I tested it the honest way.">
+<meta property="og:description" content="One unscripted 75-minute session: Claude picks the rules, a backtest and a two-year holdout judge them, then a paper account runs them.">
+<meta property="og:url" content="https://quantascent.github.io/i-had-claude-design-a-stock-strategy/">
+<meta property="og:image" content="https://quantascent.github.io/assets/og-i-had-claude-design-a-stock-strategy.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="I had Claude design a stock strategy. Then I tested it the honest way.">
+<meta name="twitter:description" content="One unscripted 75-minute session: Claude picks the rules, a backtest and a two-year holdout judge them, then a paper account runs them.">
+<meta name="twitter:image" content="https://quantascent.github.io/assets/og-i-had-claude-design-a-stock-strategy.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root { --bg:#0d1117; --panel:#161b22; --line:#30363d; --text:#e6edf3; --body:#c9d1d9;
+        --muted:#8b949e; --accent:#00d4aa; }
+* { box-sizing:border-box; }
+html { -webkit-text-size-adjust:100%; }
+body { margin:0; background:var(--bg); color:var(--body); font-family:Inter, system-ui, -apple-system,
+       "Segoe UI", Roboto, sans-serif; font-size:18px; line-height:1.7; }
+a { color:var(--accent); text-underline-offset:3px; }
+a:hover { color:#5ff0cf; }
+.wrap { max-width:720px; margin:0 auto; padding:0 20px; }
+header.top { border-bottom:1px solid var(--line); }
+header.top .wrap { display:flex; align-items:center; justify-content:space-between; gap:16px;
+                   min-height:64px; flex-wrap:wrap; padding-top:10px; padding-bottom:10px; }
+.brand { font-size:20px; font-weight:600; color:var(--accent); text-decoration:none; letter-spacing:-0.01em; }
+.brand b { color:#fff; font-weight:600; }
+nav { display:flex; flex-wrap:wrap; gap:4px 18px; }
+nav a { color:var(--muted); text-decoration:none; font-size:15px; }
+nav a:hover { color:var(--text); }
+main { padding:48px 0 32px; }
+.eyebrow { font-family:"Intel One Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+           font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin:0 0 14px; }
+h1 { color:#fff; font-size:38px; line-height:1.18; letter-spacing:-0.02em; margin:0 0 16px; font-weight:700; }
+.subtitle { color:var(--muted); font-size:20px; line-height:1.5; margin:0 0 22px; }
+.meta { color:var(--muted); font-size:15px; margin:0 0 34px; padding-bottom:26px; border-bottom:1px solid var(--line); }
+.meta a { color:var(--muted); }
+.meta a:hover { color:var(--accent); }
+article h2 { color:#fff; font-size:25px; line-height:1.3; margin:44px 0 12px; letter-spacing:-0.01em; }
+article p { margin:0 0 20px; }
+article ul, article ol { margin:0 0 22px; padding-left:24px; }
+article li { margin:0 0 8px; }
+article li p { margin:0; }
+article em { color:var(--muted); font-size:16px; }
+.card { display:block; background:var(--panel); border:1px solid var(--line); border-radius:12px;
+        padding:24px 26px; text-decoration:none; color:var(--body); margin:0 0 18px; }
+.card:hover { border-color:var(--accent); color:var(--body); }
+.card .eyebrow { margin-bottom:10px; }
+.card h2 { color:#fff; font-size:23px; line-height:1.3; margin:0 0 10px; }
+.card p { margin:0; color:var(--muted); font-size:17px; }
+.intro { font-size:19px; color:var(--body); margin:0 0 36px; }
+footer { border-top:1px solid var(--line); color:var(--muted); font-size:14px; line-height:1.6; padding:28px 0 44px; }
+footer a { color:var(--muted); }
+footer .links { display:flex; flex-wrap:wrap; gap:6px 18px; }
+footer a:hover { color:var(--accent); }
+footer p { margin:0 0 10px; }
+@media (max-width:560px) {
+  body { font-size:17px; }
+  h1 { font-size:30px; }
+  .subtitle { font-size:18px; }
+  article h2 { font-size:22px; }
+  nav { gap:4px 14px; }
+}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "I had Claude design a stock strategy. Then I tested it the honest way.", "description": "One unscripted 75-minute session: Claude picks the rules, a backtest and a two-year holdout judge them, then a paper account runs them.", "image": "https://quantascent.github.io/assets/og-i-had-claude-design-a-stock-strategy.png", "datePublished": "2026-10-12", "author": {"@type": "Person", "name": "Brandon Wilson"}, "publisher": {"@type": "Organization", "name": "QuantAscent Technologies LLC", "url": "https://quantascent.io", "logo": "https://quantascent.github.io/assets/apple-touch-icon.png", "sameAs": ["https://www.linkedin.com/company/quantascent", "https://www.crunchbase.com/organization/quantascent", "https://www.youtube.com/@QuantAscent", "https://github.com/quantascent", "https://quantascent.substack.com"]}, "mainEntityOfPage": "https://quantascent.github.io/i-had-claude-design-a-stock-strategy/", "url": "https://quantascent.github.io/i-had-claude-design-a-stock-strategy/"}</script>
+</head>
+<body>
+<header class="top"><div class="wrap">
+<a class="brand" href="/"><b>Quant</b>Ascent</a>
+<nav><a href="https://quantascent.io">Website</a><a href="https://docs.quantascent.io">Docs</a><a href="https://www.youtube.com/@QuantAscent">YouTube</a></nav>
+</div></header>
+<main><div class="wrap">
+<p class="eyebrow">QuantAscent &middot; Article</p>
+<h1>I had Claude design a stock strategy. Then I tested it the honest way.</h1>
+<p class="subtitle">One unscripted 75-minute session: Claude picks the rules, a backtest and a two-year holdout judge them, then a paper account runs them.</p>
+<p class="meta">Brandon Wilson &middot; October 12, 2026 &middot; <a href="https://youtu.be/bwZbhuHSKZ4">Watch the full session</a> &middot; <a href="https://quantascent.substack.com/p/i-had-claude-design-a-stock-strategy">Also on Substack</a></p>
+<article>
+<p>I build portfolio software for people who manage their own money, and I wanted to know what happens when you let an AI pick the rules and a proper backtest gets the final say. So I recorded the whole thing in one sitting, no script, no retakes, and left in the parts where it went sideways. The video is 75 minutes. This is the short version, with the results and what I think they mean.</p>
+<h2>The setup</h2>
+<p>I opened Claude in an incognito window so it knew nothing about me or the software. I gave it the links to the QuantAscent documentation and one instruction: treat me as a complete beginner, both with the software and with investing, and walk me through building a custom strategy.</p>
+<p>The goal I gave it was deliberately measurable. Risk-adjusted return at least as good as the S&amp;P 500, with a lower beta. At least ten stocks, some of them technology companies, rebalanced quarterly, $25,000 allocated. Those are not recommendations. They are the constraints I needed so Claude had something to aim at. If you try this, give it your own.</p>
+<h2>The one thing Claude did that impressed me</h2>
+<p>Before building anything, Claude had me build the metrics database for January 2016 through December 2023 and keep 2024 to today out of it, “for an honesty check later.”</p>
+<p>That is a holdout, and it is the single most important idea in the whole session. If you tune a strategy on a period and then report how it did on that same period, you are grading your own homework. Keeping two years unseen means the final test is on data the rules never saw.</p>
+<p>It also picked 2016 as the start for a reason the documentation explains: that is where the delisted-company data gets dense. Testing only on companies that still exist today is survivorship bias, and Claude had read enough to avoid it.</p>
+<h2>Looking at the data before picking rules</h2>
+<p>The software ranks roughly 150 fundamental and price metrics by their information coefficient, which is a measure of how well a metric lined up with forward returns across the market. I set a floor of a $2 billion market cap, ran it, and sent Claude screenshots of the full table.</p>
+<p>Two things stood out. First, a lot of metrics have error bars wider than the bars themselves, which means the signal is noise. That is normal in equities. If simple statistics worked cleanly, everyone would be rich.</p>
+<p>Second, Claude had come in with a starting set of rules in mind, including an F-score and momentum. When the table said momentum had been weak over this window, it dropped it and rebuilt around quality and low volatility, which had the clearest track record. Changing your mind when the data disagrees is the right behavior. I still think it arrived with more preconceptions than it should have, and I say so below.</p>
+<h2>Building the rules</h2>
+<p>Six scoring criteria, each with a direction and a weight, led by one-year beta (lower is better) and a set of quality measures: return on capital, free cash flow yield, buybacks. Two filters: market cap of $2 billion and up, and filings no older than 135 days. A maximum of 15 holdings. Everything else on defaults.</p>
+<p>Claude got a couple of field names wrong and asked for settings that do not exist for this strategy type. A screenshot of the screen fixed both. If you use an AI as a guide to unfamiliar software, that is the move: show it what you are looking at.</p>
+<h2>Version 1: not great</h2>
+<p>In-sample, 2016 through 2023, the first version trailed the S&amp;P 500 by about four percentage points a year. Its Sharpe ratio was 0.50 against the index’s 0.73. It fell just as far as the market in March 2020, a 35% drawdown. The one box it checked was beta at 0.48: it moved about half as much as the market, but it gave up a lot of return to do it.</p>
+<h2>Version 2: clears the bar, barely</h2>
+<p>Claude’s one revision shifted weight toward the quality metrics. Same period, same settings:</p>
+<ul><li><p>Annualized return: 10.8%, versus 12.6% for the S&amp;P 500</p>
+</li>
+<li><p>Sharpe ratio: 0.76, versus 0.73</p>
+</li>
+<li><p>Beta: 0.53, versus 1.00</p>
+</li>
+<li><p>Max drawdown: 36.6%, versus about 34%</p>
+</li>
+</ul>
+<p>Higher Sharpe than the index, lower beta, lower return, and a drawdown you would have to be able to stomach. Claude called it good enough and said we were done tuning. I agree, and the reason matters: if you keep adjusting weights until the backtest looks spectacular, the backtest is probably lying to you. That is overfitting, and it is the easiest mistake to make in this hobby.</p>
+<h2>The holdout</h2>
+<p>Then the test that counts. Same rules, January 2024 through October 2026, data the strategy had never seen:</p>
+<ul><li><p>Annualized return: 14%, versus 20% for the S&amp;P 500</p>
+</li>
+<li><p>Sharpe ratio: 0.93, versus 0.98</p>
+</li>
+<li><p>Max drawdown: 11.6%, versus 18.8%</p>
+</li>
+</ul>
+<p>It trailed the index on raw return, which is what you would expect from a low-beta strategy during a stretch where technology led the market up 20% a year. It stayed close on Sharpe and lost noticeably less in its worst stretch. The reported beta of 0.02 is not believable: eleven quarterly data points is too few, and Claude flagged that itself.</p>
+<p>Honest summary: on data it was not tuned on, the strategy behaved the way it was designed to. Smoother, lower return, smaller drawdown. Not a miracle, and not a disappointment.</p>
+<h2>What I think of Claude’s work</h2>
+<p>As a guide to the software, it did well. It explained concepts like the information coefficient without being asked, caught its own wrong assumptions when shown the data, and structured the whole exercise sensibly.</p>
+<p>Where it fell short: it went straight from the rankings table to building rules. The software has a score analysis that shows, without running a full backtest, whether higher scores actually produced higher returns, and a breakdown by sector and by year. Claude skipped it. And it arrived with a preferred set of metrics before seeing any data. If I did this for myself rather than as a tutorial, I would spend more time challenging its first draft and asking why it believed what it believed.</p>
+<h2>Running it in a paper account</h2>
+<p>Testing is only half of what the software does, so I added the strategy to a paper account, meaning fake money with real market data through Interactive Brokers. That meant trimming two existing strategies to make room, setting a quarterly rebalance reminder, and previewing the full list of buys and sells. The market was closed, so I scheduled the rebalance for the next morning, then missed the window because of meetings, and did it by hand instead. The orders went through to the brokerage and the new strategy ended up holding about $23,600 against the $25,000 target, the difference being price movement between the preview and the fills.</p>
+<p>One step I skipped on camera and would not skip with real money: reviewing every company on the buy list before placing the orders. The software has a company page for that, and an exclusion list if you decide you do not want one of them.</p>
+<p>The process is identical for a real-money account. The only thing that changes is which account you are signed into.</p>
+<h2>Three things worth keeping</h2>
+<ol><li><p>Hold out data you will not tune on, and treat the holdout as the result.</p>
+</li>
+<li><p>Stop tuning when the in-sample result is merely acceptable. A spectacular backtest is a warning sign.</p>
+</li>
+<li><p>An AI is a useful guide and idea generator. The data and the test are the judge.</p>
+</li>
+</ol>
+<p>If you have tried this with your own setup, what did the holdout do to the AI’s first draft? And what would you want tested next? Walk-forward testing is my current plan for the next session.</p>
+<p>The full session: <a href="https://youtu.be/bwZbhuHSKZ4">I Built and Tested a Stock Trading Strategy Using AI (Claude)</a>. The software: <a href="https://quantascent.io">QuantAscent</a>, desktop portfolio management and strategy backtesting for self-directed investors. The documentation Claude read is at <a href="https://docs.quantascent.io">docs.quantascent.io</a>. QuantAscent releases winter 2026; accounts created before November 12, 2026 get 50% off the first year. No card to sign up.</p>
+<p><em>Everything traded here was in a paper account (fake money). The strategy, the metrics and the holdings are what my own rules selected for that account; nothing here is a recommendation to buy or sell any security. Hypothetical backtested research statistics about our software, gross of costs and taxes; not investment, financial, or tax advice. Past or simulated performance does not predict future results. QuantAscent Technologies LLC is a software company, not an investment adviser.</em></p>
+</article>
+</div></main>
+<footer><div class="wrap">
+<p class="links"><a href="https://quantascent.io">quantascent.io</a><a href="https://docs.quantascent.io">Documentation</a><a href="https://www.youtube.com/@QuantAscent">YouTube</a><a href="https://quantascent.substack.com">Substack</a><a href="https://www.linkedin.com/company/quantascent">LinkedIn</a><a href="https://github.com/quantascent">GitHub</a></p>
+<p>&copy; 2026 QuantAscent Technologies LLC. QuantAscent is portfolio management and strategy backtesting software for self-directed investors. It is a software company, not an investment adviser, and nothing here is investment, financial, or tax advice.</p>
+</div></footer>
+</body>
+</html>
