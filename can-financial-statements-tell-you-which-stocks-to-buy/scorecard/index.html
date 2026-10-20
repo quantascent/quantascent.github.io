@@ -1,0 +1,803 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The scorecard, as committed before the run</title>
+<meta name="description" content="The pre-registered scorecard for the QuantAscent edge study: the question, the data, the 88 universes, the tests, the pass and fail thresholds, the known weaknesses, and two amendments, all committed on 2026-10-15 before any strategy was drawn.">
+<link rel="canonical" href="https://quantascent.github.io/can-financial-statements-tell-you-which-stocks-to-buy/scorecard/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="QuantAscent">
+<meta property="og:title" content="The scorecard, as committed before the run">
+<meta property="og:description" content="The pre-registered scorecard for the QuantAscent edge study: the question, the data, the 88 universes, the tests, the pass and fail thresholds, the known weaknesses, and two amendments, all committed on 2026-10-15 before any strategy was drawn.">
+<meta property="og:url" content="https://quantascent.github.io/can-financial-statements-tell-you-which-stocks-to-buy/scorecard/">
+<meta property="og:image" content="https://quantascent.github.io/assets/og-can-financial-statements-tell-you-which-stocks-to-buy.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The scorecard, as committed before the run">
+<meta name="twitter:description" content="The pre-registered scorecard for the QuantAscent edge study: the question, the data, the 88 universes, the tests, the pass and fail thresholds, the known weaknesses, and two amendments, all committed on 2026-10-15 before any strategy was drawn.">
+<meta name="twitter:image" content="https://quantascent.github.io/assets/og-can-financial-statements-tell-you-which-stocks-to-buy.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.css">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body, {delimiters: [
+    {left: '$$', right: '$$', display: true},
+    {left: '\\(', right: '\\)', display: false}], throwOnError: false});"></script>
+<style>
+:root { --bg:#0d1117; --panel:#161b22; --line:#30363d; --text:#e6edf3; --body:#c9d1d9;
+        --muted:#8b949e; --accent:#00d4aa; }
+* { box-sizing:border-box; }
+html { -webkit-text-size-adjust:100%; }
+body { margin:0; background:var(--bg); color:var(--body); font-family:Inter, system-ui, -apple-system,
+       "Segoe UI", Roboto, sans-serif; font-size:18px; line-height:1.7; }
+a { color:var(--accent); text-underline-offset:3px; }
+a:hover { color:#5ff0cf; }
+.wrap { max-width:720px; margin:0 auto; padding:0 20px; }
+header.top { border-bottom:1px solid var(--line); }
+header.top .wrap { display:flex; align-items:center; justify-content:space-between; gap:16px;
+                   min-height:64px; flex-wrap:wrap; padding-top:10px; padding-bottom:10px; }
+.brand { font-size:20px; font-weight:600; color:var(--accent); text-decoration:none; letter-spacing:-0.01em; }
+.brand b { color:#fff; font-weight:600; }
+nav { display:flex; flex-wrap:wrap; gap:4px 18px; }
+nav a { color:var(--muted); text-decoration:none; font-size:15px; }
+nav a:hover { color:var(--text); }
+main { padding:48px 0 32px; }
+.eyebrow { font-family:"Intel One Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+           font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin:0 0 14px; }
+h1 { color:#fff; font-size:38px; line-height:1.18; letter-spacing:-0.02em; margin:0 0 16px; font-weight:700; }
+.subtitle { color:var(--muted); font-size:20px; line-height:1.5; margin:0 0 22px; }
+.meta { color:var(--muted); font-size:15px; margin:0 0 34px; padding-bottom:26px; border-bottom:1px solid var(--line); }
+.meta a { color:var(--muted); }
+.meta a:hover { color:var(--accent); }
+article h2 { color:#fff; font-size:25px; line-height:1.3; margin:44px 0 12px; letter-spacing:-0.01em; }
+article p { margin:0 0 20px; }
+article ul, article ol { margin:0 0 22px; padding-left:24px; }
+article li { margin:0 0 8px; }
+article li p { margin:0; }
+article em { color:var(--muted); font-size:16px; }
+.card { display:block; background:var(--panel); border:1px solid var(--line); border-radius:12px;
+        padding:24px 26px; text-decoration:none; color:var(--body); margin:0 0 18px; }
+.card:hover { border-color:var(--accent); color:var(--body); }
+.card .eyebrow { margin-bottom:10px; }
+.card h2 { color:#fff; font-size:23px; line-height:1.3; margin:0 0 10px; }
+.card p { margin:0; color:var(--muted); font-size:17px; }
+.intro { font-size:19px; color:var(--body); margin:0 0 36px; }
+footer { border-top:1px solid var(--line); color:var(--muted); font-size:14px; line-height:1.6; padding:28px 0 44px; }
+footer a { color:var(--muted); }
+footer .links { display:flex; flex-wrap:wrap; gap:6px 18px; }
+footer a:hover { color:var(--accent); }
+footer p { margin:0 0 10px; }
+@media (max-width:560px) {
+  body { font-size:17px; }
+  h1 { font-size:30px; }
+  .subtitle { font-size:18px; }
+  article h2 { font-size:22px; }
+  nav { gap:4px 14px; }
+}
+
+
+.wrap img { max-width: 100%; height: auto; display: block; margin: 1.4em auto; }
+article h3 { color:#fff; font-size:21px; margin:32px 0 10px; }
+article code { font-family:"Intel One Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+               font-size:0.92em; background:var(--panel); border:1px solid var(--line);
+               border-radius:5px; padding:1px 6px; color:var(--text); }
+article hr { border:0; border-top:1px solid var(--line); margin:40px 0; }
+article strong { color:#fff; }
+.katex { font-size:1.08em; }
+.katex-display { margin:14px 0 18px; overflow-x:auto; overflow-y:hidden; padding:4px 0; }
+article li .katex-display { margin:10px 0 12px; }
+.draft-note { background:var(--panel); border:1px solid var(--line); border-left:4px solid var(--accent);
+              border-radius:8px; padding:14px 18px; color:var(--muted); font-size:16px; margin:0 0 30px; }
+.tbl { overflow-x:auto; margin:22px 0 26px; }
+article table { width:100%; border-collapse:separate; border-spacing:0; background:var(--panel);
+                border:1px solid var(--line); border-radius:12px; overflow:hidden; font-size:15.5px;
+                font-variant-numeric:tabular-nums; line-height:1.4; }
+article th { text-align:left; font-size:12.5px; letter-spacing:0.08em; text-transform:uppercase; font-weight:600;
+             color:var(--accent); padding:12px 12px 10px; border-bottom:1px solid var(--line);
+             background:rgba(255,255,255,0.03); vertical-align:bottom; }
+article td { padding:10px 12px; border-top:1px solid rgba(48,54,61,0.55); color:var(--body); vertical-align:top; }
+article tr:first-child td { border-top:0; }
+article tbody tr:nth-child(even) td { background:rgba(255,255,255,0.025); }
+article td:first-child { color:var(--text); }
+.v { display:inline-block; padding:1px 8px; border-radius:999px; font-size:11.5px; letter-spacing:0.05em;
+     font-weight:600; margin-left:5px; vertical-align:1px; white-space:nowrap; }
+.v-good { color:#0d1117; background:var(--accent); }
+.v-mid { color:var(--text); background:#2d333b; border:1px solid var(--line); }
+.v-bad { color:#fff; background:#b23b3b; }
+@media print {
+  html, body, .wrap, article, main { background:#fff !important; color:#111 !important; }
+  body { font-size:12.5pt; }
+  article p, article li, article td, article th, article blockquote { color:#111 !important; }
+  h1, article h2, article h3, article strong, article th { color:#000 !important; }
+  .eyebrow, a { color:#0a7a62 !important; }
+  header.top, footer { display:none; }
+  article code { background:#f3f3f3 !important; border-color:#ddd !important; color:#000 !important; }
+  .draft-note { background:#f7f7f7 !important; border-color:#ccc !important; color:#333 !important; }
+  article em { color:#444 !important; }
+  article table { border-color:#ccc !important; }
+  article td, article th { border-color:#ddd !important; }
+  .wrap img { border:1px solid #ddd; }
+  article table { background:#fff !important; border-color:#ccc !important; }
+  article th { color:#0a7a62 !important; background:#f3f3f3 !important; border-bottom-color:#ccc !important; }
+  article td { color:#111 !important; border-top-color:#e6e6e6 !important; }
+  article tbody tr:nth-child(even) td { background:#fafafa !important; }
+  .v-good { background:#0a7a62 !important; color:#fff !important; }
+  .v-mid { background:#eee !important; color:#333 !important; border-color:#ccc !important; }
+  .v-bad { background:#b23b3b !important; color:#fff !important; }
+}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "The scorecard, as committed before the run", "description": "The pre-registered scorecard for the QuantAscent edge study: the question, the data, the 88 universes, the tests, the pass and fail thresholds, the known weaknesses, and two amendments, all committed on 2026-10-15 before any strategy was drawn.", "url": "https://quantascent.github.io/can-financial-statements-tell-you-which-stocks-to-buy/scorecard/", "isPartOf": "https://quantascent.github.io/can-financial-statements-tell-you-which-stocks-to-buy/", "datePublished": "2026-10-19", "author": {"@type": "Person", "name": "Brandon Wilson"}, "publisher": {"@type": "Organization", "name": "QuantAscent Technologies LLC", "url": "https://quantascent.io", "logo": "https://quantascent.github.io/assets/apple-touch-icon.png", "sameAs": ["https://www.linkedin.com/company/quantascent", "https://www.crunchbase.com/organization/quantascent", "https://www.youtube.com/@QuantAscent", "https://github.com/quantascent", "https://quantascent.substack.com"]}}</script>
+</head>
+<body>
+<header class="top"><div class="wrap">
+<a class="brand" href="/"><b>Quant</b>Ascent</a>
+<nav><a href="https://quantascent.io">Website</a><a href="https://docs.quantascent.io">Docs</a><a href="https://www.youtube.com/@QuantAscent">YouTube</a></nav>
+</div></header>
+<main><div class="wrap">
+<p class="eyebrow">QuantAscent &middot; Edge study data</p>
+<h1>The scorecard, as committed before the run</h1>
+<p class="meta">Published with <a href="/can-financial-statements-tell-you-which-stocks-to-buy/">Can financial statements tell you which stocks to buy? I tested 31,000 strategies to find out.</a> &middot; Brandon Wilson &middot; October 19, 2026</p>
+<article>
+<p><em>Public copy of the scorecard committed to the QuantAscent repository on 2026-10-15 (commit af41393), with Amendments 1 and 2 (commits 80730ad and 8d95e9c) added the same day, before any strategy was drawn. The run started on 2026-10-15 at 21:21. Two changes were made for publication: the data vendor's name is replaced with "the data vendor", and this note is added. Nothing else is edited. In this file the three arms carry the study's internal labels. They map to the article as follows: "placebo" is version 2, Library only; "design space" or "sweep" is version 3, Adaptive, any settings; "as designed" is version 4, Adaptive, shipped settings.</em></p>
+<p>Pre-registered 2026-10-15. This file was written and committed before any draw was
+run. The git hash of the commit that first added it is the timestamp. Anything that
+changes after that commit is recorded under <strong>Amendments</strong> at the bottom, with the
+date and the reason. Results never change a hypothesis or a bar.</p>
+<h2>1. The question</h2>
+<p>Does scoring companies on their financial statements with statistical methods give a
+stock picker an edge over picking names at random from the same pool, and over owning
+the pool or the market as a whole?</p>
+<p>"Edge" is scored three ways because the summer study found they move independently:</p>
+<ul>
+<li><strong>Return:</strong> does the typical software portfolio make more money?</li>
+<li><strong>Risk:</strong> does it lose less in its worst stretch, and swing less?</li>
+<li><strong>Risk-adjusted return:</strong> does it make more money per unit of risk?</li>
+</ul>
+<p>And "edge" is tested against three comparison groups, from easiest to hardest:</p>
+<ol>
+<li><strong>Random portfolios from the same pool</strong> (same universe filter, same number of
+   holdings, same quarters). This isolates the scoring method.</li>
+<li><strong>Owning the whole pool equally.</strong> This isolates the picking.</li>
+<li><strong>The market:</strong> the S&amp;P 500 cap-weighted (SPY), the S&amp;P 500 equal-weighted (RSP),
+   and for single-sector pools the sector ETF.</li>
+</ol>
+<h2>2. What is being tested</h2>
+<p>The QuantAscent Adaptive Builder as shipped in the app, driven through the Sweep
+Explorer's design-space sampler, on a research panel built with the shipped panel
+builder on a longer history than the app's pack carries (section 3, Amendment 1).
+In plain terms, at every quarter the engine:</p>
+<ol>
+<li>looks only at data available before that quarter,</li>
+<li>measures which financial metrics have recently predicted returns in the chosen
+   pool (information coefficient, split-half sign agreement),</li>
+<li>fills a recipe's slots with the qualifying metrics, optionally narrows the pool
+   with a single statistically chosen floor metric,</li>
+<li>scores every company in the pool and buys the top N equally weighted,</li>
+<li>holds one quarter, then repeats.</li>
+</ol>
+<p>The walk-forward is out of sample at every quarter by construction. Code paths:
+<code>quant_engine/user_library.py</code> <code>run_walk_forward</code> and <code>derive_recipe</code>,
+<code>quant_engine/sweep_space.py</code> <code>sample_sweep</code>, <code>quant_engine/luck_band.py</code>
+<code>draw_returns</code>. The harness calls these; it does not reimplement them.</p>
+<h2>3. Data</h2>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Panel</td>
+<td><code>out/raw/panel/2009-10-07_2026-10-09_90d_lb20_edge_study.pkl</code> (Amendment 1), built by <code>scripts/build_panel.py</code> with the shipped builder <code>MetricAnalyzer.build_matrix_parallel</code> on the installed <code>quant_engine.db</code></td>
+</tr>
+<tr>
+<td>Built</td>
+<td>2026-10-15T18:41:15, the data vendor fundamentals basis; SHA-256 in the <code>.sha256</code> file beside it (f83e5363...fd62)</td>
+</tr>
+<tr>
+<td>Size</td>
+<td>263,520 rows, 6,705 tickers, 175 columns, 69 quarterly as-of dates</td>
+</tr>
+<tr>
+<td>As-of dates</td>
+<td>2009-10-07 through 2026-07-10, 90-day spacing. The 41 scored dates [28..68] are row-for-row and value-for-value identical to the shipped panel <code>2014-09-11_2026-10-09_90d_lb20_full.pkl</code> (built 2026-10-09): verified 2026-10-15, 207,449 rows matched, 169 numeric columns, zero mismatches</td>
+</tr>
+<tr>
+<td>Forward return</td>
+<td><code>FutureProfit</code>, 90 days, clipped to [-100%, +100%] per the readout convention</td>
+</tr>
+<tr>
+<td>Universe guards</td>
+<td>45-day death grace, 365-day gap guard, 393 symbol-splice tickers excluded</td>
+</tr>
+<tr>
+<td>Dead companies in panel</td>
+<td>2015: 3, 2016: 59, 2017: 100, 2018: 124, 2019: 26, 2020: 6, 2021: 99, 2022: 216, 2023: 365, 2024: 393, 2025: 480</td>
+</tr>
+<tr>
+<td>Benchmark prices</td>
+<td><code>quant_engine.db</code> <code>prices</code> adj_close for SPY and sector ETFs; RSP fetched from the data vendor dividend-adjusted EOD and convention-checked against the DB's SPY series before use</td>
+</tr>
+</tbody>
+</table></div>
+<p>The harness records the panel file's SHA-256 and the DB's max price date in <code>out/</code>
+at run time. A result produced on a different panel is a different study.</p>
+<p><strong>Survivorship disclosure, fixed before the run.</strong> Dead companies are well covered
+from 2021 on, partially covered 2016 to 2018, thin in 2019 and 2020, and essentially
+absent before 2016. The first scored quarter is 2016-08-31. The engine's record
+starts in 2011 (it needs eight panel dates of history), but no quarter before
+2016-08-31 is ever scored, so 2009 to mid-2016 is training history only. The
+bias flatters the software's portfolios, the random portfolios, and the pool average
+alike, so comparisons 1 and 2 are largely unaffected; it flatters the software
+against the market (comparison 3). The write-up says this.</p>
+<h2>4. The universe matrix</h2>
+<p>One sweep per cell. A universe is fixed for its sweep. Every cell carries a $5
+share-price floor (the panel itself already excludes sub-$1 names at build time)
+and the freshness rule <code>DaysSinceFiling &lt;= 135</code> as a metric filter (Amendment 2),
+so the engine's candidate pool, the random cloud, and the pool average all exclude
+stale filers alike. The engine's own freshness screen uses the same 135-day rule,
+so this adds nothing to the engine and removes an asymmetry from the comparisons.</p>
+<p><strong>Sector sets (16):</strong> the eleven singles (Basic Materials, Communication Services,
+Consumer Cyclical, Consumer Defensive, Energy, Financial Services, Healthcare,
+Industrials, Real Estate, Technology, Utilities), four groups, and all sectors.</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Group</th>
+<th>Sectors</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cyclical</td>
+<td>Consumer Cyclical, Industrials, Basic Materials, Energy</td>
+</tr>
+<tr>
+<td>defensive</td>
+<td>Consumer Defensive, Utilities, Healthcare</td>
+</tr>
+<tr>
+<td>growth</td>
+<td>Technology, Communication Services</td>
+</tr>
+<tr>
+<td>financial</td>
+<td>Financial Services, Real Estate</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Size sets (9),</strong> market cap in USD:</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Band</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>micro</td>
+<td>below $300M</td>
+</tr>
+<tr>
+<td>small</td>
+<td>$300M to $2B</td>
+</tr>
+<tr>
+<td>mid</td>
+<td>$2B to $10B</td>
+</tr>
+<tr>
+<td>large</td>
+<td>above $10B</td>
+</tr>
+<tr>
+<td>micro_small</td>
+<td>below $2B</td>
+</tr>
+<tr>
+<td>small_mid</td>
+<td>$300M to $10B</td>
+</tr>
+<tr>
+<td>mid_large</td>
+<td>above $2B</td>
+</tr>
+<tr>
+<td>ex_micro</td>
+<td>above $300M</td>
+</tr>
+<tr>
+<td>all</td>
+<td>no cap band</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Gate sets (3),</strong> as <code>metric_filters</code> entries, NaN fails closed:</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Rule</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>none</td>
+<td>no gate</td>
+</tr>
+<tr>
+<td>profit</td>
+<td><code>MeanNetIncome &gt; 0</code> (profitable on average over the metric's lookback)</td>
+</tr>
+<tr>
+<td>solvent</td>
+<td><code>MeanZscore &gt; -1.282</code>, derived on the training-only years by the pre-specified rule in <code>scripts/calibrate_z.py</code> (Amendment 1)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>How the solvent threshold was derived.</strong> Rows: panel dates before the first scored
+quarter (2009-10-07 to 2016-06-02, 28 dates, 73,590 stock-quarters), $5 floor, all
+sectors. Label: tail loss, next-quarter return below -30% (base rate 4.3%). Rule: the
+single Z split with the largest Gini impurity decrease, scanning a 0.1-percentile
+grid, allowed to exclude at most 30% of rows. Result: Z &gt; -1.282, which excludes
+4.2% of rows; the tail-loss rate is 14.6% below the cut and 3.8% above it. It keeps
+94% or more of every sector except Healthcare (84%). Output: <code>out/z_calibration.json</code>.</p>
+<p>Why not the textbook 1.8: in this panel the median Z is 1.68, so "above 1.8" is a
+median split (keeps 47%), and it is a sector tilt by value, not because Z is
+undefined for anyone: it keeps 18% of Financial Services, 17% of Real Estate, and
+11% of Utilities, whose balance sheets make Z structurally low. On the calibration
+rows the tail-loss rate above 1.8 is slightly higher than below it, so 1.8 is not a
+distress screen in this data. One reference cell <code>A-all-solvent18</code> (<code>MeanZscore &gt;
+1.8</code>, all sectors, all caps, 500 draws) is kept so the piece can compare.</p>
+<p>The calibration years are survivors-only, and a distress screen is about the
+companies that go bust, which are the ones missing. The derived cut is therefore
+lenient, which makes the gate axis a conservative test of "does a screen help."</p>
+<p>The <code>profit</code> gate keeps 69% of the pool overall but only 29% of Healthcare (the
+unprofitable-biotech effect) and 58% of Technology. It is partly a sector tilt and
+is labelled as such.</p>
+<p>The engine's own statistically chosen gate (the <code>universe_floor</code> dial) is not a
+universe cell. It is varied on and off inside every sweep, so "did letting the
+statistics choose the gate help" is reported as its own finding (section 8, F4).</p>
+<p><strong>Tier A, the main factorial:</strong> all sectors x 9 sizes x 3 gates = 27 cells, 500
+draws each, plus the reference cell <code>A-all-solvent18</code> (28 cells).</p>
+<p><strong>Tier B, sector detail:</strong> 15 sector sets (11 singles + 4 groups) x {all, ex_micro}
+x {none, profit} = 60 cells, 200 draws each.</p>
+<p>88 cells, 26,000 draws. Each draw is one full-series walk-forward, so every cut
+point in section 6 comes from the same run.</p>
+<p>Cell id format: <code>A-&lt;size&gt;-&lt;gate&gt;</code> and <code>B-&lt;sector_slug&gt;-&lt;size&gt;-&lt;gate&gt;</code>. Sweep seed
+for a cell = 101 + its ordinal in the cell list the harness writes to
+<code>out/cells.json</code> (list order: Tier A in the table order above, then
+<code>A-all-solvent18</code>, then Tier B alphabetical by sector slug). Luck cloud seed = 7,
+the product convention.</p>
+<p><strong>Thin-cell rule.</strong> Before the run, the harness counts each cell's pool per traded
+quarter from the panel. A cell whose pool averages fewer than 45 names (three times
+the maximum holdings count) is marked <code>thin</code>, still run, but excluded from every
+verdict aggregate and listed by name in the write-up as "too thin to test." Pool
+counts are not outcome data, so this check does not break pre-registration.</p>
+<h2>5. The design space, identical for every cell</h2>
+<pre><code>structure: mode &quot;template&quot;, flavors_allowed = all seven (Momentum, Growth, Quality,
+           Value, Financial Strength, Defensive, Equal Weighting),
+           max_blend = 6 (the composer's full range), holdings = [5, 15]
+dials:     lookback             [&quot;expanding&quot;, 12, 16, 20, 24]
+           stability            [&quot;standard&quot;, &quot;strict&quot;]
+           ic_floor             [0.010, 0.020, 0.030]
+           cadence              [&quot;quarterly&quot;, &quot;boundary&quot;]
+           universe_floor       [true, false]
+           floor_stability_gate [true, false]
+           freshness_trained    true   (inert once freshness is in the universe,
+                                        Amendment 2; fixed on)
+</code></pre>
+<p>Every leaf is a value the Sweep tab exposes. The sampler is non-adaptive: draws
+never move toward winners. Custom-cluster mode is out of scope for this study.</p>
+<p><strong>Three further arms on the nine no-gate Tier A cells</strong> (<code>A-&lt;size&gt;-none</code>, the
+headline cell among them), Amendment 2. Same universe, same quarters, same random
+cloud as the design-space arm, so the four rungs read as a ladder:</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Arm</th>
+<th>What it is</th>
+<th>Isolates</th>
+<th>Runs per cell</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Random stocks</td>
+<td>the random cloud; 50th percentile by definition</td>
+<td>nothing</td>
+<td>the cloud</td>
+</tr>
+<tr>
+<td>Placebo engine</td>
+<td>the engine with one function replaced: each slot takes a uniformly random metric from the slot's cluster, scored in its textbook direction; no IC test; universe floor off. Structure, holdings, and all other dials sampled exactly as the design space</td>
+<td>fundamentals without statistics</td>
+<td>500</td>
+</tr>
+<tr>
+<td>Design space</td>
+<td>the uniform sweep above</td>
+<td>the statistics, any configuration</td>
+<td>500</td>
+</tr>
+<tr>
+<td>As designed</td>
+<td>the Build tab's out-of-the-box dials: expanding window, standard stability, IC floor 0.020, quarterly re-learn, universe floor on with its stability gate, freshness on, 10 holdings; structure enumerated over the 7 single templates and every blend of 2 to 6 tilts (64 structures), each run once</td>
+<td>the product's design choices</td>
+<td>64</td>
+</tr>
+</tbody>
+</table></div>
+<p>The placebo's slot filler is the only non-product code in the study. It is a
+20-line substitute for <code>_fill_slots</code> that ignores the IC halves; everything else
+(universe, scoring, portfolio construction, walk-forward) is the shipped path.
+Placebo seed for a cell = 1001 + the cell's ordinal.</p>
+<h2>6. Spans and cut points</h2>
+<p>Panel date indices in brackets (the extended panel, Amendment 1). The engine trades
+from index 8 (2011-09-xx) but quarters before 2016-08-31 [28] are survivors-only and
+are never scored. 41 scored quarters are available, 2016-08-31 [28] through
+2026-07-10 [68], the same dates as the shipped panel's [8..48].</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Span</th>
+<th>Quarters</th>
+<th>Used for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FULL</td>
+<td>[28..68], 41 q</td>
+<td>the most powered version of tests T1 to T3 and T5</td>
+</tr>
+<tr>
+<td>Seam 1</td>
+<td>selection [28..35] 2016-08-31 to 2018-05-23; holdout [36..43] 2018-08-21 to 2020-05-12</td>
+<td>T4</td>
+</tr>
+<tr>
+<td>Seam 2</td>
+<td>selection [28..43]; holdout [44..51] 2020-08-10 to 2022-05-02</td>
+<td>T4</td>
+</tr>
+<tr>
+<td>Seam 3</td>
+<td>selection [28..51]; holdout [52..59] 2022-07-31 to 2024-04-21</td>
+<td>T4</td>
+</tr>
+<tr>
+<td>Seam 4</td>
+<td>selection [28..59]; holdout [60..68] 2024-07-20 to 2026-07-10, 9 q</td>
+<td>T4</td>
+</tr>
+</tbody>
+</table></div>
+<p>Selection spans expand from the first scored quarter. Holdouts are two years,
+matching the product's own sealed span. Tests T1 to T3 and T5 are also reported per
+holdout. Every training window (section 5) is fully formed at the first scored
+quarter: the engine has 28 panel dates of history there, more than the longest
+trailing window.</p>
+<p><strong>Stood-aside quarters</strong> (the engine held cash because nothing qualified):</p>
+<ul>
+<li>For comparisons against random portfolios (T1 to T3), traded quarters only, on
+  both sides. This is the product's luck-cloud convention.</li>
+<li>For comparisons against the pool and the market (T5), the full span with cash
+  quarters at 0% while the benchmark keeps compounding. This is what an adopter
+  would have lived through.</li>
+<li>The stood-aside rate per cell is reported either way.</li>
+</ul>
+<p><strong>Refusals.</strong> A draw with fewer than 4 traded quarters in a span is refused for
+that span (product convention <code>REFUSED_MIN_Q</code>). Refused and errored counts are
+reported per cell and never dropped silently.</p>
+<h2>7. Metrics</h2>
+<p>Per draw, per span, from quarterly returns:</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CAGR</td>
+<td>compounded wealth ^ (4 / quarters) - 1</td>
+</tr>
+<tr>
+<td>Max drawdown</td>
+<td>minimum of wealth / running peak - 1 on the quarterly path</td>
+</tr>
+<tr>
+<td>Volatility</td>
+<td>standard deviation of quarterly returns x 2 (annualized, sample sd)</td>
+</tr>
+<tr>
+<td>Sharpe</td>
+<td>mean quarterly return / sd x 2, risk-free rate 0, the product's convention</td>
+</tr>
+<tr>
+<td>Excess vs X</td>
+<td>CAGR minus X's CAGR over the same quarters</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Luck percentile.</strong> For a draw and a span, 500 random portfolios are drawn from the
+same universe filter, redrawn every quarter, over the draw's traded quarters, seed 7.
+The draw's percentile is the share of random portfolios it beats on the metric.
+Under no edge, percentiles are uniform and the median across draws is 50.</p>
+<p>Two versions are computed (Amendment 2). <strong>Matched-count (primary):</strong> each quarter's
+random portfolios hold exactly as many names as the engine actually held that
+quarter (the engine holds between 5 and the requested count, fewer when fewer
+qualify; a fixed-count cloud would be less concentrated than the engine and tilt
+the drawdown comparison against it). This is a per-date-size variant of
+<code>luck_band.draw_returns</code> with the same conventions, pinned by a test to reproduce
+<code>draw_returns</code> bit-for-bit when every size is equal. <strong>Product convention
+(secondary):</strong> <code>luck_band.draw_returns</code> with the requested holdings count. On the
+product's own design span this must reproduce the <code>nfp</code> the sweep runner stamped on
+the row exactly; the harness asserts it, which validates the scoring arithmetic.</p>
+<p>Percentile direction: higher is better for CAGR and Sharpe; for max drawdown and
+volatility the percentile is the share of random portfolios with a worse (deeper or
+higher) value, so higher is still better.</p>
+<p><strong>Uncertainty.</strong> Draws within a cell share quarters, so they are not independent.
+Every confidence interval is a 4-quarter block bootstrap over the span's quarters
+(1,000 resamples): resample quarter blocks, recompute every draw's and every random
+portfolio's metric on the resampled path, recompute the percentile and the
+cross-draw median. The CI is on the cross-draw median percentile.</p>
+<p><strong>Secondary arm, cap-weighted picks.</strong> From each draw's recorded quarterly picks,
+reweight by the panel's <code>MarketCap</code> at the as-of date and recompute the series.
+Its random cloud is cap-weighted too (same drawn tickers, cap weights). Reported in
+T5 against SPY only. This arm never decides a headline verdict.</p>
+<h2>8. Tests and verdict bars</h2>
+<p>Each test returns one of three verdicts per cell and span, always printed with the
+median and its 95% interval (Amendment 2: the middle verdict is NOT DETECTED, not
+"no edge", because ten years of quarterly data cannot distinguish a small edge from
+none, and the interval says which it is closer to):</p>
+<ul>
+<li><strong>EDGE:</strong> the cross-draw median percentile is at or above 60 and its 95% CI
+  excludes 50.</li>
+<li><strong>NOT DETECTED:</strong> the CI includes 50, or the median sits between 40 and 60.</li>
+<li><strong>HARM:</strong> the median is at or below 40 and the CI excludes 50.</li>
+</ul>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Question</th>
+<th>Metric</th>
+<th>Comparison</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T1</td>
+<td>Does the method make more money than random?</td>
+<td>CAGR percentile</td>
+<td>random cloud</td>
+</tr>
+<tr>
+<td>T2</td>
+<td>Does it lose less?</td>
+<td>max-drawdown percentile and volatility percentile, both reported; the verdict uses max drawdown</td>
+<td>random cloud</td>
+</tr>
+<tr>
+<td>T3</td>
+<td>Does it make more per unit of risk?</td>
+<td>Sharpe percentile</td>
+<td>random cloud</td>
+</tr>
+<tr>
+<td>T4</td>
+<td>Does a strong backtest predict a strong holdout?</td>
+<td>Spearman rank correlation across draws between selection-span CAGR and holdout CAGR; also between selection max drawdown and holdout max drawdown</td>
+<td>the cell's own draws, per seam</td>
+</tr>
+<tr>
+<td>T5</td>
+<td>Is it better than just owning things?</td>
+<td>share of draws whose full-span CAGR beats the pool average, RSP, SPY, and the sector ETF where one applies</td>
+<td>pool EW, RSP, SPY, sector ETF</td>
+</tr>
+</tbody>
+</table></div>
+<p>T4 verdict bars, per metric: <strong>PERSISTS</strong> if the correlation is at or above +0.20 at
+three or more of the four seams; <strong>DOES NOT PERSIST</strong> otherwise. The top-decile-by-
+selection draws' median holdout excess versus the remaining draws is reported next
+to it, since that is what "picking the best dot on the map" would have bought.</p>
+<p>T5 verdict bars, per benchmark: <strong>BEATS</strong> if the share of draws ahead is at or above
+60% and the 4-quarter block-bootstrap 95% CI on that share excludes 50%; <strong>TIES</strong> if
+the CI includes 50%; <strong>TRAILS</strong> if the share is at or below 40% and the CI excludes
+50%. The pool-average comparison is the picking test. The RSP comparison is the
+fairest market bar for an equal-weight portfolio. The SPY comparison is the one the
+survivorship disclosure says is tilted in our favor.</p>
+<p><strong>T6, the statistics rung (Amendment 2).</strong> On each of the nine no-gate Tier A
+cells, the design-space arm's cross-draw median percentile minus the placebo arm's,
+for T1, T2, and T3 on the FULL span, with a 4-quarter block-bootstrap 95% CI on the
+difference. <strong>ADDS</strong> if the difference is at or above +5 points and the CI excludes
+0; <strong>NOT DETECTED</strong> if the CI includes 0 or the difference is within 5 points of 0;
+<strong>SUBTRACTS</strong> if at or below -5 and the CI excludes 0. The as-designed arm is
+scored on T1 to T3 and T5 with the section 8 bars like any other arm, and its
+difference from the design-space arm is reported the same way as T6.</p>
+<p><strong>T7, selection discipline (Amendment 2).</strong> The product's documented way to choose
+from a sweep is to reject draws below the luck bar and prefer the lowest-risk
+candidates. On each seam's selection span, two pre-stated selections are applied to
+the design-space draws of each cell: (a) the shallowest-drawdown quartile, and (b)
+draws above the product's bar for a 500-draw sweep (the 500/501 percentile of the
+product-convention cloud). For each, the selected draws' median holdout CAGR
+percentile and max-drawdown percentile are compared with the remaining draws'.
+<strong>PERSISTS</strong> if the selected draws lead by at least 5 points at three or more of the
+four seams; <strong>DOES NOT PERSIST</strong> otherwise. This is the test of "use the software the
+way the methodology page says," and it costs no extra draws.</p>
+<p>Secondary findings, reported but not verdicts:</p>
+<ul>
+<li><strong>F1</strong> The cell map: every test's verdict per cell, as a grid and as a
+  distribution, never as a leaderboard.</li>
+<li><strong>F2</strong> Size: T1 to T3 medians across the nine size sets within Tier A.</li>
+<li><strong>F3</strong> Gates: T1 to T3 medians for none vs profit vs solvent within Tier A.</li>
+<li><strong>F4</strong> Engine-chosen floor: T1 to T3 medians for draws with <code>universe_floor</code>
+  on vs off, pooled across Tier A.</li>
+<li><strong>F5</strong> Sectors: T1 to T3 and T5-sector-ETF per sector set in Tier B.</li>
+<li><strong>F6</strong> Holdings count and blend size: T1 to T3 medians by holdings bucket
+  (5 to 7, 8 to 11, 12 to 15) and by number of flavors in the blend.</li>
+<li><strong>F7</strong> Stood-aside rate and refusal rate per cell.</li>
+<li><strong>F8</strong> Training window: T1 to T3 medians for expanding vs trailing 12, 16, 20,
+  and 24 quarters, pooled across Tier A.</li>
+<li><strong>F9</strong> Turnover: median share of names replaced per quarter, per cell and per
+  arm, so a reader can apply their own cost haircut to the gross figures.</li>
+<li><strong>F10</strong> Portfolio size: distribution of names actually held versus requested,
+  per cell, with the stood-aside rate.</li>
+</ul>
+<h2>9. Headline and exploration</h2>
+<p><strong>The headline verdict</strong> comes from one cell, fixed now: <code>A-all-none</code> (all sectors,
+all caps, no gate, $5 floor), on the FULL span for T1, T2, T3, and T5, and across
+the four seams for T4, and (Amendment 2) the ladder on that cell: random stocks,
+placebo engine, design space, as designed, each with its T1 to T3 medians and
+intervals, plus T6 and T7. The write-up's answer to "is there an edge" is these
+verdicts, in the words of section 8, read rung by rung.</p>
+<p><strong>Everything else is exploration.</strong> With 88 cells, about 4 would clear a 5%
+threshold by luck alone if the method did nothing. Exploration is therefore reported
+as distributions across cells (what share of non-thin cells returned EDGE on T1, on
+T3, and so on) and as the factor summaries F2 to F7. A single non-headline cell is
+never presented as a result on its own. The broad claim "the method works across
+pools" requires the share of non-thin cells returning EDGE on a test to exceed the
+upper 95% binomial bound of what chance predicts at the 5% level.</p>
+<h2>10. Compute plan</h2>
+<ul>
+<li>Workers: 4 by default (the pool deadlocked at 8 inside the app); the headless
+  harness may use up to 8 if the probe shows it stable. The panel costs 0.4 GB per
+  worker; the machine has 32 logical cores and 32 GB.</li>
+<li>Timing probe first: 20 draws of <code>A-all-none</code>, extrapolate to the roughly 31,100
+  draws and runs across all arms (26,000 design space, 4,500 placebo, 576 as
+  designed). The probe's draws are the first 20 of that cell under its seed; they
+  are kept and are not scored or looked at until every cell finishes.</li>
+<li>If the projection exceeds three nights, reduce in this order and record it under
+  Amendments: Tier B to 100 draws per cell, then Tier A to 300 draws per cell. Cells
+  and arms are never dropped to save time.</li>
+<li>The harness is committed before the full run starts. No scoring code runs until
+  every cell and arm has finished.</li>
+<li>Smoke test with hard assertions before the run: every pick passes its cell's
+  universe filter on its date; pick counts sit within 5 and the requested holdings;
+  the product-convention percentile reproduces the row's stamped <code>nfp</code> exactly; the
+  matched-count cloud equals <code>draw_returns</code> bit-for-bit when sizes are constant.</li>
+<li>Runs are resumable per cell (the sweep runner appends rows and skips finished
+  draws). The harness writes <code>out/run_manifest.json</code> with panel hash, DB price max
+  date, cell list, seeds, start and end times.</li>
+</ul>
+<h2>11. Known weaknesses, listed before the run</h2>
+<ol>
+<li>Survivorship: survivors-only before 2016 (training history only, 2009 to 2016),
+   partial 2016 to 2018, thin 2019 and 2020, dense 2021 on. The engine therefore
+   learned its early recipes from a sample missing its deaths; the direction of that
+   effect on the method is unknown and it does not inflate any scored quarter.
+   43 symbol-reuse names and the builder's splice-guard exclusions are out.</li>
+<li>Gross of trading costs, slippage, and taxes. Quarterly rebalance on panel dates.</li>
+<li>Returns clipped to plus or minus 100% per quarter (the readout convention; this
+   mutes both the best and worst single-name outcomes, for the software and the
+   random portfolios alike).</li>
+<li>Micro-cap cells are likely untradeable at any meaningful size; they are reported
+   with that caveat.</li>
+<li>The <code>solvent</code> gate removes most financials and REITs.</li>
+<li>XLRE begins 2015-10 and XLC 2018-06; the engine falls back to SPY before those
+   dates, so Real Estate and Communication Services sector-ETF comparisons are
+   partly SPY comparisons in early quarters.</li>
+<li>One panel vendor (the data vendor). An in-house fundamentals pack is not used here.</li>
+<li>Ten years, one market regime dominated by large-cap growth. The seams exist to
+   show how much the answer moves with the cut, not to escape this.</li>
+<li>The method's shape was designed on this same history. The metric clusters, the
+   flavor templates and their weights, the IC floor options, and the stability rule
+   were chosen in research during 2026 on this panel. Each scored quarter's recipe
+   is out of sample, but the ingredient list is not. Mitigations: every dial is
+   varied across its full range so no single tuned setting is tested, the placebo
+   arm shows what the ingredient list does without the statistics, and the piece
+   says this plainly.</li>
+<li>Companies trading under $1 today are absent from the database entirely, their
+    history included, because the active universe was enumerated with a $1 floor.
+    The fallen angels are missing. Both sides share it; it tilts the market
+    comparison in our favor.</li>
+<li>Seam 1's holdout contains the 2020 crash with 2019 and 2020 deaths mostly
+    missing from the panel.</li>
+<li>Current sector labels are applied to history; companies reclassified since are
+    in their present sector throughout.</li>
+<li>A dead company's final quarter records the return to its last exchange print,
+    which for bankruptcies is usually above the ultimate recovery.</li>
+<li>Our figures are gross; the ETF series are net of their expense ratios.</li>
+</ol>
+<h2>12. Reporting rules for the write-up</h2>
+<ul>
+<li>Every number is an aggregate across draws. No draw is named as "the strategy."</li>
+<li>No stock is named. No prediction is made. No return is tied to subscribing.</li>
+<li>Verdicts are stated in section 8's words. "No edge" is published as such.</li>
+<li>The disclosure line appears on every channel: "Hypothetical backtested research
+  statistics about our software, gross of costs and taxes; not investment,
+  financial, or tax advice. Past or simulated performance does not predict future
+  results."</li>
+<li>The commit hash of this scorecard is cited in the piece.</li>
+</ul>
+<h2>Amendments</h2>
+<p><strong>Amendment 1, 2026-10-15, before any sweep draw was run.</strong> Original scorecard
+commit <code>af41393</code>. Changes, each made in place above and listed here:</p>
+<ol>
+<li><strong>Panel extended backward for training only.</strong> The shipped panel starts
+   2014-09-11, which left the engine 8 quarters of history at the first scored
+   quarter and truncated every trailing window until 2019 to 2022. The study panel
+   now starts 2009-10-07 on the same 90-day grid (built with the shipped builder;
+   scored quarters verified identical, section 3). Scored quarters, seams, and
+   every bar are unchanged. Reason: survivorship bias inflates a result only when
+   survivors-only quarters are scored; none are. The engine learns its early
+   recipes from a sample missing its deaths, disclosed in section 11.</li>
+<li><strong>Solvent gate threshold derived instead of ported.</strong> The original <code>MeanZscore &gt;
+   1.8</code> was justified with a wrong mechanism ("undefined for banks and REITs"; Z is
+   present for 99.6% of rows and is simply low for balance-sheet-heavy sectors) and
+   turned out to be a median split. Replaced with a threshold from a pre-specified
+   rule on the training-only years (section 4): <code>MeanZscore &gt; -1.282</code>. The rule,
+   its inputs, and its output were fixed and run before any sweep.</li>
+<li><strong>Reference cell added.</strong> <code>A-all-solvent18</code> keeps the textbook 1.8 on the
+   all-sectors, all-caps pool so the piece can compare. 88 cells, 26,000 draws.</li>
+<li><strong>Profit gate tilt disclosed.</strong> It keeps 29% of Healthcare.</li>
+<li><strong>F8 added.</strong> Training-window dial (expanding vs trailing 12/16/20/24) reported
+   as an exploration finding.</li>
+</ol>
+<p><strong>Amendment 2, 2026-10-15, before any sweep draw was run.</strong> A soundness review of
+the design, in two parts: is the comparison fair, and is the process being tested
+the one the software embodies rather than a user turning every knob at random.</p>
+<ol>
+<li><strong>Stale-filer asymmetry removed.</strong> The engine always screened filers older than
+   135 days; the random cloud and pool average did not (1.6% of the pool, and on the
+   training years those names earned about 3.5 points less per quarter). The
+   freshness rule is now part of every cell's universe. <code>freshness_trained</code> becomes
+   inert and is fixed on.</li>
+<li><strong>Random cloud matched to actual portfolio size</strong> (primary), with the product
+   convention kept as a secondary figure and as the harness validation.</li>
+<li><strong>"NO EDGE" renamed NOT DETECTED</strong>, interval always printed.</li>
+<li><strong>Placebo engine arm added</strong> on the nine no-gate Tier A cells: the engine with
+   its statistical metric test removed. Test T6 compares the design space against
+   it. This is the direct test of "do the statistics add anything beyond using
+   fundamentals at all."</li>
+<li><strong>As-designed arm added</strong> on the same nine cells: the Build tab's defaults with
+   all 64 template structures enumerated. The ladder (random, placebo, design space,
+   as designed) joins the headline.</li>
+<li><strong>T7 selection discipline added</strong>: the product's documented selection logic
+   applied ex ante on each seam's selection span, scored on the holdout.</li>
+<li><strong>F9 turnover and F10 portfolio size added.</strong></li>
+<li><strong>Disclosures 9 to 14 added</strong>, led by the fact that the method's ingredient list
+   was designed on this same history.</li>
+<li><strong>Process rules added</strong>: harness committed before the run, probe draws kept and
+   unseen, no scoring until every arm finishes, smoke-test assertions.</li>
+<li>Draw count is now about 31,100 across all arms.</li>
+</ol></article>
+</div></main>
+<footer><div class="wrap">
+<p class="links"><a href="https://quantascent.io">quantascent.io</a><a href="https://docs.quantascent.io">Documentation</a><a href="https://www.youtube.com/@QuantAscent">YouTube</a><a href="https://quantascent.substack.com">Substack</a><a href="https://www.linkedin.com/company/quantascent">LinkedIn</a><a href="https://github.com/quantascent">GitHub</a></p>
+<p>&copy; 2026 QuantAscent Technologies LLC. QuantAscent is portfolio management and strategy backtesting software for self-directed investors. It is a software company, not an investment adviser, and nothing here is investment, financial, or tax advice.</p>
+</div></footer>
+</body>
+</html>

@@ -1,0 +1,4980 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The full scored report</title>
+<meta name="description" content="Every table behind the QuantAscent edge study: the four versions on the headline universe, all 88 universes with scores, intervals, and verdicts, the exploration tables, and the per-window results.">
+<link rel="canonical" href="https://quantascent.github.io/can-financial-statements-tell-you-which-stocks-to-buy/report/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="QuantAscent">
+<meta property="og:title" content="The full scored report">
+<meta property="og:description" content="Every table behind the QuantAscent edge study: the four versions on the headline universe, all 88 universes with scores, intervals, and verdicts, the exploration tables, and the per-window results.">
+<meta property="og:url" content="https://quantascent.github.io/can-financial-statements-tell-you-which-stocks-to-buy/report/">
+<meta property="og:image" content="https://quantascent.github.io/assets/og-can-financial-statements-tell-you-which-stocks-to-buy.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The full scored report">
+<meta name="twitter:description" content="Every table behind the QuantAscent edge study: the four versions on the headline universe, all 88 universes with scores, intervals, and verdicts, the exploration tables, and the per-window results.">
+<meta name="twitter:image" content="https://quantascent.github.io/assets/og-can-financial-statements-tell-you-which-stocks-to-buy.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.css">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body, {delimiters: [
+    {left: '$$', right: '$$', display: true},
+    {left: '\\(', right: '\\)', display: false}], throwOnError: false});"></script>
+<style>
+:root { --bg:#0d1117; --panel:#161b22; --line:#30363d; --text:#e6edf3; --body:#c9d1d9;
+        --muted:#8b949e; --accent:#00d4aa; }
+* { box-sizing:border-box; }
+html { -webkit-text-size-adjust:100%; }
+body { margin:0; background:var(--bg); color:var(--body); font-family:Inter, system-ui, -apple-system,
+       "Segoe UI", Roboto, sans-serif; font-size:18px; line-height:1.7; }
+a { color:var(--accent); text-underline-offset:3px; }
+a:hover { color:#5ff0cf; }
+.wrap { max-width:720px; margin:0 auto; padding:0 20px; }
+header.top { border-bottom:1px solid var(--line); }
+header.top .wrap { display:flex; align-items:center; justify-content:space-between; gap:16px;
+                   min-height:64px; flex-wrap:wrap; padding-top:10px; padding-bottom:10px; }
+.brand { font-size:20px; font-weight:600; color:var(--accent); text-decoration:none; letter-spacing:-0.01em; }
+.brand b { color:#fff; font-weight:600; }
+nav { display:flex; flex-wrap:wrap; gap:4px 18px; }
+nav a { color:var(--muted); text-decoration:none; font-size:15px; }
+nav a:hover { color:var(--text); }
+main { padding:48px 0 32px; }
+.eyebrow { font-family:"Intel One Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+           font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin:0 0 14px; }
+h1 { color:#fff; font-size:38px; line-height:1.18; letter-spacing:-0.02em; margin:0 0 16px; font-weight:700; }
+.subtitle { color:var(--muted); font-size:20px; line-height:1.5; margin:0 0 22px; }
+.meta { color:var(--muted); font-size:15px; margin:0 0 34px; padding-bottom:26px; border-bottom:1px solid var(--line); }
+.meta a { color:var(--muted); }
+.meta a:hover { color:var(--accent); }
+article h2 { color:#fff; font-size:25px; line-height:1.3; margin:44px 0 12px; letter-spacing:-0.01em; }
+article p { margin:0 0 20px; }
+article ul, article ol { margin:0 0 22px; padding-left:24px; }
+article li { margin:0 0 8px; }
+article li p { margin:0; }
+article em { color:var(--muted); font-size:16px; }
+.card { display:block; background:var(--panel); border:1px solid var(--line); border-radius:12px;
+        padding:24px 26px; text-decoration:none; color:var(--body); margin:0 0 18px; }
+.card:hover { border-color:var(--accent); color:var(--body); }
+.card .eyebrow { margin-bottom:10px; }
+.card h2 { color:#fff; font-size:23px; line-height:1.3; margin:0 0 10px; }
+.card p { margin:0; color:var(--muted); font-size:17px; }
+.intro { font-size:19px; color:var(--body); margin:0 0 36px; }
+footer { border-top:1px solid var(--line); color:var(--muted); font-size:14px; line-height:1.6; padding:28px 0 44px; }
+footer a { color:var(--muted); }
+footer .links { display:flex; flex-wrap:wrap; gap:6px 18px; }
+footer a:hover { color:var(--accent); }
+footer p { margin:0 0 10px; }
+@media (max-width:560px) {
+  body { font-size:17px; }
+  h1 { font-size:30px; }
+  .subtitle { font-size:18px; }
+  article h2 { font-size:22px; }
+  nav { gap:4px 14px; }
+}
+
+
+.wrap img { max-width: 100%; height: auto; display: block; margin: 1.4em auto; }
+article h3 { color:#fff; font-size:21px; margin:32px 0 10px; }
+article code { font-family:"Intel One Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+               font-size:0.92em; background:var(--panel); border:1px solid var(--line);
+               border-radius:5px; padding:1px 6px; color:var(--text); }
+article hr { border:0; border-top:1px solid var(--line); margin:40px 0; }
+article strong { color:#fff; }
+.katex { font-size:1.08em; }
+.katex-display { margin:14px 0 18px; overflow-x:auto; overflow-y:hidden; padding:4px 0; }
+article li .katex-display { margin:10px 0 12px; }
+.draft-note { background:var(--panel); border:1px solid var(--line); border-left:4px solid var(--accent);
+              border-radius:8px; padding:14px 18px; color:var(--muted); font-size:16px; margin:0 0 30px; }
+.tbl { overflow-x:auto; margin:22px 0 26px; }
+article table { width:100%; border-collapse:separate; border-spacing:0; background:var(--panel);
+                border:1px solid var(--line); border-radius:12px; overflow:hidden; font-size:15.5px;
+                font-variant-numeric:tabular-nums; line-height:1.4; }
+article th { text-align:left; font-size:12.5px; letter-spacing:0.08em; text-transform:uppercase; font-weight:600;
+             color:var(--accent); padding:12px 12px 10px; border-bottom:1px solid var(--line);
+             background:rgba(255,255,255,0.03); vertical-align:bottom; }
+article td { padding:10px 12px; border-top:1px solid rgba(48,54,61,0.55); color:var(--body); vertical-align:top; }
+article tr:first-child td { border-top:0; }
+article tbody tr:nth-child(even) td { background:rgba(255,255,255,0.025); }
+article td:first-child { color:var(--text); }
+.v { display:inline-block; padding:1px 8px; border-radius:999px; font-size:11.5px; letter-spacing:0.05em;
+     font-weight:600; margin-left:5px; vertical-align:1px; white-space:nowrap; }
+.v-good { color:#0d1117; background:var(--accent); }
+.v-mid { color:var(--text); background:#2d333b; border:1px solid var(--line); }
+.v-bad { color:#fff; background:#b23b3b; }
+@media print {
+  html, body, .wrap, article, main { background:#fff !important; color:#111 !important; }
+  body { font-size:12.5pt; }
+  article p, article li, article td, article th, article blockquote { color:#111 !important; }
+  h1, article h2, article h3, article strong, article th { color:#000 !important; }
+  .eyebrow, a { color:#0a7a62 !important; }
+  header.top, footer { display:none; }
+  article code { background:#f3f3f3 !important; border-color:#ddd !important; color:#000 !important; }
+  .draft-note { background:#f7f7f7 !important; border-color:#ccc !important; color:#333 !important; }
+  article em { color:#444 !important; }
+  article table { border-color:#ccc !important; }
+  article td, article th { border-color:#ddd !important; }
+  .wrap img { border:1px solid #ddd; }
+  article table { background:#fff !important; border-color:#ccc !important; }
+  article th { color:#0a7a62 !important; background:#f3f3f3 !important; border-bottom-color:#ccc !important; }
+  article td { color:#111 !important; border-top-color:#e6e6e6 !important; }
+  article tbody tr:nth-child(even) td { background:#fafafa !important; }
+  .v-good { background:#0a7a62 !important; color:#fff !important; }
+  .v-mid { background:#eee !important; color:#333 !important; border-color:#ccc !important; }
+  .v-bad { background:#b23b3b !important; color:#fff !important; }
+}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "The full scored report", "description": "Every table behind the QuantAscent edge study: the four versions on the headline universe, all 88 universes with scores, intervals, and verdicts, the exploration tables, and the per-window results.", "url": "https://quantascent.github.io/can-financial-statements-tell-you-which-stocks-to-buy/report/", "isPartOf": "https://quantascent.github.io/can-financial-statements-tell-you-which-stocks-to-buy/", "datePublished": "2026-10-19", "author": {"@type": "Person", "name": "Brandon Wilson"}, "publisher": {"@type": "Organization", "name": "QuantAscent Technologies LLC", "url": "https://quantascent.io", "logo": "https://quantascent.github.io/assets/apple-touch-icon.png", "sameAs": ["https://www.linkedin.com/company/quantascent", "https://www.crunchbase.com/organization/quantascent", "https://www.youtube.com/@QuantAscent", "https://github.com/quantascent", "https://quantascent.substack.com"]}}</script>
+</head>
+<body>
+<header class="top"><div class="wrap">
+<a class="brand" href="/"><b>Quant</b>Ascent</a>
+<nav><a href="https://quantascent.io">Website</a><a href="https://docs.quantascent.io">Docs</a><a href="https://www.youtube.com/@QuantAscent">YouTube</a></nav>
+</div></header>
+<main><div class="wrap">
+<p class="eyebrow">QuantAscent &middot; Edge study data</p>
+<h1>The full scored report</h1>
+<p class="meta">Published with <a href="/can-financial-statements-tell-you-which-stocks-to-buy/">Can financial statements tell you which stocks to buy? I tested 31,000 strategies to find out.</a> &middot; Brandon Wilson &middot; October 19, 2026</p>
+<article>
+<p><em>Public copy of the scored report generated from the run's recorded rows on 2026-10-16, unchanged except for this note. In this file the three arms carry the study's internal labels. They map to the article as follows: "placebo" is version 2, Library only; "design space" or "sweep" is version 3, Adaptive, any settings; "as designed" is version 4, Adaptive, shipped settings. The per-run table behind it is <a href="/can-financial-statements-tell-you-which-stocks-to-buy/runs.csv.gz">runs.csv.gz</a>: one row per strategy per time span, with the universe, the settings the sweep drew, and the results (CAGR, max drawdown, volatility, Sharpe, the four scores, the benchmark comparisons, turnover, and holdings count). It names no tickers.</em></p>
+<p>Generated 2026-10-16 10:55 by scripts/score_study.py. Bootstrap: 1000 4-quarter circular-block resamples, seed 20261016, identical paths across arms. Random clouds: 500 portfolios, seed 7, matched to the engine's per-quarter pick count (primary). Spans in scorecard.md section 6. Verdict words from section 8. Every number is an aggregate across draws; no draw is a strategy.</p>
+<h2>1. Headline cell A-all-none (all sectors, all caps, no gate, $5 floor, fresh filers)</h2>
+<h3>The four versions of the picker, FULL span 2016-08-31 to 2026-07-10 (41 quarters)</h3>
+<p>Median percentile against the matched random cloud [95% interval] and verdict. 50 = indistinguishable from random.</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Version</th>
+<th>n draws</th>
+<th>T1 CAGR</th>
+<th>T2 max drawdown</th>
+<th>T2 volatility</th>
+<th>T3 Sharpe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Random stocks</td>
+<td>cloud</td>
+<td>50 by definition</td>
+<td>50</td>
+<td>50</td>
+<td>50</td>
+</tr>
+<tr>
+<td>Placebo engine</td>
+<td>498</td>
+<td>97.2 [71.1, 98.2] <span class="v v-good">EDGE</span></td>
+<td>94.5 [80.4, 99.4] <span class="v v-good">EDGE</span></td>
+<td>99.2 [84.3, 100.0] <span class="v v-good">EDGE</span></td>
+<td>99.6 [84.4, 99.6] <span class="v v-good">EDGE</span></td>
+</tr>
+<tr>
+<td>Design space</td>
+<td>489</td>
+<td>96.8 [67.0, 98.6] <span class="v v-good">EDGE</span></td>
+<td>98.6 [86.4, 99.6] <span class="v v-good">EDGE</span></td>
+<td>100.0 [93.4, 100.0] <span class="v v-good">EDGE</span></td>
+<td>99.8 [84.8, 99.8] <span class="v v-good">EDGE</span></td>
+</tr>
+<tr>
+<td>As designed</td>
+<td>63</td>
+<td>98.2 [74.6, 99.0] <span class="v v-good">EDGE</span></td>
+<td>98.8 [84.2, 99.8] <span class="v v-good">EDGE</span></td>
+<td>100.0 [88.6, 100.0] <span class="v v-good">EDGE</span></td>
+<td>99.8 [87.2, 100.0] <span class="v v-good">EDGE</span></td>
+</tr>
+</tbody>
+</table></div>
+<p>Median values behind those percentiles (the draw at the middle of each version):</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Version</th>
+<th>CAGR</th>
+<th>max drawdown</th>
+<th>volatility</th>
+<th>Sharpe</th>
+<th>product-convention CAGR pct</th>
+<th>stood aside</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Placebo engine</td>
+<td>11.4%</td>
+<td>-31.1%</td>
+<td>19.3%</td>
+<td>0.69</td>
+<td>97.0</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>Design space</td>
+<td>11.1%</td>
+<td>-25.4%</td>
+<td>17.3%</td>
+<td>0.70</td>
+<td>97.0</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>As designed</td>
+<td>12.2%</td>
+<td>-25.5%</td>
+<td>18.1%</td>
+<td>0.73</td>
+<td>98.0</td>
+<td>0.0%</td>
+</tr>
+</tbody>
+</table></div>
+<h3>T6, what the statistics add (design space minus placebo), FULL span</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Comparison</th>
+<th>T1 CAGR</th>
+<th>T2 max drawdown</th>
+<th>T3 Sharpe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Design space minus placebo (T6)</td>
+<td>-0.4 [-11.6, 7.7] <span class="v v-mid">NOT DETECTED</span></td>
+<td>4.1 [-2.8, 9.2] <span class="v v-mid">NOT DETECTED</span></td>
+<td>0.2 [-7.6, 6.8] <span class="v v-mid">NOT DETECTED</span></td>
+</tr>
+<tr>
+<td>As designed minus design space</td>
+<td>1.4 [-2.6, 11.2] <span class="v v-mid">NOT DETECTED</span></td>
+<td>0.2 [-4.0, 3.4] <span class="v v-mid">NOT DETECTED</span></td>
+<td>0.0 [-2.8, 6.6] <span class="v v-mid">NOT DETECTED</span></td>
+</tr>
+</tbody>
+</table></div>
+<h3>T5, better than just owning things? FULL span, cash quarters at 0%</h3>
+<p>Share of draws whose 41-quarter CAGR beats the benchmark [95% interval], verdict, and the benchmark's own CAGR.</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Version</th>
+<th>vs universe average</th>
+<th>vs RSP</th>
+<th>vs SPY</th>
+<th>cap-weighted picks vs SPY</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Placebo engine</td>
+<td>89.0% [64.8%, 91.6%] <span class="v v-good">BEATS</span></td>
+<td>50.0% [23.9%, 69.7%] <span class="v v-mid">TIES</span></td>
+<td>22.5% [6.8%, 55.4%] <span class="v v-mid">TIES</span></td>
+<td>36.5% [22.7%, 60.4%] <span class="v v-mid">TIES</span></td>
+</tr>
+<tr>
+<td>Design space</td>
+<td>93.9% [61.1%, 98.0%] <span class="v v-good">BEATS</span></td>
+<td>46.4% [17.2%, 77.5%] <span class="v v-mid">TIES</span></td>
+<td>13.3% [7.4%, 48.1%] <span class="v v-bad">TRAILS</span></td>
+<td>60.1% [23.1%, 80.0%] <span class="v v-mid">TIES</span></td>
+</tr>
+<tr>
+<td>As designed</td>
+<td>96.8% [73.0%, 98.4%] <span class="v v-good">BEATS</span></td>
+<td>58.7% [22.2%, 84.1%] <span class="v v-mid">TIES</span></td>
+<td>25.4% [7.9%, 61.9%] <span class="v v-mid">TIES</span></td>
+<td>54.0% [17.5%, 87.3%] <span class="v v-mid">TIES</span></td>
+</tr>
+</tbody>
+</table></div>
+<p>Benchmark CAGRs over the same 41 quarters: universe average 3.2%, RSP 11.3%, SPY 15.0%. Median draw CAGR with cash quarters: design space 11.0%, cap-weighted 16.3%.</p>
+<h3>T4, does a strong backtest predict a strong holdout? (design-space arm)</h3>
+<p>Spearman rank correlation across draws between the selection span and the holdout, per seam. Bar: at or above +0.20 at 3 of 4 seams.</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Seam</th>
+<th>n</th>
+<th>rho CAGR</th>
+<th>rho max drawdown</th>
+<th>top decile holdout CAGR pct</th>
+<th>rest</th>
+<th>top decile holdout excess vs SPY</th>
+<th>rest</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S1/H1</td>
+<td>485</td>
+<td>0.342</td>
+<td>0.320</td>
+<td>88.2</td>
+<td>77.3</td>
+<td>-1.9%</td>
+<td>-8.4%</td>
+</tr>
+<tr>
+<td>S2/H2</td>
+<td>478</td>
+<td>-0.078</td>
+<td>0.219</td>
+<td>50.0</td>
+<td>62.8</td>
+<td>-6.6%</td>
+<td>-3.0%</td>
+</tr>
+<tr>
+<td>S3/H3</td>
+<td>485</td>
+<td>-0.090</td>
+<td>0.220</td>
+<td>90.4</td>
+<td>95.4</td>
+<td>-4.4%</td>
+<td>0.1%</td>
+</tr>
+<tr>
+<td>S4/H4</td>
+<td>489</td>
+<td>0.143</td>
+<td>0.266</td>
+<td>80.6</td>
+<td>80.6</td>
+<td>-6.3%</td>
+<td>-6.6%</td>
+</tr>
+</tbody>
+</table></div>
+<p>Verdict: CAGR DOES NOT PERSIST (1 of 4 seams); max drawdown PERSISTS (4 of 4 seams).</p>
+<h3>T7, following the app's own selection advice (design-space arm)</h3>
+<p>Selected draws' median holdout percentile minus the remaining draws'. Bar: lead of 5 or more points at 3 of 4 seams.</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Seam</th>
+<th>(a) shallowest-drawdown quartile: n</th>
+<th>lead CAGR pct</th>
+<th>lead max-DD pct</th>
+<th>(b) above the product bar: n</th>
+<th>bar</th>
+<th>lead CAGR pct</th>
+<th>lead max-DD pct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S1/H1</td>
+<td>122</td>
+<td>13.2</td>
+<td>13.6</td>
+<td>1</td>
+<td>99.8</td>
+<td>14.6</td>
+<td>4.8</td>
+</tr>
+<tr>
+<td>S2/H2</td>
+<td>120</td>
+<td>-7.3</td>
+<td>6.7</td>
+<td>24</td>
+<td>99.8</td>
+<td>-11.5</td>
+<td>5.3</td>
+</tr>
+<tr>
+<td>S3/H3</td>
+<td>122</td>
+<td>-3.2</td>
+<td>0.9</td>
+<td>10</td>
+<td>99.8</td>
+<td>-0.8</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>S4/H4</td>
+<td>123</td>
+<td>0.4</td>
+<td>2.8</td>
+<td>59</td>
+<td>99.8</td>
+<td>7.0</td>
+<td>-7.2</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>a_shallow_dd_cagr: DOES NOT PERSIST (1 of 4 seams)</li>
+<li>a_shallow_dd_maxdd: DOES NOT PERSIST (2 of 4 seams)</li>
+<li>b_above_bar_cagr: DOES NOT PERSIST (2 of 4 seams)</li>
+<li>b_above_bar_maxdd: DOES NOT PERSIST (1 of 4 seams)</li>
+</ul>
+<h3>T1 to T3 per holdout, headline cell, design-space arm</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Holdout</th>
+<th>n</th>
+<th>refused</th>
+<th>T1 CAGR</th>
+<th>T2 max drawdown</th>
+<th>T2 volatility</th>
+<th>T3 Sharpe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>H1</td>
+<td>485</td>
+<td>15</td>
+<td>78.4 [64.6, 86.6] <span class="v v-good">EDGE</span></td>
+<td>82.0 [67.0, 92.6] <span class="v v-good">EDGE</span></td>
+<td>78.4 [61.2, 83.6] <span class="v v-good">EDGE</span></td>
+<td>79.0 [58.8, 92.0] <span class="v v-good">EDGE</span></td>
+</tr>
+<tr>
+<td>H2</td>
+<td>478</td>
+<td>22</td>
+<td>59.2 [19.4, 91.8] <span class="v v-mid">NOT DETECTED</span></td>
+<td>89.7 [65.8, 94.0] <span class="v v-good">EDGE</span></td>
+<td>98.8 [73.2, 98.8] <span class="v v-good">EDGE</span></td>
+<td>75.6 [53.4, 90.8] <span class="v v-good">EDGE</span></td>
+</tr>
+<tr>
+<td>H3</td>
+<td>485</td>
+<td>15</td>
+<td>95.2 [78.2, 95.6] <span class="v v-good">EDGE</span></td>
+<td>98.2 [79.0, 98.4] <span class="v v-good">EDGE</span></td>
+<td>92.8 [73.4, 94.2] <span class="v v-good">EDGE</span></td>
+<td>98.2 [82.6, 98.2] <span class="v v-good">EDGE</span></td>
+</tr>
+<tr>
+<td>H4</td>
+<td>489</td>
+<td>11</td>
+<td>80.6 [57.4, 90.6] <span class="v v-good">EDGE</span></td>
+<td>95.4 [81.8, 96.6] <span class="v v-good">EDGE</span></td>
+<td>97.8 [85.2, 97.8] <span class="v v-good">EDGE</span></td>
+<td>91.8 [75.8, 94.4] <span class="v v-good">EDGE</span></td>
+</tr>
+</tbody>
+</table></div>
+<h2>2. The four versions on every no-gate Tier A cell (FULL span)</h2>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Cell</th>
+<th>Placebo T1</th>
+<th>Design space T1</th>
+<th>As designed T1</th>
+<th>T6 CAGR (design minus placebo)</th>
+<th>Placebo T2</th>
+<th>Design T2</th>
+<th>As designed T2</th>
+<th>T6 max DD</th>
+<th>Placebo T3</th>
+<th>Design T3</th>
+<th>As designed T3</th>
+<th>T6 Sharpe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A-micro-none</td>
+<td>100.0 <span class="v v-good">EDGE</span></td>
+<td>100.0 <span class="v v-good">EDGE</span></td>
+<td>100.0 <span class="v v-good">EDGE</span></td>
+<td>0.0 [-0.8, 0.4] <span class="v v-mid">NOT DETECTED</span></td>
+<td>100.0 <span class="v v-good">EDGE</span></td>
+<td>100.0 <span class="v v-good">EDGE</span></td>
+<td>100.0 <span class="v v-good">EDGE</span></td>
+<td>0.0 [-0.4, 0.2] <span class="v v-mid">NOT DETECTED</span></td>
+<td>100.0 <span class="v v-good">EDGE</span></td>
+<td>100.0 <span class="v v-good">EDGE</span></td>
+<td>100.0 <span class="v v-good">EDGE</span></td>
+<td>0.0 [-0.2, 0.2] <span class="v v-mid">NOT DETECTED</span></td>
+</tr>
+<tr>
+<td>A-small-none</td>
+<td>90.3 <span class="v v-good">EDGE</span></td>
+<td>78.6 <span class="v v-mid">NOT DETECTED</span></td>
+<td>73.2 <span class="v v-mid">NOT DETECTED</span></td>
+<td>-11.7 [-20.5, -0.1] <span class="v v-bad">SUBTRACTS</span></td>
+<td>93.0 <span class="v v-good">EDGE</span></td>
+<td>93.2 <span class="v v-good">EDGE</span></td>
+<td>73.2 <span class="v v-mid">NOT DETECTED</span></td>
+<td>0.2 [-12.1, 6.5] <span class="v v-mid">NOT DETECTED</span></td>
+<td>97.0 <span class="v v-good">EDGE</span></td>
+<td>91.2 <span class="v v-good">EDGE</span></td>
+<td>82.0 <span class="v v-mid">NOT DETECTED</span></td>
+<td>-5.8 [-21.4, 2.6] <span class="v v-mid">NOT DETECTED</span></td>
+</tr>
+<tr>
+<td>A-mid-none</td>
+<td>87.2 <span class="v v-mid">NOT DETECTED</span></td>
+<td>92.9 <span class="v v-good">EDGE</span></td>
+<td>98.2 <span class="v v-good">EDGE</span></td>
+<td>5.7 [-16.8, 48.9] <span class="v v-mid">NOT DETECTED</span></td>
+<td>37.2 <span class="v v-mid">NOT DETECTED</span></td>
+<td>75.9 <span class="v v-good">EDGE</span></td>
+<td>93.2 <span class="v v-good">EDGE</span></td>
+<td>38.7 [-31.6, 79.0] <span class="v v-mid">NOT DETECTED</span></td>
+<td>91.6 <span class="v v-mid">NOT DETECTED</span></td>
+<td>97.6 <span class="v v-good">EDGE</span></td>
+<td>100.0 <span class="v v-good">EDGE</span></td>
+<td>6.0 [-17.8, 52.1] <span class="v v-mid">NOT DETECTED</span></td>
+</tr>
+<tr>
+<td>A-large-none</td>
+<td>71.2 <span class="v v-mid">NOT DETECTED</span></td>
+<td>84.0 <span class="v v-mid">NOT DETECTED</span></td>
+<td>91.8 <span class="v v-mid">NOT DETECTED</span></td>
+<td>12.8 [-10.8, 41.2] <span class="v v-mid">NOT DETECTED</span></td>
+<td>56.0 <span class="v v-mid">NOT DETECTED</span></td>
+<td>47.2 <span class="v v-mid">NOT DETECTED</span></td>
+<td>81.8 <span class="v v-mid">NOT DETECTED</span></td>
+<td>-8.8 [-30.4, 53.4] <span class="v v-mid">NOT DETECTED</span></td>
+<td>75.4 <span class="v v-mid">NOT DETECTED</span></td>
+<td>90.4 <span class="v v-mid">NOT DETECTED</span></td>
+<td>94.8 <span class="v v-good">EDGE</span></td>
+<td>15.0 [-12.0, 50.2] <span class="v v-mid">NOT DETECTED</span></td>
+</tr>
+<tr>
+<td>A-micro_small-none</td>
+<td>99.4 <span class="v v-good">EDGE</span></td>
+<td>99.0 <span class="v v-good">EDGE</span></td>
+<td>99.4 <span class="v v-good">EDGE</span></td>
+<td>-0.4 [-9.2, 3.8] <span class="v v-mid">NOT DETECTED</span></td>
+<td>100.0 <span class="v v-good">EDGE</span></td>
+<td>99.3 <span class="v v-good">EDGE</span></td>
+<td>99.4 <span class="v v-good">EDGE</span></td>
+<td>-0.7 [-14.8, 0.6] <span class="v v-mid">NOT DETECTED</span></td>
+<td>100.0 <span class="v v-good">EDGE</span></td>
+<td>99.8 <span class="v v-good">EDGE</span></td>
+<td>99.6 <span class="v v-good">EDGE</span></td>
+<td>-0.2 [-8.8, 2.0] <span class="v v-mid">NOT DETECTED</span></td>
+</tr>
+<tr>
+<td>A-small_mid-none</td>
+<td>73.1 <span class="v v-mid">NOT DETECTED</span></td>
+<td>85.1 <span class="v v-good">EDGE</span></td>
+<td>93.4 <span class="v v-good">EDGE</span></td>
+<td>12.0 [-7.5, 34.6] <span class="v v-mid">NOT DETECTED</span></td>
+<td>66.8 <span class="v v-mid">NOT DETECTED</span></td>
+<td>86.9 <span class="v v-good">EDGE</span></td>
+<td>79.6 <span class="v v-mid">NOT DETECTED</span></td>
+<td>20.1 [-6.0, 49.6] <span class="v v-mid">NOT DETECTED</span></td>
+<td>84.8 <span class="v v-mid">NOT DETECTED</span></td>
+<td>95.8 <span class="v v-good">EDGE</span></td>
+<td>98.2 <span class="v v-good">EDGE</span></td>
+<td>11.0 [-6.5, 44.6] <span class="v v-mid">NOT DETECTED</span></td>
+</tr>
+<tr>
+<td>A-mid_large-none</td>
+<td>71.2 <span class="v v-mid">NOT DETECTED</span></td>
+<td>89.8 <span class="v v-mid">NOT DETECTED</span></td>
+<td>96.0 <span class="v v-good">EDGE</span></td>
+<td>18.6 [-16.5, 35.5] <span class="v v-mid">NOT DETECTED</span></td>
+<td>72.1 <span class="v v-mid">NOT DETECTED</span></td>
+<td>66.2 <span class="v v-mid">NOT DETECTED</span></td>
+<td>94.6 <span class="v v-good">EDGE</span></td>
+<td>-5.9 [-34.2, 45.5] <span class="v v-mid">NOT DETECTED</span></td>
+<td>86.6 <span class="v v-good">EDGE</span></td>
+<td>97.8 <span class="v v-good">EDGE</span></td>
+<td>99.6 <span class="v v-good">EDGE</span></td>
+<td>11.2 [-23.9, 37.7] <span class="v v-mid">NOT DETECTED</span></td>
+</tr>
+<tr>
+<td>A-ex_micro-none</td>
+<td>87.2 <span class="v v-good">EDGE</span></td>
+<td>88.6 <span class="v v-mid">NOT DETECTED</span></td>
+<td>89.2 <span class="v v-mid">NOT DETECTED</span></td>
+<td>1.4 [-19.2, 17.8] <span class="v v-mid">NOT DETECTED</span></td>
+<td>89.8 <span class="v v-good">EDGE</span></td>
+<td>94.0 <span class="v v-good">EDGE</span></td>
+<td>84.4 <span class="v v-good">EDGE</span></td>
+<td>4.2 [-7.8, 17.0] <span class="v v-mid">NOT DETECTED</span></td>
+<td>96.4 <span class="v v-good">EDGE</span></td>
+<td>98.6 <span class="v v-good">EDGE</span></td>
+<td>96.8 <span class="v v-good">EDGE</span></td>
+<td>2.2 [-8.3, 21.0] <span class="v v-mid">NOT DETECTED</span></td>
+</tr>
+<tr>
+<td>A-all-none</td>
+<td>97.2 <span class="v v-good">EDGE</span></td>
+<td>96.8 <span class="v v-good">EDGE</span></td>
+<td>98.2 <span class="v v-good">EDGE</span></td>
+<td>-0.4 [-11.6, 7.7] <span class="v v-mid">NOT DETECTED</span></td>
+<td>94.5 <span class="v v-good">EDGE</span></td>
+<td>98.6 <span class="v v-good">EDGE</span></td>
+<td>98.8 <span class="v v-good">EDGE</span></td>
+<td>4.1 [-2.8, 9.2] <span class="v v-mid">NOT DETECTED</span></td>
+<td>99.6 <span class="v v-good">EDGE</span></td>
+<td>99.8 <span class="v v-good">EDGE</span></td>
+<td>99.8 <span class="v v-good">EDGE</span></td>
+<td>0.2 [-7.6, 6.8] <span class="v v-mid">NOT DETECTED</span></td>
+</tr>
+</tbody>
+</table></div>
+<h2>3. F1, the cell map (design-space arm, FULL span)</h2>
+<p>Median percentile [95% interval] verdict for T1 to T3; T5 shares with verdicts. Thin cells would be marked; none are.</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Cell</th>
+<th>n</th>
+<th>refused</th>
+<th>T1 CAGR</th>
+<th>T2 max DD</th>
+<th>T3 Sharpe</th>
+<th>T5 vs universe avg</th>
+<th>T5 vs RSP</th>
+<th>T5 vs SPY</th>
+<th>T5 vs sector ETF</th>
+<th>T4 CAGR</th>
+<th>T4 max DD</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A-micro-none</td>
+<td>492</td>
+<td>5</td>
+<td>100.0 [97.8, 100.0] <span class="v v-good">EDGE</span></td>
+<td>100.0 [99.4, 100.0] <span class="v v-good">EDGE</span></td>
+<td>100.0 [99.4, 100.0] <span class="v v-good">EDGE</span></td>
+<td>97.8% <span class="v v-good">BEATS</span></td>
+<td>73.2% <span class="v v-mid">TIES</span></td>
+<td>40.2% <span class="v v-mid">TIES</span></td>
+<td>-</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>A-micro-profit</td>
+<td>488</td>
+<td>9</td>
+<td>86.4 [53.3, 94.2] <span class="v v-good">EDGE</span></td>
+<td>83.4 [62.2, 93.1] <span class="v v-good">EDGE</span></td>
+<td>93.7 [63.0, 97.6] <span class="v v-good">EDGE</span></td>
+<td>79.5% <span class="v v-mid">TIES</span></td>
+<td>65.0% <span class="v v-mid">TIES</span></td>
+<td>26.8% <span class="v v-mid">TIES</span></td>
+<td>-</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>A-micro-solvent</td>
+<td>491</td>
+<td>7</td>
+<td>100.0 [95.0, 100.0] <span class="v v-good">EDGE</span></td>
+<td>100.0 [97.6, 100.0] <span class="v v-good">EDGE</span></td>
+<td>100.0 [97.8, 100.0] <span class="v v-good">EDGE</span></td>
+<td>99.2% <span class="v v-good">BEATS</span></td>
+<td>69.7% <span class="v v-mid">TIES</span></td>
+<td>37.9% <span class="v v-mid">TIES</span></td>
+<td>-</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>A-small-none</td>
+<td>485</td>
+<td>15</td>
+<td>78.6 [46.2, 90.0] <span class="v v-mid">NOT DETECTED</span></td>
+<td>93.2 [66.6, 99.8] <span class="v v-good">EDGE</span></td>
+<td>91.2 [57.4, 98.0] <span class="v v-good">EDGE</span></td>
+<td>81.4% <span class="v v-mid">TIES</span></td>
+<td>24.9% <span class="v v-mid">TIES</span></td>
+<td>6.2% <span class="v v-bad">TRAILS</span></td>
+<td>-</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>A-small-profit</td>
+<td>486</td>
+<td>12</td>
+<td>39.6 [20.2, 66.4] <span class="v v-mid">NOT DETECTED</span></td>
+<td>61.6 [43.9, 80.8] <span class="v v-mid">NOT DETECTED</span></td>
+<td>54.9 [29.0, 79.4] <span class="v v-mid">NOT DETECTED</span></td>
+<td>18.3% <span class="v v-mid">TIES</span></td>
+<td>14.0% <span class="v v-bad">TRAILS</span></td>
+<td>2.7% <span class="v v-bad">TRAILS</span></td>
+<td>-</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>A-small-solvent</td>
+<td>484</td>
+<td>14</td>
+<td>80.1 [48.4, 89.4] <span class="v v-mid">NOT DETECTED</span></td>
+<td>91.2 [64.2, 99.8] <span class="v v-good">EDGE</span></td>
+<td>91.2 [58.2, 97.6] <span class="v v-good">EDGE</span></td>
+<td>78.3% <span class="v v-mid">TIES</span></td>
+<td>27.1% <span class="v v-mid">TIES</span></td>
+<td>5.0% <span class="v v-bad">TRAILS</span></td>
+<td>-</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>A-mid-none</td>
+<td>492</td>
+<td>5</td>
+<td>92.9 [63.4, 96.2] <span class="v v-good">EDGE</span></td>
+<td>75.9 [57.8, 96.9] <span class="v v-good">EDGE</span></td>
+<td>97.6 [71.2, 98.8] <span class="v v-good">EDGE</span></td>
+<td>85.8% <span class="v v-good">BEATS</span></td>
+<td>65.2% <span class="v v-mid">TIES</span></td>
+<td>32.1% <span class="v v-mid">TIES</span></td>
+<td>-</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>A-mid-profit</td>
+<td>486</td>
+<td>10</td>
+<td>82.2 [35.0, 93.6] <span class="v v-mid">NOT DETECTED</span></td>
+<td>69.2 [22.6, 95.8] <span class="v v-mid">NOT DETECTED</span></td>
+<td>89.0 [40.1, 97.2] <span class="v v-mid">NOT DETECTED</span></td>
+<td>57.2% <span class="v v-mid">TIES</span></td>
+<td>49.6% <span class="v v-mid">TIES</span></td>
+<td>27.0% <span class="v v-bad">TRAILS</span></td>
+<td>-</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>A-mid-solvent</td>
+<td>490</td>
+<td>4</td>
+<td>91.8 [62.6, 95.8] <span class="v v-good">EDGE</span></td>
+<td>74.0 [56.6, 93.6] <span class="v v-good">EDGE</span></td>
+<td>96.6 [69.0, 98.0] <span class="v v-good">EDGE</span></td>
+<td>82.4% <span class="v v-good">BEATS</span></td>
+<td>60.6% <span class="v v-mid">TIES</span></td>
+<td>33.1% <span class="v v-mid">TIES</span></td>
+<td>-</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>A-large-none</td>
+<td>496</td>
+<td>2</td>
+<td>84.0 [40.9, 96.0] <span class="v v-mid">NOT DETECTED</span></td>
+<td>47.2 [27.6, 95.4] <span class="v v-mid">NOT DETECTED</span></td>
+<td>90.4 [42.8, 98.2] <span class="v v-mid">NOT DETECTED</span></td>
+<td>77.0% <span class="v v-mid">TIES</span></td>
+<td>58.3% <span class="v v-mid">TIES</span></td>
+<td>16.7% <span class="v v-mid">TIES</span></td>
+<td>-</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>A-large-profit</td>
+<td>494</td>
+<td>5</td>
+<td>87.8 [36.7, 97.6] <span class="v v-mid">NOT DETECTED</span></td>
+<td>42.5 [12.2, 95.0] <span class="v v-mid">NOT DETECTED</span></td>
+<td>88.5 [31.4, 97.8] <span class="v v-mid">NOT DETECTED</span></td>
+<td>67.2% <span class="v v-mid">TIES</span></td>
+<td>59.3% <span class="v v-mid">TIES</span></td>
+<td>26.5% <span class="v v-mid">TIES</span></td>
+<td>-</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>A-large-solvent</td>
+<td>495</td>
+<td>3</td>
+<td>83.2 [37.4, 95.8] <span class="v v-mid">NOT DETECTED</span></td>
+<td>40.0 [23.3, 95.8] <span class="v v-mid">NOT DETECTED</span></td>
+<td>89.8 [39.3, 98.0] <span class="v v-mid">NOT DETECTED</span></td>
+<td>76.8% <span class="v v-mid">TIES</span></td>
+<td>57.4% <span class="v v-mid">TIES</span></td>
+<td>14.9% <span class="v v-mid">TIES</span></td>
+<td>-</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>A-micro_small-none</td>
+<td>486</td>
+<td>13</td>
+<td>99.0 [77.0, 99.4] <span class="v v-good">EDGE</span></td>
+<td>99.3 [81.1, 100.0] <span class="v v-good">EDGE</span></td>
+<td>99.8 [85.6, 100.0] <span class="v v-good">EDGE</span></td>
+<td>96.3% <span class="v v-good">BEATS</span></td>
+<td>34.6% <span class="v v-mid">TIES</span></td>
+<td>10.3% <span class="v v-mid">TIES</span></td>
+<td>-</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>A-micro_small-profit</td>
+<td>477</td>
+<td>20</td>
+<td>48.8 [24.6, 76.2] <span class="v v-mid">NOT DETECTED</span></td>
+<td>69.0 [51.4, 88.8] <span class="v v-good">EDGE</span></td>
+<td>65.6 [34.4, 87.6] <span class="v v-mid">NOT DETECTED</span></td>
+<td>32.7% <span class="v v-mid">TIES</span></td>
+<td>25.6% <span class="v v-mid">TIES</span></td>
+<td>8.8% <span class="v v-bad">TRAILS</span></td>
+<td>-</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>A-micro_small-solvent</td>
+<td>490</td>
+<td>5</td>
+<td>97.4 [68.6, 98.6] <span class="v v-good">EDGE</span></td>
+<td>97.8 [72.1, 100.0] <span class="v v-good">EDGE</span></td>
+<td>99.4 [77.8, 100.0] <span class="v v-good">EDGE</span></td>
+<td>95.7% <span class="v v-good">BEATS</span></td>
+<td>35.9% <span class="v v-mid">TIES</span></td>
+<td>8.0% <span class="v v-mid">TIES</span></td>
+<td>-</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>A-small_mid-none</td>
+<td>486</td>
+<td>12</td>
+<td>85.1 [53.3, 91.9] <span class="v v-good">EDGE</span></td>
+<td>86.9 [72.1, 98.8] <span class="v v-good">EDGE</span></td>
+<td>95.8 [72.2, 98.4] <span class="v v-good">EDGE</span></td>
+<td>81.1% <span class="v v-mid">TIES</span></td>
+<td>45.9% <span class="v v-mid">TIES</span></td>
+<td>16.3% <span class="v v-bad">TRAILS</span></td>
+<td>-</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>A-small_mid-profit</td>
+<td>468</td>
+<td>29</td>
+<td>46.5 [16.6, 78.8] <span class="v v-mid">NOT DETECTED</span></td>
+<td>51.5 [18.1, 83.9] <span class="v v-mid">NOT DETECTED</span></td>
+<td>53.2 [19.6, 82.8] <span class="v v-mid">NOT DETECTED</span></td>
+<td>31.4% <span class="v v-mid">TIES</span></td>
+<td>23.7% <span class="v v-mid">TIES</span></td>
+<td>8.1% <span class="v v-bad">TRAILS</span></td>
+<td>-</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>A-small_mid-solvent</td>
+<td>487</td>
+<td>13</td>
+<td>85.0 [49.5, 91.8] <span class="v v-mid">NOT DETECTED</span></td>
+<td>87.0 [72.4, 98.4] <span class="v v-good">EDGE</span></td>
+<td>94.6 [70.6, 98.4] <span class="v v-good">EDGE</span></td>
+<td>80.1% <span class="v v-mid">TIES</span></td>
+<td>44.6% <span class="v v-mid">TIES</span></td>
+<td>13.8% <span class="v v-bad">TRAILS</span></td>
+<td>-</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>A-mid_large-none</td>
+<td>498</td>
+<td>1</td>
+<td>89.8 [45.6, 97.4] <span class="v v-mid">NOT DETECTED</span></td>
+<td>66.2 [40.1, 99.0] <span class="v v-mid">NOT DETECTED</span></td>
+<td>97.8 [54.1, 99.6] <span class="v v-good">EDGE</span></td>
+<td>80.9% <span class="v v-mid">TIES</span></td>
+<td>63.5% <span class="v v-mid">TIES</span></td>
+<td>27.3% <span class="v v-mid">TIES</span></td>
+<td>-</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>A-mid_large-profit</td>
+<td>492</td>
+<td>6</td>
+<td>90.4 [38.2, 98.0] <span class="v v-mid">NOT DETECTED</span></td>
+<td>72.1 [24.7, 97.8] <span class="v v-mid">NOT DETECTED</span></td>
+<td>94.8 [42.9, 99.4] <span class="v v-mid">NOT DETECTED</span></td>
+<td>67.9% <span class="v v-mid">TIES</span></td>
+<td>60.8% <span class="v v-mid">TIES</span></td>
+<td>28.5% <span class="v v-mid">TIES</span></td>
+<td>-</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>A-mid_large-solvent</td>
+<td>496</td>
+<td>3</td>
+<td>91.2 [48.2, 97.4] <span class="v v-mid">NOT DETECTED</span></td>
+<td>71.4 [44.2, 98.6] <span class="v v-mid">NOT DETECTED</span></td>
+<td>97.6 [60.2, 99.4] <span class="v v-good">EDGE</span></td>
+<td>82.3% <span class="v v-mid">TIES</span></td>
+<td>63.5% <span class="v v-mid">TIES</span></td>
+<td>25.8% <span class="v v-mid">TIES</span></td>
+<td>-</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>A-ex_micro-none</td>
+<td>493</td>
+<td>6</td>
+<td>88.6 [49.2, 95.6] <span class="v v-mid">NOT DETECTED</span></td>
+<td>94.0 [78.2, 99.2] <span class="v v-good">EDGE</span></td>
+<td>98.6 [75.7, 99.2] <span class="v v-good">EDGE</span></td>
+<td>84.2% <span class="v v-mid">TIES</span></td>
+<td>56.6% <span class="v v-mid">TIES</span></td>
+<td>17.8% <span class="v v-bad">TRAILS</span></td>
+<td>-</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>A-ex_micro-profit</td>
+<td>484</td>
+<td>16</td>
+<td>65.3 [17.8, 92.2] <span class="v v-mid">NOT DETECTED</span></td>
+<td>67.0 [19.9, 95.8] <span class="v v-mid">NOT DETECTED</span></td>
+<td>78.9 [27.2, 96.8] <span class="v v-mid">NOT DETECTED</span></td>
+<td>46.7% <span class="v v-mid">TIES</span></td>
+<td>38.2% <span class="v v-mid">TIES</span></td>
+<td>13.6% <span class="v v-bad">TRAILS</span></td>
+<td>-</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>A-ex_micro-solvent</td>
+<td>483</td>
+<td>15</td>
+<td>87.0 [47.6, 95.4] <span class="v v-mid">NOT DETECTED</span></td>
+<td>89.4 [69.2, 99.0] <span class="v v-good">EDGE</span></td>
+<td>98.2 [70.2, 99.0] <span class="v v-good">EDGE</span></td>
+<td>80.3% <span class="v v-mid">TIES</span></td>
+<td>55.5% <span class="v v-mid">TIES</span></td>
+<td>16.4% <span class="v v-bad">TRAILS</span></td>
+<td>-</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>A-all-none</td>
+<td>489</td>
+<td>11</td>
+<td>96.8 [67.0, 98.6] <span class="v v-good">EDGE</span></td>
+<td>98.6 [86.4, 99.6] <span class="v v-good">EDGE</span></td>
+<td>99.8 [84.8, 99.8] <span class="v v-good">EDGE</span></td>
+<td>93.9% <span class="v v-good">BEATS</span></td>
+<td>46.4% <span class="v v-mid">TIES</span></td>
+<td>13.3% <span class="v v-bad">TRAILS</span></td>
+<td>-</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-good">PERSISTS</span></td>
+</tr>
+<tr>
+<td>A-all-profit</td>
+<td>485</td>
+<td>12</td>
+<td>60.2 [16.2, 90.6] <span class="v v-mid">NOT DETECTED</span></td>
+<td>80.6 [28.4, 96.6] <span class="v v-mid">NOT DETECTED</span></td>
+<td>82.0 [31.1, 96.2] <span class="v v-mid">NOT DETECTED</span></td>
+<td>42.5% <span class="v v-mid">TIES</span></td>
+<td>33.0% <span class="v v-mid">TIES</span></td>
+<td>9.5% <span class="v v-bad">TRAILS</span></td>
+<td>-</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>A-all-solvent</td>
+<td>482</td>
+<td>15</td>
+<td>94.3 [61.4, 97.4] <span class="v v-good">EDGE</span></td>
+<td>97.7 [86.2, 99.4] <span class="v v-good">EDGE</span></td>
+<td>99.2 [83.8, 99.6] <span class="v v-good">EDGE</span></td>
+<td>94.2% <span class="v v-good">BEATS</span></td>
+<td>50.6% <span class="v v-mid">TIES</span></td>
+<td>14.3% <span class="v v-mid">TIES</span></td>
+<td>-</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>A-all-solvent18</td>
+<td>490</td>
+<td>8</td>
+<td>99.4 [80.6, 99.8] <span class="v v-good">EDGE</span></td>
+<td>100.0 [97.4, 100.0] <span class="v v-good">EDGE</span></td>
+<td>100.0 [96.4, 100.0] <span class="v v-good">EDGE</span></td>
+<td>96.5% <span class="v v-good">BEATS</span></td>
+<td>77.3% <span class="v v-mid">TIES</span></td>
+<td>29.4% <span class="v v-mid">TIES</span></td>
+<td>-</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>B-basic_materials-all-none</td>
+<td>195</td>
+<td>4</td>
+<td>79.8 [43.8, 93.6] <span class="v v-mid">NOT DETECTED</span></td>
+<td>91.8 [54.6, 97.1] <span class="v v-good">EDGE</span></td>
+<td>85.2 [48.0, 94.4] <span class="v v-mid">NOT DETECTED</span></td>
+<td>80.0% <span class="v v-mid">TIES</span></td>
+<td>41.5% <span class="v v-mid">TIES</span></td>
+<td>5.1% <span class="v v-mid">TIES</span></td>
+<td>64.6% <span class="v v-mid">TIES</span> (XLB)</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>B-basic_materials-all-profit</td>
+<td>195</td>
+<td>4</td>
+<td>40.2 [19.8, 71.3] <span class="v v-mid">NOT DETECTED</span></td>
+<td>71.0 [25.4, 89.2] <span class="v v-mid">NOT DETECTED</span></td>
+<td>47.2 [23.1, 78.3] <span class="v v-mid">NOT DETECTED</span></td>
+<td>20.5% <span class="v v-mid">TIES</span></td>
+<td>25.1% <span class="v v-mid">TIES</span></td>
+<td>7.2% <span class="v v-mid">TIES</span></td>
+<td>45.1% <span class="v v-mid">TIES</span> (XLB)</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>B-basic_materials-ex_micro-none</td>
+<td>197</td>
+<td>2</td>
+<td>55.2 [24.8, 81.7] <span class="v v-mid">NOT DETECTED</span></td>
+<td>61.4 [28.9, 87.8] <span class="v v-mid">NOT DETECTED</span></td>
+<td>59.4 [27.6, 82.2] <span class="v v-mid">NOT DETECTED</span></td>
+<td>32.5% <span class="v v-mid">TIES</span></td>
+<td>20.3% <span class="v v-mid">TIES</span></td>
+<td>5.1% <span class="v v-mid">TIES</span></td>
+<td>42.6% <span class="v v-mid">TIES</span> (XLB)</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>B-basic_materials-ex_micro-profit</td>
+<td>195</td>
+<td>5</td>
+<td>29.8 [14.4, 63.8] <span class="v v-mid">NOT DETECTED</span></td>
+<td>66.6 [22.7, 86.2] <span class="v v-mid">NOT DETECTED</span></td>
+<td>39.6 [19.4, 72.0] <span class="v v-mid">NOT DETECTED</span></td>
+<td>13.8% <span class="v v-mid">TIES</span></td>
+<td>16.9% <span class="v v-mid">TIES</span></td>
+<td>2.1% <span class="v v-bad">TRAILS</span></td>
+<td>31.3% <span class="v v-mid">TIES</span> (XLB)</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>B-communication_services-all-none</td>
+<td>196</td>
+<td>4</td>
+<td>98.2 [76.2, 98.6] <span class="v v-good">EDGE</span></td>
+<td>99.6 [96.6, 99.8] <span class="v v-good">EDGE</span></td>
+<td>99.8 [91.9, 99.6] <span class="v v-good">EDGE</span></td>
+<td>93.9% <span class="v v-good">BEATS</span></td>
+<td>12.8% <span class="v v-mid">TIES</span></td>
+<td>2.0% <span class="v v-bad">TRAILS</span></td>
+<td>7.1% <span class="v v-mid">TIES</span> (XLC)</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>B-communication_services-all-profit</td>
+<td>195</td>
+<td>5</td>
+<td>94.4 [65.6, 97.5] <span class="v v-good">EDGE</span></td>
+<td>93.0 [80.8, 98.6] <span class="v v-good">EDGE</span></td>
+<td>98.2 [78.0, 99.2] <span class="v v-good">EDGE</span></td>
+<td>87.7% <span class="v v-good">BEATS</span></td>
+<td>20.5% <span class="v v-mid">TIES</span></td>
+<td>4.1% <span class="v v-bad">TRAILS</span></td>
+<td>12.3% <span class="v v-mid">TIES</span> (XLC)</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>B-communication_services-ex_micro-none</td>
+<td>192</td>
+<td>8</td>
+<td>88.9 [61.7, 92.9] <span class="v v-good">EDGE</span></td>
+<td>92.2 [83.0, 98.7] <span class="v v-good">EDGE</span></td>
+<td>94.5 [71.7, 96.2] <span class="v v-good">EDGE</span></td>
+<td>87.0% <span class="v v-good">BEATS</span></td>
+<td>3.6% <span class="v v-bad">TRAILS</span></td>
+<td>0.0% <span class="v v-bad">TRAILS</span></td>
+<td>1.6% <span class="v v-mid">TIES</span> (XLC)</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>B-communication_services-ex_micro-profit</td>
+<td>188</td>
+<td>12</td>
+<td>88.2 [59.1, 95.4] <span class="v v-good">EDGE</span></td>
+<td>71.6 [57.2, 94.6] <span class="v v-good">EDGE</span></td>
+<td>92.5 [62.2, 97.0] <span class="v v-good">EDGE</span></td>
+<td>83.5% <span class="v v-mid">TIES</span></td>
+<td>9.0% <span class="v v-mid">TIES</span></td>
+<td>0.0% <span class="v v-bad">TRAILS</span></td>
+<td>4.3% <span class="v v-mid">TIES</span> (XLC)</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>B-consumer_cyclical-all-none</td>
+<td>198</td>
+<td>2</td>
+<td>89.1 [27.0, 98.6] <span class="v v-mid">NOT DETECTED</span></td>
+<td>95.1 [64.4, 99.5] <span class="v v-good">EDGE</span></td>
+<td>95.5 [38.2, 99.4] <span class="v v-mid">NOT DETECTED</span></td>
+<td>85.9% <span class="v v-mid">TIES</span></td>
+<td>20.7% <span class="v v-mid">TIES</span></td>
+<td>4.5% <span class="v v-bad">TRAILS</span></td>
+<td>18.2% <span class="v v-mid">TIES</span> (XLY)</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>B-consumer_cyclical-all-profit</td>
+<td>190</td>
+<td>10</td>
+<td>45.2 [9.8, 83.2] <span class="v v-mid">NOT DETECTED</span></td>
+<td>54.7 [30.4, 90.8] <span class="v v-mid">NOT DETECTED</span></td>
+<td>57.6 [12.0, 88.2] <span class="v v-mid">NOT DETECTED</span></td>
+<td>33.2% <span class="v v-mid">TIES</span></td>
+<td>8.4% <span class="v v-bad">TRAILS</span></td>
+<td>0.0% <span class="v v-bad">TRAILS</span></td>
+<td>7.9% <span class="v v-mid">TIES</span> (XLY)</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>B-consumer_cyclical-ex_micro-none</td>
+<td>194</td>
+<td>5</td>
+<td>71.3 [17.1, 93.6] <span class="v v-mid">NOT DETECTED</span></td>
+<td>80.2 [45.7, 96.8] <span class="v v-mid">NOT DETECTED</span></td>
+<td>81.9 [23.8, 96.7] <span class="v v-mid">NOT DETECTED</span></td>
+<td>70.6% <span class="v v-mid">TIES</span></td>
+<td>11.3% <span class="v v-mid">TIES</span></td>
+<td>0.5% <span class="v v-bad">TRAILS</span></td>
+<td>8.8% <span class="v v-mid">TIES</span> (XLY)</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-good">PERSISTS</span></td>
+</tr>
+<tr>
+<td>B-consumer_cyclical-ex_micro-profit</td>
+<td>194</td>
+<td>5</td>
+<td>51.0 [16.2, 82.4] <span class="v v-mid">NOT DETECTED</span></td>
+<td>63.6 [38.8, 84.4] <span class="v v-mid">NOT DETECTED</span></td>
+<td>58.9 [19.2, 86.2] <span class="v v-mid">NOT DETECTED</span></td>
+<td>38.1% <span class="v v-mid">TIES</span></td>
+<td>9.3% <span class="v v-mid">TIES</span></td>
+<td>3.1% <span class="v v-bad">TRAILS</span></td>
+<td>8.8% <span class="v v-mid">TIES</span> (XLY)</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>B-consumer_defensive-all-none</td>
+<td>194</td>
+<td>5</td>
+<td>89.1 [44.5, 96.2] <span class="v v-mid">NOT DETECTED</span></td>
+<td>99.0 [80.6, 99.2] <span class="v v-good">EDGE</span></td>
+<td>93.8 [50.7, 98.2] <span class="v v-good">EDGE</span></td>
+<td>89.2% <span class="v v-mid">TIES</span></td>
+<td>1.0% <span class="v v-bad">TRAILS</span></td>
+<td>0.0% <span class="v v-bad">TRAILS</span></td>
+<td>12.4% <span class="v v-mid">TIES</span> (XLP)</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>B-consumer_defensive-all-profit</td>
+<td>195</td>
+<td>5</td>
+<td>37.0 [17.6, 64.4] <span class="v v-mid">NOT DETECTED</span></td>
+<td>63.4 [37.6, 71.6] <span class="v v-mid">NOT DETECTED</span></td>
+<td>41.8 [18.2, 65.8] <span class="v v-mid">NOT DETECTED</span></td>
+<td>20.0% <span class="v v-mid">TIES</span></td>
+<td>1.5% <span class="v v-bad">TRAILS</span></td>
+<td>0.0% <span class="v v-bad">TRAILS</span></td>
+<td>9.7% <span class="v v-mid">TIES</span> (XLP)</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>B-consumer_defensive-ex_micro-none</td>
+<td>195</td>
+<td>4</td>
+<td>62.8 [28.6, 83.2] <span class="v v-mid">NOT DETECTED</span></td>
+<td>84.6 [52.3, 89.8] <span class="v v-good">EDGE</span></td>
+<td>68.2 [33.2, 86.2] <span class="v v-mid">NOT DETECTED</span></td>
+<td>52.8% <span class="v v-mid">TIES</span></td>
+<td>3.1% <span class="v v-bad">TRAILS</span></td>
+<td>0.5% <span class="v v-bad">TRAILS</span></td>
+<td>18.5% <span class="v v-mid">TIES</span> (XLP)</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>B-consumer_defensive-ex_micro-profit</td>
+<td>188</td>
+<td>11</td>
+<td>31.2 [14.0, 60.4] <span class="v v-mid">NOT DETECTED</span></td>
+<td>49.4 [29.0, 68.2] <span class="v v-mid">NOT DETECTED</span></td>
+<td>33.7 [15.9, 60.4] <span class="v v-mid">NOT DETECTED</span></td>
+<td>13.8% <span class="v v-mid">TIES</span></td>
+<td>0.5% <span class="v v-bad">TRAILS</span></td>
+<td>0.0% <span class="v v-bad">TRAILS</span></td>
+<td>6.9% <span class="v v-mid">TIES</span> (XLP)</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>B-cyclical-all-none</td>
+<td>197</td>
+<td>2</td>
+<td>92.6 [50.6, 97.2] <span class="v v-good">EDGE</span></td>
+<td>96.6 [81.2, 99.0] <span class="v v-good">EDGE</span></td>
+<td>97.8 [72.4, 99.0] <span class="v v-good">EDGE</span></td>
+<td>90.4% <span class="v v-mid">TIES</span></td>
+<td>55.3% <span class="v v-mid">TIES</span></td>
+<td>11.2% <span class="v v-mid">TIES</span></td>
+<td>-</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>B-cyclical-all-profit</td>
+<td>197</td>
+<td>2</td>
+<td>54.2 [18.3, 82.0] <span class="v v-mid">NOT DETECTED</span></td>
+<td>74.4 [56.6, 90.8] <span class="v v-good">EDGE</span></td>
+<td>73.4 [39.4, 91.4] <span class="v v-mid">NOT DETECTED</span></td>
+<td>35.0% <span class="v v-mid">TIES</span></td>
+<td>35.0% <span class="v v-mid">TIES</span></td>
+<td>10.7% <span class="v v-bad">TRAILS</span></td>
+<td>-</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>B-cyclical-ex_micro-none</td>
+<td>197</td>
+<td>3</td>
+<td>73.8 [31.8, 90.8] <span class="v v-mid">NOT DETECTED</span></td>
+<td>87.2 [67.4, 95.4] <span class="v v-good">EDGE</span></td>
+<td>89.2 [55.8, 95.6] <span class="v v-good">EDGE</span></td>
+<td>60.9% <span class="v v-mid">TIES</span></td>
+<td>47.7% <span class="v v-mid">TIES</span></td>
+<td>11.2% <span class="v v-mid">TIES</span></td>
+<td>-</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>B-cyclical-ex_micro-profit</td>
+<td>196</td>
+<td>4</td>
+<td>53.1 [21.2, 79.4] <span class="v v-mid">NOT DETECTED</span></td>
+<td>80.5 [52.6, 91.7] <span class="v v-good">EDGE</span></td>
+<td>79.2 [44.8, 90.3] <span class="v v-mid">NOT DETECTED</span></td>
+<td>33.7% <span class="v v-mid">TIES</span></td>
+<td>34.7% <span class="v v-mid">TIES</span></td>
+<td>6.1% <span class="v v-bad">TRAILS</span></td>
+<td>-</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>B-defensive-all-none</td>
+<td>193</td>
+<td>7</td>
+<td>99.8 [82.6, 100.0] <span class="v v-good">EDGE</span></td>
+<td>100.0 [99.8, 100.0] <span class="v v-good">EDGE</span></td>
+<td>100.0 [96.4, 100.0] <span class="v v-good">EDGE</span></td>
+<td>99.0% <span class="v v-good">BEATS</span></td>
+<td>15.5% <span class="v v-mid">TIES</span></td>
+<td>2.6% <span class="v v-bad">TRAILS</span></td>
+<td>-</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-good">PERSISTS</span></td>
+</tr>
+<tr>
+<td>B-defensive-all-profit</td>
+<td>190</td>
+<td>10</td>
+<td>27.9 [13.0, 61.5] <span class="v v-mid">NOT DETECTED</span></td>
+<td>50.8 [18.2, 76.4] <span class="v v-mid">NOT DETECTED</span></td>
+<td>32.1 [14.4, 67.6] <span class="v v-mid">NOT DETECTED</span></td>
+<td>17.9% <span class="v v-mid">TIES</span></td>
+<td>1.1% <span class="v v-bad">TRAILS</span></td>
+<td>0.0% <span class="v v-bad">TRAILS</span></td>
+<td>-</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>B-defensive-ex_micro-none</td>
+<td>196</td>
+<td>4</td>
+<td>87.7 [40.2, 97.6] <span class="v v-mid">NOT DETECTED</span></td>
+<td>100.0 [96.0, 100.0] <span class="v v-good">EDGE</span></td>
+<td>98.2 [66.2, 99.6] <span class="v v-good">EDGE</span></td>
+<td>94.9% <span class="v v-mid">TIES</span></td>
+<td>8.2% <span class="v v-mid">TIES</span></td>
+<td>0.5% <span class="v v-bad">TRAILS</span></td>
+<td>-</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>B-defensive-ex_micro-profit</td>
+<td>184</td>
+<td>16</td>
+<td>19.7 [9.4, 54.2] <span class="v v-mid">NOT DETECTED</span></td>
+<td>33.0 [9.9, 67.4] <span class="v v-mid">NOT DETECTED</span></td>
+<td>18.7 [9.7, 56.3] <span class="v v-mid">NOT DETECTED</span></td>
+<td>8.7% <span class="v v-bad">TRAILS</span></td>
+<td>1.6% <span class="v v-bad">TRAILS</span></td>
+<td>0.5% <span class="v v-bad">TRAILS</span></td>
+<td>-</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>B-energy-all-none</td>
+<td>196</td>
+<td>4</td>
+<td>96.0 [64.0, 99.0] <span class="v v-good">EDGE</span></td>
+<td>91.2 [59.8, 99.6] <span class="v v-good">EDGE</span></td>
+<td>99.0 [77.2, 99.8] <span class="v v-good">EDGE</span></td>
+<td>90.3% <span class="v v-good">BEATS</span></td>
+<td>73.0% <span class="v v-mid">TIES</span></td>
+<td>45.9% <span class="v v-mid">TIES</span></td>
+<td>75.0% <span class="v v-mid">TIES</span> (XLE)</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>B-energy-all-profit</td>
+<td>196</td>
+<td>4</td>
+<td>81.1 [42.6, 96.0] <span class="v v-mid">NOT DETECTED</span></td>
+<td>62.4 [30.8, 79.2] <span class="v v-mid">NOT DETECTED</span></td>
+<td>83.8 [45.1, 96.8] <span class="v v-mid">NOT DETECTED</span></td>
+<td>70.9% <span class="v v-mid">TIES</span></td>
+<td>71.9% <span class="v v-mid">TIES</span></td>
+<td>42.9% <span class="v v-mid">TIES</span></td>
+<td>74.0% <span class="v v-mid">TIES</span> (XLE)</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>B-energy-ex_micro-none</td>
+<td>198</td>
+<td>2</td>
+<td>89.4 [46.8, 97.2] <span class="v v-mid">NOT DETECTED</span></td>
+<td>92.7 [64.0, 99.4] <span class="v v-good">EDGE</span></td>
+<td>96.6 [68.4, 99.5] <span class="v v-good">EDGE</span></td>
+<td>80.3% <span class="v v-mid">TIES</span></td>
+<td>58.6% <span class="v v-mid">TIES</span></td>
+<td>26.8% <span class="v v-mid">TIES</span></td>
+<td>65.7% <span class="v v-mid">TIES</span> (XLE)</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>B-energy-ex_micro-profit</td>
+<td>196</td>
+<td>3</td>
+<td>81.3 [40.0, 94.0] <span class="v v-mid">NOT DETECTED</span></td>
+<td>73.5 [41.4, 85.4] <span class="v v-mid">NOT DETECTED</span></td>
+<td>85.1 [46.6, 96.4] <span class="v v-mid">NOT DETECTED</span></td>
+<td>59.2% <span class="v v-mid">TIES</span></td>
+<td>58.2% <span class="v v-mid">TIES</span></td>
+<td>31.6% <span class="v v-mid">TIES</span></td>
+<td>59.2% <span class="v v-mid">TIES</span> (XLE)</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>B-financial-all-none</td>
+<td>200</td>
+<td>0</td>
+<td>90.2 [48.8, 97.2] <span class="v v-mid">NOT DETECTED</span></td>
+<td>75.1 [33.1, 90.6] <span class="v v-mid">NOT DETECTED</span></td>
+<td>94.0 [57.0, 98.5] <span class="v v-good">EDGE</span></td>
+<td>72.0% <span class="v v-mid">TIES</span></td>
+<td>41.5% <span class="v v-mid">TIES</span></td>
+<td>18.5% <span class="v v-mid">TIES</span></td>
+<td>-</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>B-financial-all-profit</td>
+<td>196</td>
+<td>3</td>
+<td>92.8 [40.5, 99.2] <span class="v v-mid">NOT DETECTED</span></td>
+<td>66.2 [7.8, 92.2] <span class="v v-mid">NOT DETECTED</span></td>
+<td>88.4 [34.5, 98.2] <span class="v v-mid">NOT DETECTED</span></td>
+<td>60.2% <span class="v v-mid">TIES</span></td>
+<td>50.5% <span class="v v-mid">TIES</span></td>
+<td>32.1% <span class="v v-mid">TIES</span></td>
+<td>-</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>B-financial-ex_micro-none</td>
+<td>198</td>
+<td>2</td>
+<td>80.6 [32.2, 96.2] <span class="v v-mid">NOT DETECTED</span></td>
+<td>73.6 [16.4, 96.6] <span class="v v-mid">NOT DETECTED</span></td>
+<td>86.7 [35.6, 97.4] <span class="v v-mid">NOT DETECTED</span></td>
+<td>56.6% <span class="v v-mid">TIES</span></td>
+<td>35.4% <span class="v v-mid">TIES</span></td>
+<td>17.7% <span class="v v-bad">TRAILS</span></td>
+<td>-</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>B-financial-ex_micro-profit</td>
+<td>194</td>
+<td>5</td>
+<td>84.5 [30.1, 95.9] <span class="v v-mid">NOT DETECTED</span></td>
+<td>79.0 [13.0, 94.0] <span class="v v-mid">NOT DETECTED</span></td>
+<td>84.5 [32.0, 96.0] <span class="v v-mid">NOT DETECTED</span></td>
+<td>47.9% <span class="v v-mid">TIES</span></td>
+<td>32.0% <span class="v v-mid">TIES</span></td>
+<td>12.4% <span class="v v-bad">TRAILS</span></td>
+<td>-</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>B-financial_services-all-none</td>
+<td>199</td>
+<td>0</td>
+<td>73.0 [39.0, 89.2] <span class="v v-mid">NOT DETECTED</span></td>
+<td>57.0 [31.8, 87.0] <span class="v v-mid">NOT DETECTED</span></td>
+<td>81.2 [47.6, 93.2] <span class="v v-mid">NOT DETECTED</span></td>
+<td>64.3% <span class="v v-mid">TIES</span></td>
+<td>37.2% <span class="v v-mid">TIES</span></td>
+<td>14.1% <span class="v v-mid">TIES</span></td>
+<td>28.6% <span class="v v-mid">TIES</span> (XLF)</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>B-financial_services-all-profit</td>
+<td>196</td>
+<td>4</td>
+<td>77.6 [29.0, 94.6] <span class="v v-mid">NOT DETECTED</span></td>
+<td>52.4 [4.0, 79.1] <span class="v v-mid">NOT DETECTED</span></td>
+<td>69.4 [21.4, 92.3] <span class="v v-mid">NOT DETECTED</span></td>
+<td>51.5% <span class="v v-mid">TIES</span></td>
+<td>46.4% <span class="v v-mid">TIES</span></td>
+<td>24.5% <span class="v v-mid">TIES</span></td>
+<td>39.8% <span class="v v-mid">TIES</span> (XLF)</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>B-financial_services-ex_micro-none</td>
+<td>198</td>
+<td>2</td>
+<td>59.5 [16.6, 92.4] <span class="v v-mid">NOT DETECTED</span></td>
+<td>75.1 [10.2, 96.0] <span class="v v-mid">NOT DETECTED</span></td>
+<td>72.2 [20.3, 94.8] <span class="v v-mid">NOT DETECTED</span></td>
+<td>42.9% <span class="v v-mid">TIES</span></td>
+<td>33.3% <span class="v v-mid">TIES</span></td>
+<td>14.6% <span class="v v-bad">TRAILS</span></td>
+<td>28.3% <span class="v v-mid">TIES</span> (XLF)</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>B-financial_services-ex_micro-profit</td>
+<td>193</td>
+<td>7</td>
+<td>70.6 [18.2, 93.6] <span class="v v-mid">NOT DETECTED</span></td>
+<td>68.4 [6.3, 92.8] <span class="v v-mid">NOT DETECTED</span></td>
+<td>72.8 [19.8, 92.6] <span class="v v-mid">NOT DETECTED</span></td>
+<td>44.6% <span class="v v-mid">TIES</span></td>
+<td>39.9% <span class="v v-mid">TIES</span></td>
+<td>16.1% <span class="v v-bad">TRAILS</span></td>
+<td>35.8% <span class="v v-mid">TIES</span> (XLF)</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>B-growth-all-none</td>
+<td>191</td>
+<td>8</td>
+<td>99.8 [89.8, 99.8] <span class="v v-good">EDGE</span></td>
+<td>99.4 [92.6, 99.8] <span class="v v-good">EDGE</span></td>
+<td>100.0 [97.4, 100.0] <span class="v v-good">EDGE</span></td>
+<td>98.4% <span class="v v-good">BEATS</span></td>
+<td>93.2% <span class="v v-mid">TIES</span></td>
+<td>83.8% <span class="v v-mid">TIES</span></td>
+<td>-</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-good">PERSISTS</span></td>
+</tr>
+<tr>
+<td>B-growth-all-profit</td>
+<td>191</td>
+<td>8</td>
+<td>97.0 [71.1, 98.6] <span class="v v-good">EDGE</span></td>
+<td>70.0 [52.7, 95.8] <span class="v v-good">EDGE</span></td>
+<td>98.2 [77.4, 99.6] <span class="v v-good">EDGE</span></td>
+<td>92.1% <span class="v v-good">BEATS</span></td>
+<td>91.6% <span class="v v-mid">TIES</span></td>
+<td>77.5% <span class="v v-mid">TIES</span></td>
+<td>-</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-good">PERSISTS</span></td>
+</tr>
+<tr>
+<td>B-growth-ex_micro-none</td>
+<td>195</td>
+<td>5</td>
+<td>96.6 [74.5, 98.4] <span class="v v-good">EDGE</span></td>
+<td>86.0 [74.4, 97.8] <span class="v v-good">EDGE</span></td>
+<td>99.4 [86.0, 99.8] <span class="v v-good">EDGE</span></td>
+<td>89.7% <span class="v v-good">BEATS</span></td>
+<td>88.2% <span class="v v-mid">TIES</span></td>
+<td>72.8% <span class="v v-mid">TIES</span></td>
+<td>-</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-good">PERSISTS</span></td>
+</tr>
+<tr>
+<td>B-growth-ex_micro-profit</td>
+<td>194</td>
+<td>5</td>
+<td>91.0 [58.7, 98.2] <span class="v v-good">EDGE</span></td>
+<td>39.3 [33.1, 93.5] <span class="v v-mid">NOT DETECTED</span></td>
+<td>96.6 [62.8, 99.4] <span class="v v-good">EDGE</span></td>
+<td>82.0% <span class="v v-mid">TIES</span></td>
+<td>86.6% <span class="v v-mid">TIES</span></td>
+<td>65.5% <span class="v v-mid">TIES</span></td>
+<td>-</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-good">PERSISTS</span></td>
+</tr>
+<tr>
+<td>B-healthcare-all-none</td>
+<td>200</td>
+<td>0</td>
+<td>100.0 [93.0, 100.0] <span class="v v-good">EDGE</span></td>
+<td>100.0 [100.0, 100.0] <span class="v v-good">EDGE</span></td>
+<td>100.0 [99.6, 100.0] <span class="v v-good">EDGE</span></td>
+<td>100.0% <span class="v v-good">BEATS</span></td>
+<td>54.5% <span class="v v-mid">TIES</span></td>
+<td>13.0% <span class="v v-mid">TIES</span></td>
+<td>63.5% <span class="v v-mid">TIES</span> (XLV)</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>B-healthcare-all-profit</td>
+<td>195</td>
+<td>5</td>
+<td>81.6 [41.6, 92.8] <span class="v v-mid">NOT DETECTED</span></td>
+<td>95.6 [69.8, 97.4] <span class="v v-good">EDGE</span></td>
+<td>90.8 [59.4, 95.9] <span class="v v-good">EDGE</span></td>
+<td>65.1% <span class="v v-mid">TIES</span></td>
+<td>33.3% <span class="v v-mid">TIES</span></td>
+<td>7.2% <span class="v v-mid">TIES</span></td>
+<td>44.1% <span class="v v-mid">TIES</span> (XLV)</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>B-healthcare-ex_micro-none</td>
+<td>196</td>
+<td>4</td>
+<td>97.4 [57.4, 99.8] <span class="v v-good">EDGE</span></td>
+<td>100.0 [97.9, 100.0] <span class="v v-good">EDGE</span></td>
+<td>100.0 [88.0, 100.0] <span class="v v-good">EDGE</span></td>
+<td>99.5% <span class="v v-mid">TIES</span></td>
+<td>28.1% <span class="v v-mid">TIES</span></td>
+<td>4.6% <span class="v v-mid">TIES</span></td>
+<td>44.4% <span class="v v-mid">TIES</span> (XLV)</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>B-healthcare-ex_micro-profit</td>
+<td>191</td>
+<td>7</td>
+<td>63.6 [32.8, 84.3] <span class="v v-mid">NOT DETECTED</span></td>
+<td>80.8 [48.4, 94.0] <span class="v v-mid">NOT DETECTED</span></td>
+<td>77.2 [40.6, 92.7] <span class="v v-mid">NOT DETECTED</span></td>
+<td>43.5% <span class="v v-mid">TIES</span></td>
+<td>23.6% <span class="v v-mid">TIES</span></td>
+<td>2.6% <span class="v v-bad">TRAILS</span></td>
+<td>34.0% <span class="v v-mid">TIES</span> (XLV)</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>B-industrials-all-none</td>
+<td>198</td>
+<td>2</td>
+<td>94.3 [56.2, 97.8] <span class="v v-good">EDGE</span></td>
+<td>97.2 [84.8, 98.6] <span class="v v-good">EDGE</span></td>
+<td>99.2 [80.1, 99.4] <span class="v v-good">EDGE</span></td>
+<td>95.5% <span class="v v-mid">TIES</span></td>
+<td>82.8% <span class="v v-mid">TIES</span></td>
+<td>33.3% <span class="v v-mid">TIES</span></td>
+<td>68.7% <span class="v v-mid">TIES</span> (XLI)</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>B-industrials-all-profit</td>
+<td>191</td>
+<td>9</td>
+<td>50.0 [17.0, 80.7] <span class="v v-mid">NOT DETECTED</span></td>
+<td>86.8 [40.1, 93.4] <span class="v v-mid">NOT DETECTED</span></td>
+<td>75.2 [36.6, 91.0] <span class="v v-mid">NOT DETECTED</span></td>
+<td>33.5% <span class="v v-mid">TIES</span></td>
+<td>59.2% <span class="v v-mid">TIES</span></td>
+<td>18.8% <span class="v v-mid">TIES</span></td>
+<td>40.3% <span class="v v-mid">TIES</span> (XLI)</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>B-industrials-ex_micro-none</td>
+<td>200</td>
+<td>0</td>
+<td>75.8 [31.9, 92.0] <span class="v v-mid">NOT DETECTED</span></td>
+<td>93.4 [65.8, 96.2] <span class="v v-good">EDGE</span></td>
+<td>93.9 [60.0, 97.4] <span class="v v-good">EDGE</span></td>
+<td>60.0% <span class="v v-mid">TIES</span></td>
+<td>67.0% <span class="v v-mid">TIES</span></td>
+<td>30.0% <span class="v v-mid">TIES</span></td>
+<td>53.0% <span class="v v-mid">TIES</span> (XLI)</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>B-industrials-ex_micro-profit</td>
+<td>192</td>
+<td>8</td>
+<td>45.1 [13.4, 83.2] <span class="v v-mid">NOT DETECTED</span></td>
+<td>85.8 [38.8, 94.8] <span class="v v-mid">NOT DETECTED</span></td>
+<td>73.1 [36.0, 93.4] <span class="v v-mid">NOT DETECTED</span></td>
+<td>32.8% <span class="v v-mid">TIES</span></td>
+<td>58.3% <span class="v v-mid">TIES</span></td>
+<td>27.1% <span class="v v-mid">TIES</span></td>
+<td>40.1% <span class="v v-mid">TIES</span> (XLI)</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>B-real_estate-all-none</td>
+<td>198</td>
+<td>2</td>
+<td>52.7 [24.2, 77.8] <span class="v v-mid">NOT DETECTED</span></td>
+<td>33.4 [27.2, 77.6] <span class="v v-mid">NOT DETECTED</span></td>
+<td>55.3 [23.0, 84.6] <span class="v v-mid">NOT DETECTED</span></td>
+<td>50.0% <span class="v v-mid">TIES</span></td>
+<td>0.5% <span class="v v-bad">TRAILS</span></td>
+<td>0.0% <span class="v v-bad">TRAILS</span></td>
+<td>8.1% <span class="v v-mid">TIES</span> (XLRE)</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>B-real_estate-all-profit</td>
+<td>193</td>
+<td>7</td>
+<td>23.4 [13.9, 58.2] <span class="v v-mid">NOT DETECTED</span></td>
+<td>20.8 [16.4, 59.8] <span class="v v-mid">NOT DETECTED</span></td>
+<td>27.8 [15.0, 65.8] <span class="v v-mid">NOT DETECTED</span></td>
+<td>28.0% <span class="v v-mid">TIES</span></td>
+<td>0.0% <span class="v v-bad">TRAILS</span></td>
+<td>0.0% <span class="v v-bad">TRAILS</span></td>
+<td>9.8% <span class="v v-mid">TIES</span> (XLRE)</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>B-real_estate-ex_micro-none</td>
+<td>194</td>
+<td>6</td>
+<td>21.5 [9.6, 57.6] <span class="v v-mid">NOT DETECTED</span></td>
+<td>23.6 [15.6, 55.4] <span class="v v-mid">NOT DETECTED</span></td>
+<td>21.3 [10.3, 60.6] <span class="v v-mid">NOT DETECTED</span></td>
+<td>28.9% <span class="v v-mid">TIES</span></td>
+<td>0.0% <span class="v v-bad">TRAILS</span></td>
+<td>0.0% <span class="v v-bad">TRAILS</span></td>
+<td>10.8% <span class="v v-mid">TIES</span> (XLRE)</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>B-real_estate-ex_micro-profit</td>
+<td>194</td>
+<td>5</td>
+<td>23.6 [15.5, 54.1] <span class="v v-mid">NOT DETECTED</span></td>
+<td>26.6 [15.2, 61.6] <span class="v v-mid">NOT DETECTED</span></td>
+<td>26.6 [16.3, 62.7] <span class="v v-mid">NOT DETECTED</span></td>
+<td>30.4% <span class="v v-mid">TIES</span></td>
+<td>0.0% <span class="v v-bad">TRAILS</span></td>
+<td>0.0% <span class="v v-bad">TRAILS</span></td>
+<td>12.9% <span class="v v-mid">TIES</span> (XLRE)</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>B-technology-all-none</td>
+<td>196</td>
+<td>4</td>
+<td>99.8 [86.6, 99.8] <span class="v v-good">EDGE</span></td>
+<td>99.8 [95.0, 100.0] <span class="v v-good">EDGE</span></td>
+<td>100.0 [97.8, 100.0] <span class="v v-good">EDGE</span></td>
+<td>96.9% <span class="v v-good">BEATS</span></td>
+<td>93.9% <span class="v v-good">BEATS</span></td>
+<td>90.3% <span class="v v-mid">TIES</span></td>
+<td>13.3% <span class="v v-mid">TIES</span> (XLK)</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-good">PERSISTS</span></td>
+</tr>
+<tr>
+<td>B-technology-all-profit</td>
+<td>194</td>
+<td>6</td>
+<td>89.4 [54.4, 95.6] <span class="v v-good">EDGE</span></td>
+<td>61.9 [46.4, 98.2] <span class="v v-mid">NOT DETECTED</span></td>
+<td>97.7 [70.8, 99.2] <span class="v v-good">EDGE</span></td>
+<td>84.0% <span class="v v-mid">TIES</span></td>
+<td>90.7% <span class="v v-mid">TIES</span></td>
+<td>81.4% <span class="v v-mid">TIES</span></td>
+<td>7.7% <span class="v v-mid">TIES</span> (XLK)</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-good">PERSISTS</span></td>
+</tr>
+<tr>
+<td>B-technology-ex_micro-none</td>
+<td>194</td>
+<td>6</td>
+<td>89.3 [59.6, 96.2] <span class="v v-good">EDGE</span></td>
+<td>79.0 [60.4, 97.4] <span class="v v-good">EDGE</span></td>
+<td>98.6 [76.4, 99.3] <span class="v v-good">EDGE</span></td>
+<td>88.7% <span class="v v-good">BEATS</span></td>
+<td>91.8% <span class="v v-mid">TIES</span></td>
+<td>75.3% <span class="v v-mid">TIES</span></td>
+<td>8.2% <span class="v v-bad">TRAILS</span> (XLK)</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-good">PERSISTS</span></td>
+</tr>
+<tr>
+<td>B-technology-ex_micro-profit</td>
+<td>195</td>
+<td>5</td>
+<td>89.8 [55.8, 97.2] <span class="v v-good">EDGE</span></td>
+<td>56.2 [40.5, 98.6] <span class="v v-mid">NOT DETECTED</span></td>
+<td>98.2 [68.6, 99.6] <span class="v v-good">EDGE</span></td>
+<td>83.6% <span class="v v-mid">TIES</span></td>
+<td>89.7% <span class="v v-mid">TIES</span></td>
+<td>84.1% <span class="v v-mid">TIES</span></td>
+<td>13.8% <span class="v v-mid">TIES</span> (XLK)</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-good">PERSISTS</span></td>
+</tr>
+<tr>
+<td>B-utilities-all-none</td>
+<td>196</td>
+<td>4</td>
+<td>43.5 [22.5, 67.2] <span class="v v-mid">NOT DETECTED</span></td>
+<td>50.1 [31.8, 75.3] <span class="v v-mid">NOT DETECTED</span></td>
+<td>45.5 [23.8, 67.8] <span class="v v-mid">NOT DETECTED</span></td>
+<td>27.6% <span class="v v-mid">TIES</span></td>
+<td>0.5% <span class="v v-bad">TRAILS</span></td>
+<td>0.0% <span class="v v-bad">TRAILS</span></td>
+<td>4.1% <span class="v v-mid">TIES</span> (XLU)</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>B-utilities-all-profit</td>
+<td>193</td>
+<td>7</td>
+<td>14.2 [10.4, 38.4] <span class="v v-bad">HARM</span></td>
+<td>41.6 [18.5, 60.1] <span class="v v-mid">NOT DETECTED</span></td>
+<td>18.8 [11.6, 41.3] <span class="v v-bad">HARM</span></td>
+<td>10.4% <span class="v v-bad">TRAILS</span></td>
+<td>0.0% <span class="v v-bad">TRAILS</span></td>
+<td>0.0% <span class="v v-bad">TRAILS</span></td>
+<td>1.0% <span class="v v-bad">TRAILS</span> (XLU)</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>B-utilities-ex_micro-none</td>
+<td>190</td>
+<td>10</td>
+<td>24.1 [13.4, 58.7] <span class="v v-mid">NOT DETECTED</span></td>
+<td>40.2 [21.0, 68.5] <span class="v v-mid">NOT DETECTED</span></td>
+<td>23.5 [14.0, 55.8] <span class="v v-mid">NOT DETECTED</span></td>
+<td>15.3% <span class="v v-mid">TIES</span></td>
+<td>0.5% <span class="v v-bad">TRAILS</span></td>
+<td>0.5% <span class="v v-bad">TRAILS</span></td>
+<td>4.2% <span class="v v-mid">TIES</span> (XLU)</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+<tr>
+<td>B-utilities-ex_micro-profit</td>
+<td>187</td>
+<td>13</td>
+<td>12.4 [8.4, 40.4] <span class="v v-bad">HARM</span></td>
+<td>30.8 [13.8, 58.8] <span class="v v-mid">NOT DETECTED</span></td>
+<td>12.8 [8.4, 41.0] <span class="v v-bad">HARM</span></td>
+<td>7.0% <span class="v v-bad">TRAILS</span></td>
+<td>0.0% <span class="v v-bad">TRAILS</span></td>
+<td>0.0% <span class="v v-bad">TRAILS</span></td>
+<td>1.6% <span class="v v-bad">TRAILS</span> (XLU)</td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+<td><span class="v v-mid">DOES NOT PERSIST</span></td>
+</tr>
+</tbody>
+</table></div>
+<h3>Distribution of verdicts across the 88 non-thin cells</h3>
+<p>Chance alone at the 5% level would produce EDGE on about 4.4 cells; the upper 95% binomial bound is 8. The broad claim needs more than 8 cells with EDGE on a test.</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Test</th>
+<th>EDGE / BEATS / PERSISTS / ADDS</th>
+<th>NOT DETECTED / TIES / DOES NOT PERSIST</th>
+<th>HARM / TRAILS / SUBTRACTS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T4_cagr</td>
+<td>0</td>
+<td>88</td>
+<td>0</td>
+</tr>
+<tr>
+<td>T4_maxdd</td>
+<td>11</td>
+<td>77</td>
+<td>0</td>
+</tr>
+<tr>
+<td>T5_pool</td>
+<td>20</td>
+<td>65</td>
+<td>3</td>
+</tr>
+<tr>
+<td>T5_rsp</td>
+<td>1</td>
+<td>70</td>
+<td>17</td>
+</tr>
+<tr>
+<td>T5_sector</td>
+<td>0</td>
+<td>41</td>
+<td>3</td>
+</tr>
+<tr>
+<td>T5_spy</td>
+<td>0</td>
+<td>43</td>
+<td>45</td>
+</tr>
+<tr>
+<td>T7_a_shallow_dd_cagr</td>
+<td>5</td>
+<td>83</td>
+<td>0</td>
+</tr>
+<tr>
+<td>T7_a_shallow_dd_maxdd</td>
+<td>17</td>
+<td>71</td>
+<td>0</td>
+</tr>
+<tr>
+<td>T7_b_above_bar_cagr</td>
+<td>3</td>
+<td>85</td>
+<td>0</td>
+</tr>
+<tr>
+<td>T7_b_above_bar_maxdd</td>
+<td>1</td>
+<td>87</td>
+<td>0</td>
+</tr>
+<tr>
+<td>T_cagr</td>
+<td>29</td>
+<td>57</td>
+<td>2</td>
+</tr>
+<tr>
+<td>T_maxdd</td>
+<td>43</td>
+<td>45</td>
+<td>0</td>
+</tr>
+<tr>
+<td>T_sharpe</td>
+<td>43</td>
+<td>43</td>
+<td>2</td>
+</tr>
+<tr>
+<td>T_vol</td>
+<td>52</td>
+<td>36</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></div>
+<h2>4. Exploration findings (design-space arm, FULL span, medians across pooled draws)</h2>
+<h3>F2, size (Tier A, all gates pooled)</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>size</th>
+<th>draws</th>
+<th>T1 CAGR</th>
+<th>T2 max DD</th>
+<th>T2 vol</th>
+<th>T3 Sharpe</th>
+<th>median CAGR (traded)</th>
+<th>stood aside</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>micro</td>
+<td>1471</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>13.6%</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>small</td>
+<td>1455</td>
+<td>71.8</td>
+<td>86.4</td>
+<td>99.8</td>
+<td>86.2</td>
+<td>9.7%</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>mid</td>
+<td>1468</td>
+<td>90.6</td>
+<td>73.2</td>
+<td>95.4</td>
+<td>95.4</td>
+<td>13.9%</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>large</td>
+<td>1485</td>
+<td>84.6</td>
+<td>43.4</td>
+<td>71.2</td>
+<td>89.4</td>
+<td>12.7%</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>micro_small</td>
+<td>1453</td>
+<td>95.2</td>
+<td>96.2</td>
+<td>100.0</td>
+<td>98.4</td>
+<td>10.0%</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>small_mid</td>
+<td>1441</td>
+<td>78.2</td>
+<td>79.2</td>
+<td>99.0</td>
+<td>88.4</td>
+<td>11.2%</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>mid_large</td>
+<td>1486</td>
+<td>90.4</td>
+<td>69.6</td>
+<td>97.0</td>
+<td>97.0</td>
+<td>13.5%</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>ex_micro</td>
+<td>1460</td>
+<td>84.2</td>
+<td>84.2</td>
+<td>99.8</td>
+<td>95.8</td>
+<td>12.1%</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>all</td>
+<td>1946</td>
+<td>95.4</td>
+<td>98.4</td>
+<td>100.0</td>
+<td>99.4</td>
+<td>12.1%</td>
+<td>0.0%</td>
+</tr>
+</tbody>
+</table></div>
+<h3>F3, gates (Tier A, all sizes pooled)</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>gate</th>
+<th>draws</th>
+<th>T1 CAGR</th>
+<th>T2 max DD</th>
+<th>T2 vol</th>
+<th>T3 Sharpe</th>
+<th>median CAGR (traded)</th>
+<th>stood aside</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>none</td>
+<td>4417</td>
+<td>93.2</td>
+<td>94.6</td>
+<td>99.8</td>
+<td>98.4</td>
+<td>11.8%</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>profit</td>
+<td>4360</td>
+<td>71.6</td>
+<td>68.2</td>
+<td>89.4</td>
+<td>81.1</td>
+<td>12.6%</td>
+<td>7.3%</td>
+</tr>
+<tr>
+<td>solvent</td>
+<td>4398</td>
+<td>92.0</td>
+<td>91.8</td>
+<td>99.8</td>
+<td>98.2</td>
+<td>11.9%</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>solvent18</td>
+<td>490</td>
+<td>99.4</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>13.6%</td>
+<td>0.0%</td>
+</tr>
+</tbody>
+</table></div>
+<h3>F4, engine-chosen universe floor on vs off (Tier A pooled)</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>universe_floor</th>
+<th>draws</th>
+<th>T1 CAGR</th>
+<th>T2 max DD</th>
+<th>T2 vol</th>
+<th>T3 Sharpe</th>
+<th>median CAGR (traded)</th>
+<th>stood aside</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>True</td>
+<td>6895</td>
+<td>90.0</td>
+<td>87.2</td>
+<td>98.8</td>
+<td>96.4</td>
+<td>12.4%</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>False</td>
+<td>6770</td>
+<td>88.6</td>
+<td>88.0</td>
+<td>99.0</td>
+<td>95.8</td>
+<td>11.9%</td>
+<td>0.0%</td>
+</tr>
+</tbody>
+</table></div>
+<h3>F8, training window (Tier A pooled)</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>lookback</th>
+<th>draws</th>
+<th>T1 CAGR</th>
+<th>T2 max DD</th>
+<th>T2 vol</th>
+<th>T3 Sharpe</th>
+<th>median CAGR (traded)</th>
+<th>stood aside</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>expanding</td>
+<td>2636</td>
+<td>89.8</td>
+<td>94.0</td>
+<td>99.8</td>
+<td>97.4</td>
+<td>12.1%</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>12</td>
+<td>2827</td>
+<td>90.6</td>
+<td>87.4</td>
+<td>98.6</td>
+<td>96.4</td>
+<td>12.5%</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>16</td>
+<td>2784</td>
+<td>89.0</td>
+<td>77.4</td>
+<td>97.2</td>
+<td>94.4</td>
+<td>12.1%</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>20</td>
+<td>2754</td>
+<td>88.6</td>
+<td>80.8</td>
+<td>98.0</td>
+<td>95.4</td>
+<td>12.1%</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>24</td>
+<td>2664</td>
+<td>89.0</td>
+<td>91.1</td>
+<td>99.4</td>
+<td>96.6</td>
+<td>11.9%</td>
+<td>0.0%</td>
+</tr>
+</tbody>
+</table></div>
+<h3>F6, holdings count and blend size (Tier A pooled)</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>holdings_bucket</th>
+<th>draws</th>
+<th>T1 CAGR</th>
+<th>T2 max DD</th>
+<th>T2 vol</th>
+<th>T3 Sharpe</th>
+<th>median CAGR (traded)</th>
+<th>stood aside</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5-7</td>
+<td>3793</td>
+<td>85.2</td>
+<td>87.0</td>
+<td>97.8</td>
+<td>92.4</td>
+<td>11.7%</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>8-11</td>
+<td>4912</td>
+<td>89.4</td>
+<td>87.4</td>
+<td>98.8</td>
+<td>95.8</td>
+<td>12.1%</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>12-15</td>
+<td>4960</td>
+<td>92.4</td>
+<td>88.4</td>
+<td>99.4</td>
+<td>98.0</td>
+<td>12.4%</td>
+<td>0.0%</td>
+</tr>
+</tbody>
+</table></div>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>n_flavors</th>
+<th>draws</th>
+<th>T1 CAGR</th>
+<th>T2 max DD</th>
+<th>T2 vol</th>
+<th>T3 Sharpe</th>
+<th>median CAGR (traded)</th>
+<th>stood aside</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2109</td>
+<td>79.2</td>
+<td>80.0</td>
+<td>88.6</td>
+<td>86.6</td>
+<td>11.2%</td>
+<td>9.8%</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2318</td>
+<td>86.3</td>
+<td>84.8</td>
+<td>95.8</td>
+<td>92.8</td>
+<td>11.5%</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2316</td>
+<td>89.8</td>
+<td>86.0</td>
+<td>98.4</td>
+<td>95.8</td>
+<td>12.2%</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2412</td>
+<td>90.0</td>
+<td>90.2</td>
+<td>99.4</td>
+<td>97.0</td>
+<td>12.1%</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>5</td>
+<td>2306</td>
+<td>91.4</td>
+<td>90.0</td>
+<td>99.6</td>
+<td>97.8</td>
+<td>12.6%</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>6</td>
+<td>2204</td>
+<td>93.0</td>
+<td>90.6</td>
+<td>99.8</td>
+<td>98.4</td>
+<td>12.8%</td>
+<td>0.0%</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Other dials (Tier A pooled)</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>stability</th>
+<th>draws</th>
+<th>T1 CAGR</th>
+<th>T2 max DD</th>
+<th>T2 vol</th>
+<th>T3 Sharpe</th>
+<th>median CAGR (traded)</th>
+<th>stood aside</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>standard</td>
+<td>6899</td>
+<td>90.2</td>
+<td>87.2</td>
+<td>99.0</td>
+<td>96.6</td>
+<td>12.2%</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>strict</td>
+<td>6766</td>
+<td>88.4</td>
+<td>88.0</td>
+<td>98.6</td>
+<td>95.4</td>
+<td>12.1%</td>
+<td>0.0%</td>
+</tr>
+</tbody>
+</table></div>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>ic_floor</th>
+<th>draws</th>
+<th>T1 CAGR</th>
+<th>T2 max DD</th>
+<th>T2 vol</th>
+<th>T3 Sharpe</th>
+<th>median CAGR (traded)</th>
+<th>stood aside</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.01</td>
+<td>4629</td>
+<td>90.4</td>
+<td>85.8</td>
+<td>98.8</td>
+<td>96.8</td>
+<td>12.1%</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>0.02</td>
+<td>4524</td>
+<td>89.2</td>
+<td>87.4</td>
+<td>98.8</td>
+<td>96.0</td>
+<td>12.1%</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>0.03</td>
+<td>4512</td>
+<td>88.4</td>
+<td>89.7</td>
+<td>99.0</td>
+<td>95.6</td>
+<td>12.2%</td>
+<td>0.0%</td>
+</tr>
+</tbody>
+</table></div>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>cadence</th>
+<th>draws</th>
+<th>T1 CAGR</th>
+<th>T2 max DD</th>
+<th>T2 vol</th>
+<th>T3 Sharpe</th>
+<th>median CAGR (traded)</th>
+<th>stood aside</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>quarterly</td>
+<td>6901</td>
+<td>89.8</td>
+<td>89.8</td>
+<td>99.2</td>
+<td>96.6</td>
+<td>12.3%</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>boundary</td>
+<td>6764</td>
+<td>88.8</td>
+<td>85.0</td>
+<td>98.6</td>
+<td>95.6</td>
+<td>12.0%</td>
+<td>0.0%</td>
+</tr>
+</tbody>
+</table></div>
+<h3>F5, sectors (Tier B, per sector set, its 4 cells pooled)</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Sector set</th>
+<th>draws</th>
+<th>T1 CAGR</th>
+<th>T2 max DD</th>
+<th>T3 Sharpe</th>
+<th>share beating sector ETF</th>
+<th>share beating universe avg</th>
+<th>share beating SPY</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Basic Materials</td>
+<td>782</td>
+<td>51.7</td>
+<td>74.7</td>
+<td>59.4</td>
+<td>45.9%</td>
+<td>36.7%</td>
+<td>4.9%</td>
+</tr>
+<tr>
+<td>Communication Services</td>
+<td>771</td>
+<td>93.0</td>
+<td>93.8</td>
+<td>97.4</td>
+<td>6.4%</td>
+<td>88.1%</td>
+<td>1.6%</td>
+</tr>
+<tr>
+<td>Consumer Cyclical</td>
+<td>776</td>
+<td>67.5</td>
+<td>77.2</td>
+<td>76.8</td>
+<td>11.0%</td>
+<td>57.2%</td>
+<td>2.1%</td>
+</tr>
+<tr>
+<td>Consumer Cyclical+Industrials+Basic Materials+Energy</td>
+<td>787</td>
+<td>72.6</td>
+<td>87.0</td>
+<td>88.6</td>
+<td>n/a</td>
+<td>55.0%</td>
+<td>9.8%</td>
+</tr>
+<tr>
+<td>Consumer Defensive</td>
+<td>772</td>
+<td>56.7</td>
+<td>77.6</td>
+<td>61.3</td>
+<td>11.9%</td>
+<td>44.2%</td>
+<td>0.1%</td>
+</tr>
+<tr>
+<td>Consumer Defensive+Utilities+Healthcare</td>
+<td>763</td>
+<td>73.8</td>
+<td>97.0</td>
+<td>81.0</td>
+<td>n/a</td>
+<td>56.0%</td>
+<td>0.9%</td>
+</tr>
+<tr>
+<td>Energy</td>
+<td>786</td>
+<td>88.9</td>
+<td>82.6</td>
+<td>93.3</td>
+<td>68.4%</td>
+<td>75.2%</td>
+<td>36.8%</td>
+</tr>
+<tr>
+<td>Financial Services</td>
+<td>786</td>
+<td>70.4</td>
+<td>64.2</td>
+<td>74.1</td>
+<td>33.1%</td>
+<td>50.9%</td>
+<td>17.3%</td>
+</tr>
+<tr>
+<td>Financial Services+Real Estate</td>
+<td>788</td>
+<td>87.8</td>
+<td>73.7</td>
+<td>89.4</td>
+<td>n/a</td>
+<td>59.3%</td>
+<td>20.2%</td>
+</tr>
+<tr>
+<td>Healthcare</td>
+<td>782</td>
+<td>95.5</td>
+<td>100.0</td>
+<td>99.6</td>
+<td>46.7%</td>
+<td>77.4%</td>
+<td>6.9%</td>
+</tr>
+<tr>
+<td>Industrials</td>
+<td>781</td>
+<td>74.8</td>
+<td>92.4</td>
+<td>91.0</td>
+<td>50.7%</td>
+<td>55.8%</td>
+<td>27.4%</td>
+</tr>
+<tr>
+<td>Real Estate</td>
+<td>779</td>
+<td>30.6</td>
+<td>26.2</td>
+<td>32.8</td>
+<td>10.4%</td>
+<td>34.4%</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>Technology</td>
+<td>779</td>
+<td>94.6</td>
+<td>87.0</td>
+<td>99.4</td>
+<td>10.8%</td>
+<td>88.3%</td>
+<td>82.8%</td>
+</tr>
+<tr>
+<td>Technology+Communication Services</td>
+<td>771</td>
+<td>97.6</td>
+<td>84.4</td>
+<td>99.4</td>
+<td>n/a</td>
+<td>90.5%</td>
+<td>74.8%</td>
+</tr>
+<tr>
+<td>Utilities</td>
+<td>766</td>
+<td>22.0</td>
+<td>41.8</td>
+<td>24.5</td>
+<td>2.7%</td>
+<td>15.1%</td>
+<td>0.1%</td>
+</tr>
+</tbody>
+</table></div>
+<h3>F7, F9, F10: stood-aside, refusals, turnover, portfolio size per cell (design-space arm, FULL span)</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Cell</th>
+<th>n</th>
+<th>refused</th>
+<th>stood-aside rate (median draw)</th>
+<th>turnover per quarter (median)</th>
+<th>names held (median draw)</th>
+<th>requested (median)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A-micro-none</td>
+<td>492</td>
+<td>5</td>
+<td>0.0%</td>
+<td>66.7%</td>
+<td>11.0</td>
+<td>11</td>
+</tr>
+<tr>
+<td>A-micro-profit</td>
+<td>488</td>
+<td>9</td>
+<td>0.0%</td>
+<td>75.0%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>A-micro-solvent</td>
+<td>491</td>
+<td>7</td>
+<td>0.0%</td>
+<td>66.7%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>A-small-none</td>
+<td>485</td>
+<td>15</td>
+<td>0.0%</td>
+<td>72.7%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>A-small-profit</td>
+<td>486</td>
+<td>12</td>
+<td>26.8%</td>
+<td>80.0%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>A-small-solvent</td>
+<td>484</td>
+<td>14</td>
+<td>0.0%</td>
+<td>73.3%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>A-mid-none</td>
+<td>492</td>
+<td>5</td>
+<td>0.0%</td>
+<td>71.4%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>A-mid-profit</td>
+<td>486</td>
+<td>10</td>
+<td>6.1%</td>
+<td>75.0%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>A-mid-solvent</td>
+<td>490</td>
+<td>4</td>
+<td>0.0%</td>
+<td>73.3%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>A-large-none</td>
+<td>496</td>
+<td>2</td>
+<td>0.0%</td>
+<td>58.7%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>A-large-profit</td>
+<td>494</td>
+<td>5</td>
+<td>4.9%</td>
+<td>61.5%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>A-large-solvent</td>
+<td>495</td>
+<td>3</td>
+<td>0.0%</td>
+<td>57.1%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>A-micro_small-none</td>
+<td>486</td>
+<td>13</td>
+<td>0.0%</td>
+<td>75.0%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>A-micro_small-profit</td>
+<td>477</td>
+<td>20</td>
+<td>9.8%</td>
+<td>83.3%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>A-micro_small-solvent</td>
+<td>490</td>
+<td>5</td>
+<td>0.0%</td>
+<td>75.0%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>A-small_mid-none</td>
+<td>486</td>
+<td>12</td>
+<td>0.0%</td>
+<td>73.3%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>A-small_mid-profit</td>
+<td>468</td>
+<td>29</td>
+<td>23.2%</td>
+<td>79.3%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>A-small_mid-solvent</td>
+<td>487</td>
+<td>13</td>
+<td>0.0%</td>
+<td>75.0%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>A-mid_large-none</td>
+<td>498</td>
+<td>1</td>
+<td>0.0%</td>
+<td>70.0%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>A-mid_large-profit</td>
+<td>492</td>
+<td>6</td>
+<td>4.9%</td>
+<td>75.0%</td>
+<td>9.0</td>
+<td>9</td>
+</tr>
+<tr>
+<td>A-mid_large-solvent</td>
+<td>496</td>
+<td>3</td>
+<td>0.0%</td>
+<td>71.4%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>A-ex_micro-none</td>
+<td>493</td>
+<td>6</td>
+<td>0.0%</td>
+<td>71.4%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>A-ex_micro-profit</td>
+<td>484</td>
+<td>16</td>
+<td>7.3%</td>
+<td>76.9%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>A-ex_micro-solvent</td>
+<td>483</td>
+<td>15</td>
+<td>0.0%</td>
+<td>72.7%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>A-all-none</td>
+<td>489</td>
+<td>11</td>
+<td>0.0%</td>
+<td>75.0%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>A-all-profit</td>
+<td>485</td>
+<td>12</td>
+<td>7.3%</td>
+<td>81.2%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>A-all-solvent</td>
+<td>482</td>
+<td>15</td>
+<td>0.0%</td>
+<td>76.9%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>A-all-solvent18</td>
+<td>490</td>
+<td>8</td>
+<td>0.0%</td>
+<td>75.0%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>B-basic_materials-all-none</td>
+<td>195</td>
+<td>4</td>
+<td>0.0%</td>
+<td>58.3%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>B-basic_materials-all-profit</td>
+<td>195</td>
+<td>4</td>
+<td>4.9%</td>
+<td>60.0%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>B-basic_materials-ex_micro-none</td>
+<td>197</td>
+<td>2</td>
+<td>2.4%</td>
+<td>57.7%</td>
+<td>11.0</td>
+<td>11</td>
+</tr>
+<tr>
+<td>B-basic_materials-ex_micro-profit</td>
+<td>195</td>
+<td>5</td>
+<td>9.8%</td>
+<td>60.0%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>B-communication_services-all-none</td>
+<td>196</td>
+<td>4</td>
+<td>0.0%</td>
+<td>57.1%</td>
+<td>9.0</td>
+<td>9</td>
+</tr>
+<tr>
+<td>B-communication_services-all-profit</td>
+<td>195</td>
+<td>5</td>
+<td>0.0%</td>
+<td>58.3%</td>
+<td>9.0</td>
+<td>9</td>
+</tr>
+<tr>
+<td>B-communication_services-ex_micro-none</td>
+<td>192</td>
+<td>8</td>
+<td>0.0%</td>
+<td>57.1%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>B-communication_services-ex_micro-profit</td>
+<td>188</td>
+<td>12</td>
+<td>1.2%</td>
+<td>53.8%</td>
+<td>11.0</td>
+<td>11</td>
+</tr>
+<tr>
+<td>B-consumer_cyclical-all-none</td>
+<td>198</td>
+<td>2</td>
+<td>0.0%</td>
+<td>61.5%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>B-consumer_cyclical-all-profit</td>
+<td>190</td>
+<td>10</td>
+<td>0.0%</td>
+<td>63.5%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>B-consumer_cyclical-ex_micro-none</td>
+<td>194</td>
+<td>5</td>
+<td>0.0%</td>
+<td>62.5%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>B-consumer_cyclical-ex_micro-profit</td>
+<td>194</td>
+<td>5</td>
+<td>4.9%</td>
+<td>66.7%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>B-consumer_defensive-all-none</td>
+<td>194</td>
+<td>5</td>
+<td>0.0%</td>
+<td>57.1%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>B-consumer_defensive-all-profit</td>
+<td>195</td>
+<td>5</td>
+<td>4.9%</td>
+<td>57.1%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>B-consumer_defensive-ex_micro-none</td>
+<td>195</td>
+<td>4</td>
+<td>0.0%</td>
+<td>55.6%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>B-consumer_defensive-ex_micro-profit</td>
+<td>188</td>
+<td>11</td>
+<td>4.9%</td>
+<td>50.0%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>B-cyclical-all-none</td>
+<td>197</td>
+<td>2</td>
+<td>0.0%</td>
+<td>70.8%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>B-cyclical-all-profit</td>
+<td>197</td>
+<td>2</td>
+<td>2.4%</td>
+<td>75.0%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>B-cyclical-ex_micro-none</td>
+<td>197</td>
+<td>3</td>
+<td>0.0%</td>
+<td>71.4%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>B-cyclical-ex_micro-profit</td>
+<td>196</td>
+<td>4</td>
+<td>7.3%</td>
+<td>70.0%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>B-defensive-all-none</td>
+<td>193</td>
+<td>7</td>
+<td>0.0%</td>
+<td>58.3%</td>
+<td>11.0</td>
+<td>11</td>
+</tr>
+<tr>
+<td>B-defensive-all-profit</td>
+<td>190</td>
+<td>10</td>
+<td>4.9%</td>
+<td>66.7%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>B-defensive-ex_micro-none</td>
+<td>196</td>
+<td>4</td>
+<td>0.0%</td>
+<td>61.3%</td>
+<td>9.0</td>
+<td>9</td>
+</tr>
+<tr>
+<td>B-defensive-ex_micro-profit</td>
+<td>184</td>
+<td>16</td>
+<td>19.5%</td>
+<td>62.5%</td>
+<td>11.0</td>
+<td>11</td>
+</tr>
+<tr>
+<td>B-energy-all-none</td>
+<td>196</td>
+<td>4</td>
+<td>0.0%</td>
+<td>66.7%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>B-energy-all-profit</td>
+<td>196</td>
+<td>4</td>
+<td>0.0%</td>
+<td>66.7%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>B-energy-ex_micro-none</td>
+<td>198</td>
+<td>2</td>
+<td>0.0%</td>
+<td>66.7%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>B-energy-ex_micro-profit</td>
+<td>196</td>
+<td>3</td>
+<td>0.0%</td>
+<td>66.7%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>B-financial-all-none</td>
+<td>200</td>
+<td>0</td>
+<td>0.0%</td>
+<td>70.4%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>B-financial-all-profit</td>
+<td>196</td>
+<td>3</td>
+<td>9.8%</td>
+<td>66.7%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>B-financial-ex_micro-none</td>
+<td>198</td>
+<td>2</td>
+<td>9.8%</td>
+<td>71.4%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>B-financial-ex_micro-profit</td>
+<td>194</td>
+<td>5</td>
+<td>26.8%</td>
+<td>66.7%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>B-financial_services-all-none</td>
+<td>199</td>
+<td>0</td>
+<td>0.0%</td>
+<td>62.5%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>B-financial_services-all-profit</td>
+<td>196</td>
+<td>4</td>
+<td>4.9%</td>
+<td>62.0%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>B-financial_services-ex_micro-none</td>
+<td>198</td>
+<td>2</td>
+<td>2.4%</td>
+<td>63.6%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>B-financial_services-ex_micro-profit</td>
+<td>193</td>
+<td>7</td>
+<td>9.8%</td>
+<td>58.3%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>B-growth-all-none</td>
+<td>191</td>
+<td>8</td>
+<td>0.0%</td>
+<td>60.0%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>B-growth-all-profit</td>
+<td>191</td>
+<td>8</td>
+<td>0.0%</td>
+<td>60.0%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>B-growth-ex_micro-none</td>
+<td>195</td>
+<td>5</td>
+<td>0.0%</td>
+<td>55.6%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>B-growth-ex_micro-profit</td>
+<td>194</td>
+<td>5</td>
+<td>0.0%</td>
+<td>50.0%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>B-healthcare-all-none</td>
+<td>200</td>
+<td>0</td>
+<td>0.0%</td>
+<td>46.2%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>B-healthcare-all-profit</td>
+<td>195</td>
+<td>5</td>
+<td>2.4%</td>
+<td>53.3%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>B-healthcare-ex_micro-none</td>
+<td>196</td>
+<td>4</td>
+<td>0.0%</td>
+<td>50.0%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>B-healthcare-ex_micro-profit</td>
+<td>191</td>
+<td>7</td>
+<td>4.9%</td>
+<td>50.0%</td>
+<td>11.0</td>
+<td>11</td>
+</tr>
+<tr>
+<td>B-industrials-all-none</td>
+<td>198</td>
+<td>2</td>
+<td>0.0%</td>
+<td>60.0%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>B-industrials-all-profit</td>
+<td>191</td>
+<td>9</td>
+<td>0.0%</td>
+<td>60.0%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>B-industrials-ex_micro-none</td>
+<td>200</td>
+<td>0</td>
+<td>0.0%</td>
+<td>60.0%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>B-industrials-ex_micro-profit</td>
+<td>192</td>
+<td>8</td>
+<td>0.0%</td>
+<td>60.0%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>B-real_estate-all-none</td>
+<td>198</td>
+<td>2</td>
+<td>0.0%</td>
+<td>66.7%</td>
+<td>9.0</td>
+<td>9</td>
+</tr>
+<tr>
+<td>B-real_estate-all-profit</td>
+<td>193</td>
+<td>7</td>
+<td>9.8%</td>
+<td>66.7%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>B-real_estate-ex_micro-none</td>
+<td>194</td>
+<td>6</td>
+<td>4.9%</td>
+<td>60.0%</td>
+<td>11.0</td>
+<td>11</td>
+</tr>
+<tr>
+<td>B-real_estate-ex_micro-profit</td>
+<td>194</td>
+<td>5</td>
+<td>7.3%</td>
+<td>64.3%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>B-technology-all-none</td>
+<td>196</td>
+<td>4</td>
+<td>0.0%</td>
+<td>53.8%</td>
+<td>11.0</td>
+<td>11</td>
+</tr>
+<tr>
+<td>B-technology-all-profit</td>
+<td>194</td>
+<td>6</td>
+<td>0.0%</td>
+<td>60.0%</td>
+<td>9.5</td>
+<td>10</td>
+</tr>
+<tr>
+<td>B-technology-ex_micro-none</td>
+<td>194</td>
+<td>6</td>
+<td>0.0%</td>
+<td>57.4%</td>
+<td>9.0</td>
+<td>9</td>
+</tr>
+<tr>
+<td>B-technology-ex_micro-profit</td>
+<td>195</td>
+<td>5</td>
+<td>0.0%</td>
+<td>59.1%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>B-utilities-all-none</td>
+<td>196</td>
+<td>4</td>
+<td>4.9%</td>
+<td>61.5%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>B-utilities-all-profit</td>
+<td>193</td>
+<td>7</td>
+<td>24.4%</td>
+<td>60.0%</td>
+<td>10.0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>B-utilities-ex_micro-none</td>
+<td>190</td>
+<td>10</td>
+<td>22.0%</td>
+<td>53.8%</td>
+<td>10.5</td>
+<td>10</td>
+</tr>
+<tr>
+<td>B-utilities-ex_micro-profit</td>
+<td>187</td>
+<td>13</td>
+<td>22.0%</td>
+<td>55.6%</td>
+<td>11.0</td>
+<td>11</td>
+</tr>
+</tbody>
+</table></div>
+<p>Turnover and size for the other arms on the no-gate cells:</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Cell</th>
+<th>arm</th>
+<th>turnover per quarter (median)</th>
+<th>names held</th>
+<th>requested</th>
+<th>stood aside</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A-micro-none</td>
+<td>placebo</td>
+<td>81.8%</td>
+<td>10.0</td>
+<td>10</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>A-micro-none</td>
+<td>asdesigned</td>
+<td>70.0%</td>
+<td>10.0</td>
+<td>10</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>A-small-none</td>
+<td>placebo</td>
+<td>80.0%</td>
+<td>10.0</td>
+<td>10</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>A-small-none</td>
+<td>asdesigned</td>
+<td>70.0%</td>
+<td>10.0</td>
+<td>10</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>A-mid-none</td>
+<td>placebo</td>
+<td>80.0%</td>
+<td>10.0</td>
+<td>10</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>A-mid-none</td>
+<td>asdesigned</td>
+<td>70.0%</td>
+<td>10.0</td>
+<td>10</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>A-large-none</td>
+<td>placebo</td>
+<td>76.9%</td>
+<td>10.0</td>
+<td>10</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>A-large-none</td>
+<td>asdesigned</td>
+<td>60.0%</td>
+<td>10.0</td>
+<td>10</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>A-micro_small-none</td>
+<td>placebo</td>
+<td>85.7%</td>
+<td>10.0</td>
+<td>10</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>A-micro_small-none</td>
+<td>asdesigned</td>
+<td>80.0%</td>
+<td>10.0</td>
+<td>10</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>A-small_mid-none</td>
+<td>placebo</td>
+<td>84.6%</td>
+<td>10.0</td>
+<td>10</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>A-small_mid-none</td>
+<td>asdesigned</td>
+<td>70.0%</td>
+<td>10.0</td>
+<td>10</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>A-mid_large-none</td>
+<td>placebo</td>
+<td>80.0%</td>
+<td>10.0</td>
+<td>10</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>A-mid_large-none</td>
+<td>asdesigned</td>
+<td>70.0%</td>
+<td>10.0</td>
+<td>10</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>A-ex_micro-none</td>
+<td>placebo</td>
+<td>83.3%</td>
+<td>10.0</td>
+<td>10</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>A-ex_micro-none</td>
+<td>asdesigned</td>
+<td>70.0%</td>
+<td>10.0</td>
+<td>10</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>A-all-none</td>
+<td>placebo</td>
+<td>85.7%</td>
+<td>10.0</td>
+<td>10</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>A-all-none</td>
+<td>asdesigned</td>
+<td>80.0%</td>
+<td>10.0</td>
+<td>10</td>
+<td>0.0%</td>
+</tr>
+</tbody>
+</table></div>
+<h2>5. Per-holdout T1 to T3, every cell (design-space arm)</h2>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Cell</th>
+<th>H1 CAGR</th>
+<th>H1 max DD</th>
+<th>H1 Sharpe</th>
+<th>H2 CAGR</th>
+<th>H2 max DD</th>
+<th>H2 Sharpe</th>
+<th>H3 CAGR</th>
+<th>H3 max DD</th>
+<th>H3 Sharpe</th>
+<th>H4 CAGR</th>
+<th>H4 max DD</th>
+<th>H4 Sharpe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A-micro-none</td>
+<td>83.6</td>
+<td>87.0</td>
+<td>82.0</td>
+<td>97.4</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>99.4</td>
+<td>99.8</td>
+<td>99.6</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+</tr>
+<tr>
+<td>A-micro-profit</td>
+<td>76.0</td>
+<td>83.0</td>
+<td>72.2</td>
+<td>78.5</td>
+<td>90.0</td>
+<td>88.8</td>
+<td>46.8</td>
+<td>53.6</td>
+<td>48.2</td>
+<td>63.9</td>
+<td>79.2</td>
+<td>75.2</td>
+</tr>
+<tr>
+<td>A-micro-solvent</td>
+<td>76.0</td>
+<td>81.6</td>
+<td>71.8</td>
+<td>95.6</td>
+<td>99.8</td>
+<td>99.8</td>
+<td>97.8</td>
+<td>99.0</td>
+<td>98.2</td>
+<td>99.6</td>
+<td>100.0</td>
+<td>100.0</td>
+</tr>
+<tr>
+<td>A-small-none</td>
+<td>55.2</td>
+<td>69.4</td>
+<td>46.5</td>
+<td>67.9</td>
+<td>91.3</td>
+<td>79.7</td>
+<td>81.0</td>
+<td>97.8</td>
+<td>90.9</td>
+<td>61.1</td>
+<td>97.6</td>
+<td>87.9</td>
+</tr>
+<tr>
+<td>A-small-profit</td>
+<td>49.2</td>
+<td>62.8</td>
+<td>42.8</td>
+<td>20.3</td>
+<td>36.5</td>
+<td>36.8</td>
+<td>44.5</td>
+<td>46.3</td>
+<td>43.8</td>
+<td>63.3</td>
+<td>91.7</td>
+<td>83.4</td>
+</tr>
+<tr>
+<td>A-small-solvent</td>
+<td>57.5</td>
+<td>69.5</td>
+<td>48.6</td>
+<td>66.2</td>
+<td>89.0</td>
+<td>79.8</td>
+<td>80.4</td>
+<td>97.8</td>
+<td>89.4</td>
+<td>61.6</td>
+<td>98.2</td>
+<td>88.2</td>
+</tr>
+<tr>
+<td>A-mid-none</td>
+<td>85.7</td>
+<td>93.9</td>
+<td>88.8</td>
+<td>43.6</td>
+<td>44.5</td>
+<td>42.8</td>
+<td>77.4</td>
+<td>73.6</td>
+<td>80.4</td>
+<td>77.2</td>
+<td>96.0</td>
+<td>93.6</td>
+</tr>
+<tr>
+<td>A-mid-profit</td>
+<td>88.0</td>
+<td>97.1</td>
+<td>91.1</td>
+<td>19.4</td>
+<td>16.0</td>
+<td>22.4</td>
+<td>61.0</td>
+<td>54.6</td>
+<td>60.2</td>
+<td>67.4</td>
+<td>70.8</td>
+<td>71.2</td>
+</tr>
+<tr>
+<td>A-mid-solvent</td>
+<td>78.6</td>
+<td>89.0</td>
+<td>79.0</td>
+<td>46.8</td>
+<td>49.0</td>
+<td>49.4</td>
+<td>76.0</td>
+<td>70.6</td>
+<td>80.0</td>
+<td>77.6</td>
+<td>95.0</td>
+<td>92.4</td>
+</tr>
+<tr>
+<td>A-large-none</td>
+<td>94.8</td>
+<td>95.4</td>
+<td>96.4</td>
+<td>25.7</td>
+<td>21.5</td>
+<td>25.2</td>
+<td>81.2</td>
+<td>83.6</td>
+<td>82.8</td>
+<td>48.0</td>
+<td>49.2</td>
+<td>52.6</td>
+</tr>
+<tr>
+<td>A-large-profit</td>
+<td>94.9</td>
+<td>93.5</td>
+<td>95.7</td>
+<td>14.4</td>
+<td>6.4</td>
+<td>11.2</td>
+<td>79.8</td>
+<td>73.2</td>
+<td>82.6</td>
+<td>78.2</td>
+<td>60.3</td>
+<td>73.5</td>
+</tr>
+<tr>
+<td>A-large-solvent</td>
+<td>95.2</td>
+<td>94.8</td>
+<td>96.0</td>
+<td>23.3</td>
+<td>17.4</td>
+<td>22.9</td>
+<td>81.4</td>
+<td>84.2</td>
+<td>83.8</td>
+<td>46.6</td>
+<td>52.8</td>
+<td>50.4</td>
+</tr>
+<tr>
+<td>A-micro_small-none</td>
+<td>66.2</td>
+<td>67.4</td>
+<td>63.0</td>
+<td>87.7</td>
+<td>98.9</td>
+<td>97.8</td>
+<td>93.4</td>
+<td>99.2</td>
+<td>97.4</td>
+<td>90.7</td>
+<td>99.6</td>
+<td>97.9</td>
+</tr>
+<tr>
+<td>A-micro_small-profit</td>
+<td>54.8</td>
+<td>67.8</td>
+<td>47.0</td>
+<td>34.8</td>
+<td>65.2</td>
+<td>57.1</td>
+<td>54.2</td>
+<td>65.2</td>
+<td>58.4</td>
+<td>53.8</td>
+<td>87.6</td>
+<td>74.6</td>
+</tr>
+<tr>
+<td>A-micro_small-solvent</td>
+<td>56.5</td>
+<td>62.2</td>
+<td>53.6</td>
+<td>87.8</td>
+<td>98.6</td>
+<td>97.6</td>
+<td>90.7</td>
+<td>98.6</td>
+<td>96.0</td>
+<td>84.5</td>
+<td>99.0</td>
+<td>95.4</td>
+</tr>
+<tr>
+<td>A-small_mid-none</td>
+<td>65.2</td>
+<td>77.2</td>
+<td>61.4</td>
+<td>56.4</td>
+<td>82.0</td>
+<td>74.1</td>
+<td>80.8</td>
+<td>94.2</td>
+<td>90.0</td>
+<td>71.3</td>
+<td>97.8</td>
+<td>94.0</td>
+</tr>
+<tr>
+<td>A-small_mid-profit</td>
+<td>70.8</td>
+<td>86.6</td>
+<td>65.6</td>
+<td>11.8</td>
+<td>11.0</td>
+<td>12.0</td>
+<td>58.4</td>
+<td>57.4</td>
+<td>60.9</td>
+<td>60.4</td>
+<td>76.8</td>
+<td>66.0</td>
+</tr>
+<tr>
+<td>A-small_mid-solvent</td>
+<td>69.1</td>
+<td>77.4</td>
+<td>66.8</td>
+<td>55.6</td>
+<td>75.1</td>
+<td>72.3</td>
+<td>82.6</td>
+<td>92.8</td>
+<td>90.6</td>
+<td>68.4</td>
+<td>97.6</td>
+<td>92.1</td>
+</tr>
+<tr>
+<td>A-mid_large-none</td>
+<td>96.0</td>
+<td>98.4</td>
+<td>98.4</td>
+<td>25.7</td>
+<td>33.8</td>
+<td>26.6</td>
+<td>77.2</td>
+<td>83.2</td>
+<td>81.9</td>
+<td>66.2</td>
+<td>88.4</td>
+<td>88.1</td>
+</tr>
+<tr>
+<td>A-mid_large-profit</td>
+<td>95.8</td>
+<td>97.8</td>
+<td>98.2</td>
+<td>20.3</td>
+<td>18.2</td>
+<td>23.1</td>
+<td>75.8</td>
+<td>68.2</td>
+<td>78.8</td>
+<td>68.6</td>
+<td>68.0</td>
+<td>70.6</td>
+</tr>
+<tr>
+<td>A-mid_large-solvent</td>
+<td>94.2</td>
+<td>97.6</td>
+<td>97.4</td>
+<td>29.3</td>
+<td>36.7</td>
+<td>31.8</td>
+<td>81.9</td>
+<td>86.0</td>
+<td>88.3</td>
+<td>67.8</td>
+<td>87.6</td>
+<td>86.8</td>
+</tr>
+<tr>
+<td>A-ex_micro-none</td>
+<td>90.0</td>
+<td>96.2</td>
+<td>93.4</td>
+<td>36.6</td>
+<td>67.4</td>
+<td>48.8</td>
+<td>81.4</td>
+<td>94.6</td>
+<td>90.8</td>
+<td>64.2</td>
+<td>94.8</td>
+<td>89.0</td>
+</tr>
+<tr>
+<td>A-ex_micro-profit</td>
+<td>90.0</td>
+<td>97.2</td>
+<td>93.8</td>
+<td>6.7</td>
+<td>11.2</td>
+<td>9.8</td>
+<td>65.8</td>
+<td>55.6</td>
+<td>63.6</td>
+<td>70.8</td>
+<td>80.6</td>
+<td>72.2</td>
+</tr>
+<tr>
+<td>A-ex_micro-solvent</td>
+<td>91.0</td>
+<td>96.1</td>
+<td>94.2</td>
+<td>33.6</td>
+<td>54.7</td>
+<td>39.3</td>
+<td>84.0</td>
+<td>94.4</td>
+<td>92.8</td>
+<td>64.7</td>
+<td>93.0</td>
+<td>86.8</td>
+</tr>
+<tr>
+<td>A-all-none</td>
+<td>78.4</td>
+<td>82.0</td>
+<td>79.0</td>
+<td>59.2</td>
+<td>89.7</td>
+<td>75.6</td>
+<td>95.2</td>
+<td>98.2</td>
+<td>98.2</td>
+<td>80.6</td>
+<td>95.4</td>
+<td>91.8</td>
+</tr>
+<tr>
+<td>A-all-profit</td>
+<td>90.4</td>
+<td>97.2</td>
+<td>93.4</td>
+<td>10.4</td>
+<td>30.4</td>
+<td>25.6</td>
+<td>60.4</td>
+<td>74.0</td>
+<td>72.0</td>
+<td>46.7</td>
+<td>73.7</td>
+<td>58.5</td>
+</tr>
+<tr>
+<td>A-all-solvent</td>
+<td>81.0</td>
+<td>83.3</td>
+<td>80.4</td>
+<td>53.6</td>
+<td>89.2</td>
+<td>73.3</td>
+<td>92.6</td>
+<td>97.0</td>
+<td>97.2</td>
+<td>76.3</td>
+<td>95.6</td>
+<td>90.7</td>
+</tr>
+<tr>
+<td>A-all-solvent18</td>
+<td>80.8</td>
+<td>89.4</td>
+<td>84.6</td>
+<td>81.8</td>
+<td>98.2</td>
+<td>94.4</td>
+<td>98.4</td>
+<td>98.8</td>
+<td>99.6</td>
+<td>83.1</td>
+<td>94.2</td>
+<td>91.6</td>
+</tr>
+<tr>
+<td>B-basic_materials-all-none</td>
+<td>66.4</td>
+<td>85.6</td>
+<td>60.6</td>
+<td>25.0</td>
+<td>33.8</td>
+<td>28.8</td>
+<td>89.9</td>
+<td>87.8</td>
+<td>87.3</td>
+<td>66.7</td>
+<td>70.8</td>
+<td>70.4</td>
+</tr>
+<tr>
+<td>B-basic_materials-all-profit</td>
+<td>61.4</td>
+<td>84.2</td>
+<td>57.2</td>
+<td>26.0</td>
+<td>24.8</td>
+<td>31.6</td>
+<td>66.1</td>
+<td>65.3</td>
+<td>63.9</td>
+<td>23.6</td>
+<td>47.0</td>
+<td>25.2</td>
+</tr>
+<tr>
+<td>B-basic_materials-ex_micro-none</td>
+<td>39.0</td>
+<td>62.2</td>
+<td>32.4</td>
+<td>16.4</td>
+<td>31.8</td>
+<td>21.0</td>
+<td>84.0</td>
+<td>85.2</td>
+<td>79.3</td>
+<td>43.0</td>
+<td>52.4</td>
+<td>43.7</td>
+</tr>
+<tr>
+<td>B-basic_materials-ex_micro-profit</td>
+<td>49.2</td>
+<td>73.2</td>
+<td>45.0</td>
+<td>17.9</td>
+<td>33.6</td>
+<td>23.8</td>
+<td>71.0</td>
+<td>81.5</td>
+<td>72.4</td>
+<td>19.8</td>
+<td>29.9</td>
+<td>21.0</td>
+</tr>
+<tr>
+<td>B-communication_services-all-none</td>
+<td>88.4</td>
+<td>95.4</td>
+<td>90.0</td>
+<td>84.4</td>
+<td>96.8</td>
+<td>91.8</td>
+<td>79.5</td>
+<td>91.8</td>
+<td>82.2</td>
+<td>84.5</td>
+<td>97.2</td>
+<td>92.8</td>
+</tr>
+<tr>
+<td>B-communication_services-all-profit</td>
+<td>96.8</td>
+<td>95.9</td>
+<td>97.9</td>
+<td>72.5</td>
+<td>82.2</td>
+<td>82.4</td>
+<td>69.2</td>
+<td>74.8</td>
+<td>70.6</td>
+<td>71.8</td>
+<td>75.0</td>
+<td>78.0</td>
+</tr>
+<tr>
+<td>B-communication_services-ex_micro-none</td>
+<td>86.2</td>
+<td>96.0</td>
+<td>88.4</td>
+<td>68.8</td>
+<td>79.4</td>
+<td>67.9</td>
+<td>73.2</td>
+<td>84.2</td>
+<td>75.7</td>
+<td>61.8</td>
+<td>93.6</td>
+<td>76.1</td>
+</tr>
+<tr>
+<td>B-communication_services-ex_micro-profit</td>
+<td>93.0</td>
+<td>93.5</td>
+<td>93.5</td>
+<td>55.0</td>
+<td>51.8</td>
+<td>57.2</td>
+<td>78.6</td>
+<td>80.4</td>
+<td>82.4</td>
+<td>74.1</td>
+<td>70.3</td>
+<td>79.2</td>
+</tr>
+<tr>
+<td>B-consumer_cyclical-all-none</td>
+<td>56.2</td>
+<td>65.2</td>
+<td>48.2</td>
+<td>30.2</td>
+<td>83.6</td>
+<td>36.2</td>
+<td>92.0</td>
+<td>97.1</td>
+<td>95.8</td>
+<td>94.6</td>
+<td>94.5</td>
+<td>95.8</td>
+</tr>
+<tr>
+<td>B-consumer_cyclical-all-profit</td>
+<td>29.7</td>
+<td>41.6</td>
+<td>25.8</td>
+<td>8.9</td>
+<td>50.5</td>
+<td>13.1</td>
+<td>68.1</td>
+<td>81.0</td>
+<td>77.5</td>
+<td>86.8</td>
+<td>87.5</td>
+<td>89.6</td>
+</tr>
+<tr>
+<td>B-consumer_cyclical-ex_micro-none</td>
+<td>45.2</td>
+<td>55.8</td>
+<td>38.5</td>
+<td>13.6</td>
+<td>63.3</td>
+<td>12.9</td>
+<td>79.5</td>
+<td>91.3</td>
+<td>89.0</td>
+<td>87.4</td>
+<td>85.0</td>
+<td>90.2</td>
+</tr>
+<tr>
+<td>B-consumer_cyclical-ex_micro-profit</td>
+<td>42.5</td>
+<td>54.5</td>
+<td>35.6</td>
+<td>5.9</td>
+<td>29.4</td>
+<td>9.6</td>
+<td>74.0</td>
+<td>78.2</td>
+<td>81.2</td>
+<td>86.6</td>
+<td>76.4</td>
+<td>87.8</td>
+</tr>
+<tr>
+<td>B-consumer_defensive-all-none</td>
+<td>47.8</td>
+<td>68.1</td>
+<td>49.8</td>
+<td>46.2</td>
+<td>82.6</td>
+<td>36.4</td>
+<td>88.8</td>
+<td>89.8</td>
+<td>91.4</td>
+<td>95.5</td>
+<td>98.6</td>
+<td>97.8</td>
+</tr>
+<tr>
+<td>B-consumer_defensive-all-profit</td>
+<td>40.4</td>
+<td>58.2</td>
+<td>40.4</td>
+<td>21.6</td>
+<td>41.4</td>
+<td>26.8</td>
+<td>52.4</td>
+<td>52.2</td>
+<td>52.4</td>
+<td>64.6</td>
+<td>66.8</td>
+<td>63.6</td>
+</tr>
+<tr>
+<td>B-consumer_defensive-ex_micro-none</td>
+<td>32.4</td>
+<td>47.8</td>
+<td>33.8</td>
+<td>29.8</td>
+<td>68.2</td>
+<td>25.8</td>
+<td>81.4</td>
+<td>82.0</td>
+<td>81.6</td>
+<td>74.8</td>
+<td>78.6</td>
+<td>74.0</td>
+</tr>
+<tr>
+<td>B-consumer_defensive-ex_micro-profit</td>
+<td>19.8</td>
+<td>34.8</td>
+<td>19.2</td>
+<td>27.2</td>
+<td>48.8</td>
+<td>31.2</td>
+<td>59.7</td>
+<td>68.0</td>
+<td>58.4</td>
+<td>61.1</td>
+<td>65.7</td>
+<td>60.9</td>
+</tr>
+<tr>
+<td>B-cyclical-all-none</td>
+<td>84.5</td>
+<td>87.6</td>
+<td>81.7</td>
+<td>30.8</td>
+<td>73.0</td>
+<td>48.6</td>
+<td>87.8</td>
+<td>87.4</td>
+<td>93.0</td>
+<td>75.6</td>
+<td>94.0</td>
+<td>83.4</td>
+</tr>
+<tr>
+<td>B-cyclical-all-profit</td>
+<td>71.2</td>
+<td>81.6</td>
+<td>65.3</td>
+<td>12.7</td>
+<td>43.0</td>
+<td>27.9</td>
+<td>66.6</td>
+<td>66.6</td>
+<td>71.4</td>
+<td>59.5</td>
+<td>86.1</td>
+<td>78.6</td>
+</tr>
+<tr>
+<td>B-cyclical-ex_micro-none</td>
+<td>80.5</td>
+<td>89.0</td>
+<td>74.5</td>
+<td>18.0</td>
+<td>49.2</td>
+<td>33.4</td>
+<td>72.0</td>
+<td>72.4</td>
+<td>80.0</td>
+<td>62.6</td>
+<td>89.6</td>
+<td>79.0</td>
+</tr>
+<tr>
+<td>B-cyclical-ex_micro-profit</td>
+<td>67.5</td>
+<td>82.5</td>
+<td>61.5</td>
+<td>13.7</td>
+<td>46.8</td>
+<td>32.4</td>
+<td>50.6</td>
+<td>68.4</td>
+<td>63.2</td>
+<td>64.4</td>
+<td>91.2</td>
+<td>80.6</td>
+</tr>
+<tr>
+<td>B-defensive-all-none</td>
+<td>75.8</td>
+<td>95.0</td>
+<td>80.4</td>
+<td>98.0</td>
+<td>100.0</td>
+<td>99.8</td>
+<td>98.0</td>
+<td>100.0</td>
+<td>99.8</td>
+<td>89.0</td>
+<td>99.4</td>
+<td>95.0</td>
+</tr>
+<tr>
+<td>B-defensive-all-profit</td>
+<td>40.7</td>
+<td>47.4</td>
+<td>41.3</td>
+<td>17.3</td>
+<td>21.2</td>
+<td>19.7</td>
+<td>70.6</td>
+<td>74.4</td>
+<td>74.6</td>
+<td>43.0</td>
+<td>75.2</td>
+<td>50.9</td>
+</tr>
+<tr>
+<td>B-defensive-ex_micro-none</td>
+<td>69.1</td>
+<td>85.0</td>
+<td>73.9</td>
+<td>90.8</td>
+<td>99.6</td>
+<td>95.8</td>
+<td>89.7</td>
+<td>99.0</td>
+<td>97.2</td>
+<td>44.2</td>
+<td>94.6</td>
+<td>56.3</td>
+</tr>
+<tr>
+<td>B-defensive-ex_micro-profit</td>
+<td>28.2</td>
+<td>35.8</td>
+<td>28.4</td>
+<td>9.8</td>
+<td>10.0</td>
+<td>11.0</td>
+<td>72.8</td>
+<td>77.8</td>
+<td>74.8</td>
+<td>27.2</td>
+<td>62.4</td>
+<td>29.0</td>
+</tr>
+<tr>
+<td>B-energy-all-none</td>
+<td>79.7</td>
+<td>85.8</td>
+<td>77.4</td>
+<td>67.0</td>
+<td>95.4</td>
+<td>99.0</td>
+<td>71.6</td>
+<td>88.9</td>
+<td>88.8</td>
+<td>72.1</td>
+<td>90.7</td>
+<td>77.3</td>
+</tr>
+<tr>
+<td>B-energy-all-profit</td>
+<td>48.8</td>
+<td>48.8</td>
+<td>59.8</td>
+<td>82.8</td>
+<td>93.6</td>
+<td>97.2</td>
+<td>42.8</td>
+<td>31.0</td>
+<td>45.2</td>
+<td>49.0</td>
+<td>48.7</td>
+<td>43.1</td>
+</tr>
+<tr>
+<td>B-energy-ex_micro-none</td>
+<td>84.8</td>
+<td>89.6</td>
+<td>83.0</td>
+<td>38.6</td>
+<td>93.6</td>
+<td>91.8</td>
+<td>61.4</td>
+<td>90.6</td>
+<td>80.0</td>
+<td>69.1</td>
+<td>92.8</td>
+<td>77.9</td>
+</tr>
+<tr>
+<td>B-energy-ex_micro-profit</td>
+<td>65.4</td>
+<td>64.0</td>
+<td>72.8</td>
+<td>66.4</td>
+<td>89.8</td>
+<td>92.4</td>
+<td>47.2</td>
+<td>55.2</td>
+<td>47.4</td>
+<td>41.4</td>
+<td>48.4</td>
+<td>41.0</td>
+</tr>
+<tr>
+<td>B-financial-all-none</td>
+<td>61.2</td>
+<td>81.8</td>
+<td>44.2</td>
+<td>39.6</td>
+<td>27.2</td>
+<td>47.8</td>
+<td>67.8</td>
+<td>81.9</td>
+<td>73.5</td>
+<td>68.9</td>
+<td>80.6</td>
+<td>75.0</td>
+</tr>
+<tr>
+<td>B-financial-all-profit</td>
+<td>66.5</td>
+<td>91.1</td>
+<td>51.1</td>
+<td>21.7</td>
+<td>5.6</td>
+<td>23.3</td>
+<td>80.0</td>
+<td>68.0</td>
+<td>80.0</td>
+<td>87.8</td>
+<td>32.7</td>
+<td>56.5</td>
+</tr>
+<tr>
+<td>B-financial-ex_micro-none</td>
+<td>87.5</td>
+<td>96.5</td>
+<td>82.1</td>
+<td>14.2</td>
+<td>8.4</td>
+<td>18.2</td>
+<td>74.2</td>
+<td>80.6</td>
+<td>81.2</td>
+<td>77.1</td>
+<td>52.6</td>
+<td>60.2</td>
+</tr>
+<tr>
+<td>B-financial-ex_micro-profit</td>
+<td>84.0</td>
+<td>94.0</td>
+<td>78.0</td>
+<td>10.8</td>
+<td>2.8</td>
+<td>17.2</td>
+<td>66.8</td>
+<td>77.4</td>
+<td>76.8</td>
+<td>91.2</td>
+<td>40.4</td>
+<td>59.1</td>
+</tr>
+<tr>
+<td>B-financial_services-all-none</td>
+<td>63.8</td>
+<td>70.6</td>
+<td>51.0</td>
+<td>25.6</td>
+<td>29.6</td>
+<td>39.8</td>
+<td>74.4</td>
+<td>84.4</td>
+<td>83.2</td>
+<td>64.6</td>
+<td>69.0</td>
+<td>69.9</td>
+</tr>
+<tr>
+<td>B-financial_services-all-profit</td>
+<td>58.6</td>
+<td>71.2</td>
+<td>45.0</td>
+<td>17.8</td>
+<td>5.0</td>
+<td>16.6</td>
+<td>65.2</td>
+<td>52.2</td>
+<td>65.6</td>
+<td>82.4</td>
+<td>19.2</td>
+<td>49.0</td>
+</tr>
+<tr>
+<td>B-financial_services-ex_micro-none</td>
+<td>83.4</td>
+<td>96.2</td>
+<td>67.8</td>
+<td>2.6</td>
+<td>8.6</td>
+<td>5.3</td>
+<td>73.0</td>
+<td>74.1</td>
+<td>80.9</td>
+<td>72.0</td>
+<td>33.9</td>
+<td>54.9</td>
+</tr>
+<tr>
+<td>B-financial_services-ex_micro-profit</td>
+<td>78.8</td>
+<td>89.9</td>
+<td>73.5</td>
+<td>3.0</td>
+<td>3.0</td>
+<td>3.4</td>
+<td>80.4</td>
+<td>80.0</td>
+<td>88.2</td>
+<td>89.0</td>
+<td>38.2</td>
+<td>59.8</td>
+</tr>
+<tr>
+<td>B-growth-all-none</td>
+<td>94.2</td>
+<td>90.4</td>
+<td>97.6</td>
+<td>87.6</td>
+<td>94.4</td>
+<td>94.6</td>
+<td>98.0</td>
+<td>96.6</td>
+<td>98.4</td>
+<td>89.0</td>
+<td>92.6</td>
+<td>96.4</td>
+</tr>
+<tr>
+<td>B-growth-all-profit</td>
+<td>95.8</td>
+<td>87.8</td>
+<td>97.6</td>
+<td>56.0</td>
+<td>44.6</td>
+<td>59.4</td>
+<td>80.2</td>
+<td>72.3</td>
+<td>82.3</td>
+<td>75.6</td>
+<td>67.8</td>
+<td>83.0</td>
+</tr>
+<tr>
+<td>B-growth-ex_micro-none</td>
+<td>91.8</td>
+<td>92.7</td>
+<td>96.3</td>
+<td>70.3</td>
+<td>70.2</td>
+<td>72.6</td>
+<td>92.3</td>
+<td>83.6</td>
+<td>92.2</td>
+<td>65.0</td>
+<td>82.1</td>
+<td>84.0</td>
+</tr>
+<tr>
+<td>B-growth-ex_micro-profit</td>
+<td>97.0</td>
+<td>90.8</td>
+<td>97.8</td>
+<td>42.4</td>
+<td>26.0</td>
+<td>46.4</td>
+<td>77.7</td>
+<td>61.4</td>
+<td>76.3</td>
+<td>73.0</td>
+<td>62.3</td>
+<td>77.1</td>
+</tr>
+<tr>
+<td>B-healthcare-all-none</td>
+<td>91.0</td>
+<td>99.0</td>
+<td>97.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>96.4</td>
+<td>99.8</td>
+<td>99.2</td>
+<td>90.6</td>
+<td>99.0</td>
+<td>94.6</td>
+</tr>
+<tr>
+<td>B-healthcare-all-profit</td>
+<td>76.4</td>
+<td>67.4</td>
+<td>77.4</td>
+<td>62.6</td>
+<td>85.0</td>
+<td>70.6</td>
+<td>84.5</td>
+<td>93.1</td>
+<td>87.5</td>
+<td>60.2</td>
+<td>73.7</td>
+<td>71.6</td>
+</tr>
+<tr>
+<td>B-healthcare-ex_micro-none</td>
+<td>89.2</td>
+<td>98.6</td>
+<td>95.0</td>
+<td>98.6</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>86.2</td>
+<td>99.8</td>
+<td>96.1</td>
+<td>43.8</td>
+<td>88.1</td>
+<td>49.9</td>
+</tr>
+<tr>
+<td>B-healthcare-ex_micro-profit</td>
+<td>55.4</td>
+<td>49.3</td>
+<td>55.1</td>
+<td>42.2</td>
+<td>63.1</td>
+<td>43.6</td>
+<td>82.0</td>
+<td>93.7</td>
+<td>88.3</td>
+<td>59.8</td>
+<td>71.0</td>
+<td>76.8</td>
+</tr>
+<tr>
+<td>B-industrials-all-none</td>
+<td>88.0</td>
+<td>88.4</td>
+<td>89.2</td>
+<td>48.8</td>
+<td>82.6</td>
+<td>73.4</td>
+<td>81.8</td>
+<td>82.8</td>
+<td>85.8</td>
+<td>79.8</td>
+<td>88.0</td>
+<td>86.4</td>
+</tr>
+<tr>
+<td>B-industrials-all-profit</td>
+<td>82.3</td>
+<td>88.3</td>
+<td>83.5</td>
+<td>20.0</td>
+<td>55.6</td>
+<td>50.4</td>
+<td>47.8</td>
+<td>54.6</td>
+<td>51.4</td>
+<td>55.4</td>
+<td>45.6</td>
+<td>54.8</td>
+</tr>
+<tr>
+<td>B-industrials-ex_micro-none</td>
+<td>89.0</td>
+<td>93.0</td>
+<td>91.2</td>
+<td>28.0</td>
+<td>63.0</td>
+<td>56.3</td>
+<td>72.0</td>
+<td>78.6</td>
+<td>82.0</td>
+<td>60.0</td>
+<td>70.6</td>
+<td>71.6</td>
+</tr>
+<tr>
+<td>B-industrials-ex_micro-profit</td>
+<td>88.6</td>
+<td>91.8</td>
+<td>92.4</td>
+<td>13.6</td>
+<td>48.8</td>
+<td>36.8</td>
+<td>42.4</td>
+<td>50.0</td>
+<td>49.2</td>
+<td>44.8</td>
+<td>50.4</td>
+<td>50.3</td>
+</tr>
+<tr>
+<td>B-real_estate-all-none</td>
+<td>45.0</td>
+<td>31.2</td>
+<td>50.4</td>
+<td>19.8</td>
+<td>22.8</td>
+<td>30.0</td>
+<td>58.2</td>
+<td>68.6</td>
+<td>56.8</td>
+<td>63.8</td>
+<td>71.2</td>
+<td>64.6</td>
+</tr>
+<tr>
+<td>B-real_estate-all-profit</td>
+<td>32.5</td>
+<td>21.3</td>
+<td>36.9</td>
+<td>14.8</td>
+<td>25.0</td>
+<td>30.2</td>
+<td>48.2</td>
+<td>67.4</td>
+<td>42.2</td>
+<td>34.9</td>
+<td>33.0</td>
+<td>34.7</td>
+</tr>
+<tr>
+<td>B-real_estate-ex_micro-none</td>
+<td>44.0</td>
+<td>31.2</td>
+<td>50.7</td>
+<td>8.8</td>
+<td>15.4</td>
+<td>16.8</td>
+<td>56.6</td>
+<td>72.6</td>
+<td>55.6</td>
+<td>44.0</td>
+<td>36.0</td>
+<td>43.4</td>
+</tr>
+<tr>
+<td>B-real_estate-ex_micro-profit</td>
+<td>36.0</td>
+<td>29.0</td>
+<td>44.0</td>
+<td>24.4</td>
+<td>27.4</td>
+<td>44.3</td>
+<td>51.6</td>
+<td>64.4</td>
+<td>48.4</td>
+<td>26.0</td>
+<td>19.8</td>
+<td>26.6</td>
+</tr>
+<tr>
+<td>B-technology-all-none</td>
+<td>90.2</td>
+<td>85.4</td>
+<td>93.8</td>
+<td>87.0</td>
+<td>96.6</td>
+<td>96.2</td>
+<td>99.0</td>
+<td>98.4</td>
+<td>99.2</td>
+<td>86.4</td>
+<td>93.4</td>
+<td>97.2</td>
+</tr>
+<tr>
+<td>B-technology-all-profit</td>
+<td>84.8</td>
+<td>89.4</td>
+<td>94.4</td>
+<td>35.2</td>
+<td>41.8</td>
+<td>42.2</td>
+<td>82.2</td>
+<td>90.0</td>
+<td>88.2</td>
+<td>74.6</td>
+<td>86.0</td>
+<td>83.4</td>
+</tr>
+<tr>
+<td>B-technology-ex_micro-none</td>
+<td>87.2</td>
+<td>89.8</td>
+<td>94.4</td>
+<td>52.2</td>
+<td>63.1</td>
+<td>55.1</td>
+<td>89.8</td>
+<td>90.4</td>
+<td>92.4</td>
+<td>62.6</td>
+<td>83.8</td>
+<td>78.9</td>
+</tr>
+<tr>
+<td>B-technology-ex_micro-profit</td>
+<td>89.3</td>
+<td>97.2</td>
+<td>97.2</td>
+<td>34.0</td>
+<td>35.8</td>
+<td>43.6</td>
+<td>76.4</td>
+<td>73.5</td>
+<td>80.5</td>
+<td>80.0</td>
+<td>87.4</td>
+<td>85.8</td>
+</tr>
+<tr>
+<td>B-utilities-all-none</td>
+<td>58.4</td>
+<td>45.5</td>
+<td>56.9</td>
+<td>39.2</td>
+<td>33.4</td>
+<td>35.9</td>
+<td>64.8</td>
+<td>72.6</td>
+<td>65.0</td>
+<td>50.7</td>
+<td>72.9</td>
+<td>55.2</td>
+</tr>
+<tr>
+<td>B-utilities-all-profit</td>
+<td>43.6</td>
+<td>53.3</td>
+<td>44.7</td>
+<td>25.4</td>
+<td>17.1</td>
+<td>24.4</td>
+<td>33.6</td>
+<td>37.6</td>
+<td>34.7</td>
+<td>27.1</td>
+<td>64.8</td>
+<td>30.6</td>
+</tr>
+<tr>
+<td>B-utilities-ex_micro-none</td>
+<td>27.6</td>
+<td>35.4</td>
+<td>29.0</td>
+<td>38.4</td>
+<td>22.2</td>
+<td>32.8</td>
+<td>66.0</td>
+<td>74.8</td>
+<td>64.8</td>
+<td>38.9</td>
+<td>48.6</td>
+<td>41.4</td>
+</tr>
+<tr>
+<td>B-utilities-ex_micro-profit</td>
+<td>38.0</td>
+<td>38.5</td>
+<td>39.8</td>
+<td>19.2</td>
+<td>8.2</td>
+<td>15.1</td>
+<td>51.6</td>
+<td>61.4</td>
+<td>51.6</td>
+<td>30.1</td>
+<td>50.7</td>
+<td>28.0</td>
+</tr>
+</tbody>
+</table></div>
+<p>Scoring took 2477s.</p></article>
+</div></main>
+<footer><div class="wrap">
+<p class="links"><a href="https://quantascent.io">quantascent.io</a><a href="https://docs.quantascent.io">Documentation</a><a href="https://www.youtube.com/@QuantAscent">YouTube</a><a href="https://quantascent.substack.com">Substack</a><a href="https://www.linkedin.com/company/quantascent">LinkedIn</a><a href="https://github.com/quantascent">GitHub</a></p>
+<p>&copy; 2026 QuantAscent Technologies LLC. QuantAscent is portfolio management and strategy backtesting software for self-directed investors. It is a software company, not an investment adviser, and nothing here is investment, financial, or tax advice.</p>
+</div></footer>
+</body>
+</html>
