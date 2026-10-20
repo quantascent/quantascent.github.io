@@ -131,7 +131,7 @@ article td:first-child { color:var(--text); }
   .v-bad { background:#b23b3b !important; color:#fff !important; }
 }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Can financial statements tell you which stocks to buy? I tested 31,000 strategies to find out.", "description": "31,000 strategies on 88 universes over ten years, each scored against 500 random portfolios and the matching ETF, with the pass and fail rules committed before the run.", "image": "https://quantascent.github.io/assets/og-can-financial-statements-tell-you-which-stocks-to-buy.png", "datePublished": "2026-10-19", "author": {"@type": "Person", "name": "Brandon Wilson"}, "publisher": {"@type": "Organization", "name": "QuantAscent Technologies LLC", "url": "https://quantascent.io", "logo": "https://quantascent.github.io/assets/apple-touch-icon.png", "sameAs": ["https://www.linkedin.com/company/quantascent", "https://www.crunchbase.com/organization/quantascent", "https://www.youtube.com/@QuantAscent", "https://github.com/quantascent", "https://quantascent.substack.com"]}, "mainEntityOfPage": "https://quantascent.github.io/can-financial-statements-tell-you-which-stocks-to-buy/", "url": "https://quantascent.github.io/can-financial-statements-tell-you-which-stocks-to-buy/"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Can financial statements tell you which stocks to buy? I tested 31,000 strategies to find out.", "description": "31,000 strategies on 88 universes over ten years, each scored against 500 random portfolios and the matching ETF, with the pass and fail rules committed before the run.", "image": "https://quantascent.github.io/assets/og-can-financial-statements-tell-you-which-stocks-to-buy.png", "datePublished": "2026-10-19", "dateModified": "2026-10-20", "author": {"@type": "Person", "name": "Brandon Wilson"}, "publisher": {"@type": "Organization", "name": "QuantAscent Technologies LLC", "url": "https://quantascent.io", "logo": "https://quantascent.github.io/assets/apple-touch-icon.png", "sameAs": ["https://www.linkedin.com/company/quantascent", "https://www.crunchbase.com/organization/quantascent", "https://www.youtube.com/@QuantAscent", "https://github.com/quantascent", "https://quantascent.substack.com"]}, "mainEntityOfPage": "https://quantascent.github.io/can-financial-statements-tell-you-which-stocks-to-buy/", "url": "https://quantascent.github.io/can-financial-statements-tell-you-which-stocks-to-buy/"}</script>
 </head>
 <body>
 <header class="top"><div class="wrap">
@@ -142,7 +142,7 @@ article td:first-child { color:var(--text); }
 <p class="eyebrow">QuantAscent &middot; Article</p>
 <h1>Can financial statements tell you which stocks to buy? I tested 31,000 strategies to find out.</h1>
 <p class="subtitle">31,000 strategies on 88 universes over ten years, each scored against 500 random portfolios and the matching ETF, with the pass and fail rules committed before the run.</p>
-<p class="meta">Brandon Wilson &middot; October 19, 2026</p>
+<p class="meta">Brandon Wilson &middot; October 19, 2026 &middot; <a href="https://quantascent.substack.com/p/can-financial-statements-tell-you">Also on Substack</a></p>
 <article>
 <p>I created QuantAscent because I wanted to find an edge in the stock market by picking my own stocks, and I believed that edge was in a company's financial statements rather than in chart patterns or day trading. Reading filings one company at a time doesn't scale, so I built software that scores every company on the same financial measurements and buys the best scores. The way it works is:</p>
 <ul>
@@ -159,136 +159,54 @@ article td:first-child { color:var(--text); }
 <p>If the answer is no, an index fund beats anything I could sell and I should go do something else. If the answer is yes, I want to know which feature is doing it.</p>
 <p>So I used the software's sweep tool to build 31,000 adaptive strategies, the kind where the statistical tests pick the metrics, across 88 different universes from random combinations of settings, and I tested every one of them from 2016 to 2026. Each strategy was compared against two benchmarks: a random grouping of stocks from the same universe, and the ETF that matched its universe.</p>
 <h2 id="the-answer">The answer</h2>
-<p><strong>Yes, with caveats.</strong> Scoring stocks with statistical methods on their financial data definitively beat picking stocks at random. The median strategy made about 11% per year and beat 97% of the random portfolios drawn from the same stocks. Random picking made 2% per year. That said, the last time I checked there wasn't an ETF, or a sane person, that picks stocks at random as an investment strategy. So how did the strategies compare to their respective ETF benchmarks?</p>
-<p>Against an ETF it was a mixed bag. On the broad universes that drew from every sector, the typical strategy landed about a point per year below the index. Sector by sector, it beat the ETF in energy, matched it in three sectors, and trailed it in the other seven. Table 1 shows the comparison between the strategies' compound annual growth rate (CAGR, i.e. the annual return) and their Sharpe ratio (a risk-adjusted return measure) against their benchmark.</p>
+<p><strong>Yes.</strong> Scoring stocks with statistical methods on their financial data definitively beat picking stocks at random. The median strategy made about 11% per year and beat 97% of the random portfolios drawn from the same stocks. Random picking made 2% per year. That said, the last time I checked there wasn't an ETF, or a sane person, that picks stocks at random as an investment strategy. So how did the strategies compare to their respective ETF benchmarks?</p>
+<p>About as well as professional money managers do, and these strategies had every setting chosen at random. S&amp;P's own scorecard finds that 14% of actively managed large-cap funds beat the S&amp;P 500 over the ten years to 2025. Against the equal-weight S&amp;P 500, which weights stocks the way the software does, 46% of the strategies finished ahead, and the median strategy landed within half a point per year of it. Against the cap-weighted S&amp;P 500, 13% finished ahead with the picks held in equal amounts, about the professionals' rate, and 60% finished ahead when the same picks were weighted by market cap, four times it, before and after an allowance for trading costs. Sector by sector it was harder: 27% of the strategies beat their own sector ETF, from 3% in utilities to 68% in energy. Table 1 shows the share of strategies that finished ahead of each benchmark and how far the median strategy's compound annual growth rate (CAGR, i.e. the annual return) landed from the benchmark's.</p>
 <div class="tbl"><table>
 <thead>
 <tr>
-<th>Sector</th>
-<th>ETF</th>
-<th style="text-align: right;">ETF CAGR</th>
-<th style="text-align: right;">Strategy CAGR, mean ± 1 SD</th>
-<th style="text-align: right;">ETF Sharpe</th>
-<th style="text-align: right;">Strategy Sharpe, mean ± 1 SD</th>
+<th>Benchmark</th>
+<th style="text-align: right;">Benchmark's annual return</th>
+<th style="text-align: right;">Strategies ahead of it</th>
+<th style="text-align: right;">Median strategy's return minus the benchmark's</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Energy</td>
-<td>XLE</td>
-<td style="text-align: right;">10.9%</td>
-<td style="text-align: right;">13.0% ± 5.3</td>
-<td style="text-align: right;">0.50</td>
-<td style="text-align: right;">0.62 ± 0.18</td>
-</tr>
-<tr>
-<td>Industrials</td>
-<td>XLI</td>
-<td style="text-align: right;">12.8%</td>
-<td style="text-align: right;">12.5% ± 4.2</td>
-<td style="text-align: right;">0.74</td>
-<td style="text-align: right;">0.72 ± 0.20</td>
-</tr>
-<tr>
-<td>Healthcare</td>
-<td>XLV</td>
-<td style="text-align: right;">10.3%</td>
-<td style="text-align: right;">9.8% ± 3.9</td>
-<td style="text-align: right;">1.04</td>
-<td style="text-align: right;">0.73 ± 0.26</td>
-</tr>
-<tr>
-<td>Basic Materials</td>
-<td>XLB</td>
-<td style="text-align: right;">9.3%</td>
-<td style="text-align: right;">8.7% ± 4.1</td>
-<td style="text-align: right;">0.64</td>
-<td style="text-align: right;">0.50 ± 0.17</td>
-</tr>
-<tr>
-<td>Financial Services</td>
-<td>XLF</td>
-<td style="text-align: right;">12.3%</td>
-<td style="text-align: right;">10.1% ± 5.2</td>
-<td style="text-align: right;">0.68</td>
-<td style="text-align: right;">0.57 ± 0.21</td>
-</tr>
-<tr>
-<td>Consumer Defensive</td>
-<td>XLP</td>
-<td style="text-align: right;">7.1%</td>
-<td style="text-align: right;">3.6% ± 3.1</td>
-<td style="text-align: right;">0.75</td>
-<td style="text-align: right;">0.34 ± 0.24</td>
-</tr>
-<tr>
-<td>Consumer Cyclical</td>
-<td>XLY</td>
-<td style="text-align: right;">11.6%</td>
-<td style="text-align: right;">6.6% ± 4.2</td>
-<td style="text-align: right;">0.68</td>
-<td style="text-align: right;">0.41 ± 0.19</td>
-</tr>
-<tr>
-<td>Technology</td>
-<td>XLK</td>
-<td style="text-align: right;">24.4%</td>
-<td style="text-align: right;">18.6% ± 5.8</td>
-<td style="text-align: right;">1.17</td>
-<td style="text-align: right;">0.94 ± 0.28</td>
-</tr>
-<tr>
-<td>Real Estate</td>
-<td>XLRE</td>
-<td style="text-align: right;">5.5%</td>
-<td style="text-align: right;">1.7% ± 3.0</td>
-<td style="text-align: right;">0.39</td>
-<td style="text-align: right;">0.21 ± 0.13</td>
-</tr>
-<tr>
-<td>Communication Services</td>
-<td>XLC</td>
-<td style="text-align: right;">12.7%</td>
-<td style="text-align: right;">6.8% ± 4.0</td>
-<td style="text-align: right;">0.83</td>
-<td style="text-align: right;">0.48 ± 0.23</td>
-</tr>
-<tr>
-<td>Utilities</td>
-<td>XLU</td>
-<td style="text-align: right;">8.5%</td>
-<td style="text-align: right;">3.8% ± 2.7</td>
-<td style="text-align: right;">0.64</td>
-<td style="text-align: right;">0.37 ± 0.22</td>
-</tr>
-<tr>
-<td>All sectors, equal-weight picks</td>
-<td>RSP</td>
+<td>RSP, the equal-weight S&amp;P 500</td>
 <td style="text-align: right;">11.3%</td>
-<td style="text-align: right;">10.2% ± 4.6</td>
-<td style="text-align: right;">0.78</td>
-<td style="text-align: right;">0.69 ± 0.28</td>
+<td style="text-align: right;">46%</td>
+<td style="text-align: right;">-0.4 pts</td>
 </tr>
 <tr>
-<td>All sectors, cap-weighted picks</td>
-<td>SPY</td>
+<td>SPY, the cap-weighted S&amp;P 500</td>
 <td style="text-align: right;">15.0%</td>
-<td style="text-align: right;">14.0% ± 7.2</td>
-<td style="text-align: right;">1.08</td>
-<td style="text-align: right;">0.75 ± 0.31</td>
+<td style="text-align: right;">13%</td>
+<td style="text-align: right;">-4.0 pts</td>
+</tr>
+<tr>
+<td>SPY, with the same picks weighted by market cap</td>
+<td style="text-align: right;">15.0%</td>
+<td style="text-align: right;">60%</td>
+<td style="text-align: right;">+1.3 pts</td>
+</tr>
+<tr>
+<td>Own sector ETF, eleven sectors pooled</td>
+<td style="text-align: right;">5.5% to 24.4%</td>
+<td style="text-align: right;">27%, from 3% to 68% by sector</td>
+<td style="text-align: right;">-2.8 pts</td>
 </tr>
 </tbody>
 </table></div>
-<p><em>Table 1. Each row is the strategies from one universe against that universe's ETF, over the ten years ending July 2026, before trading costs and taxes. The ± number is how much the strategies in that row varied with their settings.</em></p>
-<h3 id="why-should-someone-use-this-if-it-didnt-beat-the-market-in-this-test">Why should someone use this if it didn't beat the market in this test?</h3>
-<p>I had to do some serious soul searching after seeing the results. My hope was that the strategies would have all crushed their benchmarks. But the universe is never that kind. I considered giving up on this project completely and changing my own investment approach. But three things kept me going.</p>
+<p><em>Table 1. The strategies against each benchmark over the ten years ending July 2026, before trading costs and taxes. The first three rows are the 489 strategies in the main universe, every US stock over $5. The sector row pools the 8,560 strategies from the eleven single-sector universes against each one's ETF, and Table 10 shows them sector by sector. The 14% figure for professional funds is from S&amp;P's SPIVA scorecard, ten years to 2025, after fees.</em></p>
+<h3 id="why-use-this-instead-of-an-index-fund">Why use this instead of an index fund?</h3>
+<p>I had to do some serious soul searching after seeing the first results. My hope was that the strategies would have all crushed their benchmarks, and a coin flip against the equal-weight index isn't that. Then I put the numbers next to what professional managers achieve, and the picture changed. Most active funds trail their index after fees. Strategies with every setting chosen at random, with nobody choosing a universe or a structure on purpose, kept pace with the equal-weight index and finished ahead of the cap-weighted one at market-cap weight. Three more things matter here.</p>
 <ul>
-<li>People don't create strategies from random inputs. Testing randomly generated strategies and expecting them to beat the market is like throwing random ingredients in a pot and being surprised it doesn't win a cooking competition.</li>
+<li>People don't create strategies from random inputs. Every strategy in this study had its universe, its factors, and its settings drawn at random, which is the least thoughtful way anyone could use the software. The numbers in this post are what that produced.</li>
 <li>ETFs don't let you choose which individual companies you invest in, or which ones you avoid.</li>
-<li>Investing in individual stocks lets you diversify across sectors, market caps, share prices, and filters in any combination you want. For example, see if you can find an ETF that holds technology, energy, healthcare, and basic materials companies, where every company has a market cap over $200 million, a share price over $10, and a positive free cash flow yield. You can't. I've checked. You'll have to take my word on this part, but I tested that exact idea in the software after I wrote the example. An adaptive strategy on those rules, holding 12 stocks, returned 310.5% from 2016 to 2026, which is about 15% per year with trading costs included. A random sample of settings can't account for a human making decisions like that.</li>
+<li>Investing in individual stocks lets you diversify across sectors, market caps, share prices, and filters in any combination you want. For example, see if you can find an ETF that holds technology, energy, healthcare, and basic materials companies, where every company has a market cap over $200 million, a share price over $10, and a positive free cash flow yield. You can't. I've checked. A random sample of settings can't account for a human making decisions like that.</li>
 </ul>
 <h3 id="who-should-use-this-software">Who should use this software</h3>
-<p>QuantAscent is for people who want to own individual companies and want rules, not a hunch or a tip, deciding which ones. You decide the universe, the software scores every company in it on its financial statements and keeps the portfolio current at each rebalance, and you can test any idea against the past before you put money into it. The software is a poor fit if what you want is the market's return with no work, because an index fund gives you that, and this study didn't show the software beating it.</p>
+<p>QuantAscent is for people who want to own individual companies and want rules, not a hunch or a tip, deciding which ones. You decide the universe, the software scores every company in it on its financial statements and keeps the portfolio current at each rebalance, and you can test any idea against the past before you put money into it. The software is a poor fit if what you want is the market's return with no work, because an index fund gives you that.</p>
 <p>If you'd rather just buy an index fund, you can stop reading here. But if you want to create your own strategies and have complete control over the stocks you invest in, keep reading to learn how I tested this idea, see the results in detail, and find out which settings produced the higher returns.</p>
 <h2 id="how-i-tested-it">How I tested it</h2>
 <p>"Does it beat the market?" is the wrong first question. A portfolio of ten small companies and a cap-weighted index of the 500 largest companies aren't comparable, and the last decade was unusually good for the largest companies. So the first question was narrower: <strong>does the software pick better stocks than random chance would, from the same list?</strong></p>
@@ -556,8 +474,8 @@ article td:first-child { color:var(--text); }
 <p><em>Figure 4. The same test with one dot per strategy, its backtest CAGR across the bottom and its CAGR over the next two years up the side. Only the first window has a visible slope. In the other three, a better backtest did not mean a better future.</em></p>
 <p>Return <strong>DID NOT PERSIST</strong> and drawdown <strong>PERSISTED</strong>. If you had taken the top 10% of strategies by backtest return at each date and followed them for the next two years, they finished behind or level with the strategies they had outranked at three of the four dates, and ahead only in the first. <strong>This is why the sweep tool doesn't rank strategies by return.</strong> It's for seeing how a whole range of settings behaved, not for choosing a winner.</p>
 <p>The app also shows every sweep run against a luck cutoff, which it calls the luck bar, and tells you two things: discard anything that doesn't clear it, and prefer the lower-risk runs. I applied both rules mechanically at each date and checked the next two years. Neither met the 5-point threshold at three of four dates, though the lower-drawdown runs did keep their lower drawdowns, just not strongly enough to count. The luck cutoff stays anyway, because its job is to stop you from treating a lucky run as a good one, not to find winners.</p>
-<h3 id="it-matched-the-equal-weight-sp-500">It matched the equal-weight S&amp;P 500</h3>
-<p>The product holds every pick in equal amounts, so the fair index to compare it with is RSP, the equal-weight S&amp;P 500 ETF, which made 11.3% per year over the ten years. The median strategy on the shipped settings made 12.2%, and the median sweep strategy made 11.0%. Depending on the version, 46% to 59% of the strategies finished ahead of RSP. By the rule I set before the run, which needed 60% or more ahead with the uncertainty range clear of 50%, that's a tie. In plain terms, the typical strategy did about what the equal-weight index did.</p>
+<h3 id="it-kept-pace-with-the-sp-500">It kept pace with the S&amp;P 500</h3>
+<p>The product holds every pick in equal amounts, so the fair index to compare it with is RSP, the equal-weight S&amp;P 500 ETF, which made 11.3% per year over the ten years. The median strategy on the shipped settings made 12.2%, and the median sweep strategy made 11.0%. Depending on the version, 46% to 59% of the strategies finished ahead of RSP. By the rule I set before the run, which needed 60% or more ahead with the uncertainty range clear of 50%, that's a tie. In plain terms, the typical strategy did about what the equal-weight index did, and it did it with settings a random number generator chose. S&amp;P's own scorecard finds that about 14% of actively managed large-cap funds beat the S&amp;P 500 over the ten years to 2025, after fees. Half of these strategies kept pace with the equal-weight index before anyone had chosen anything on purpose.</p>
 <div class="tbl"><table>
 <thead>
 <tr>
@@ -621,12 +539,13 @@ article td:first-child { color:var(--text); }
 </tbody>
 </table></div>
 <p><em>Table 7. Each version against the index that weights the same way it does, on ten-year CAGR with cash earning zero in any quarter a strategy held no stocks. "Runs ahead" is the share of strategies that beat the index, and TIES means that share couldn't be told apart from 50%.</em></p>
-<p>The comparison everyone asks about, equal-weight picks against the regular cap-weighted S&amp;P 500, isn't a fair one, because SPY made 15.0% per year by holding the giant companies in giant size. Only 13% to 25% of the strategies beat it. So as a side calculation I re-weighted the same picks by market cap and compared them with SPY. That brought the median strategy to 16.3% per year, and 60% of them finished ahead of SPY (Figure 5). For scale, S&amp;P's own scorecard finds that about 14% of actively managed large-cap funds beat the S&amp;P 500 over the ten years to 2025, after fees. Strategies with randomly chosen settings matched that rate before costs at equal weight, and the cap-weighted version of the same picks beat it four times over, with the caveat below about what one decade can prove.</p>
+<p>The comparison everyone asks about is against the regular cap-weighted S&amp;P 500, and SPY made 15.0% per year by holding the giant companies in giant size. With the picks held in equal amounts, 13% to 25% of the strategies beat it, which is the professionals' rate. So as a side calculation I re-weighted the same picks by market cap and compared them with SPY. That brought the median strategy to 16.3% per year, and 60% of them finished ahead of SPY (Figure 5). In the large-cap universes, the ones a large-cap fund would actually hold, 56% to 67% finished ahead, with the median strategy 1 to 2.4 points per year ahead of SPY. The professionals' 14% is after fees, so take a point off every strategy for trading costs, the estimate in the cost paragraph below: 50% to 61% still finished ahead. That is four times the professionals' rate on the same footing, with the caveats below about what one decade and this data can prove.</p>
 <p><img alt="Every run's ten-year CAGR next to the benchmarks" src="/assets/edge-study/fig3_t5.png" /></p>
 <p><em>Figure 5. Every version 3 strategy's ten-year CAGR in the main universe, with the benchmarks as vertical lines. In the top panel the picks are held in equal amounts, the way the product works, and the strategies center on RSP. In the bottom panel the same picks are weighted by market cap, and most strategies sit to the right of SPY.</em></p>
 <p>So why does Table 7 still say TIES for that row? Because SPY's 15% came from a few enormous quarters, and the test asks whether the result would hold in a different ten years. The bootstrap, the same one behind every range in this post, re-drew the decade a thousand times. In the draws that included those big quarters twice, 23% of the strategies beat SPY. In the draws that missed them, 80% did. That range includes 50%, so the rule calls it a tie. The 60% is real for the decade that happened. Whether it was the method or the decade's mix of quarters, ten years can't say.</p>
-<p>Cap weighting was also where the statistical test mattered most. Switching it on moved the cap-weighted median from 12.6% to 16.3% per year and the share beating SPY from 37% to 60%. The ranges on those steps reached just below zero, and the cap-weighted comparison was registered as secondary before the run, so it can't carry a verdict on its own. It's the first thing I'd test next.</p>
+<p>Cap weighting was also where the statistical test mattered most. Switching it on moved the cap-weighted median from 12.6% to 16.3% per year and the share beating SPY from 37% to 60%. The ranges on those steps reached just below zero, and the cap-weighted comparison was registered as secondary before the run, so it can't carry a verdict on its own. It's the first thing I'd test next. The product holds every pick in equal amounts today. I'm considering a market-cap weighting option for a future release, which would make this comparison the product's own number instead of a side calculation.</p>
 <p>Two caveats on this section. Dead-company coverage in the data is a handful of companies per year before 2016, which is why the scoring starts there, and only partial from 2016 to 2020. Missing dead companies raise the software's returns but not the index's, so this comparison leans in the software's favor. Trading isn't free, and none of the numbers in this post include its cost. The typical strategy sold and replaced about seven of its ten stocks every quarter, which comes to roughly 60 trades a year. Using the app's default assumptions of $1 per trade plus a small price concession on each one, that costs about 1% of a $10,000 account per year, and about two thirds of 1% on a $100,000 account. So knock up to a point off every return in this post, depending on your account size.</p>
+<p>Two more costs the study doesn't model, because they depend on your account. The subscription is $171 a year, which is 1.7% of a $10,000 account and 0.17% of $100,000. On a $10,000 account the software plus its trading comes to about 2.7% a year that an index fund doesn't charge, so the typical strategy, which landed 0.4 points behind the equal-weight index before costs, would trail it by about three points after them. On $100,000 the two together are under 1%. Taxes are the larger cost in a taxable account. Replacing seven of ten stocks every quarter means nearly every gain is realized within a year and taxed as ordinary income. At a 24% federal rate that is roughly 2.5 points of an 11% year, where an index ETF taxes you on its dividends and defers the rest until you sell, at the lower long-term rate. Actively managed mutual funds pass their managers' trading on to you the same way, through yearly capital-gains distributions, so a fund investor in a taxable account pays this cost too; it isn't in the 14% figure, which is before the investor's taxes. In an IRA or a 401(k) the tax difference disappears.</p>
 <p>For completeness, every version also beat owning every stock in the universe in equal amounts, which made 3.2% per year. 89% to 97% of the strategies finished ahead of that, and all three versions read BEATS.</p>
 <h3 id="the-edge-held-in-every-two-year-window">The edge held in every two-year window</h3>
 <p><img alt="The three main tests per two-year window, version 3" src="/assets/edge-study/fig7_holdouts.png" /></p>
@@ -722,10 +641,102 @@ article td:first-child { color:var(--text); }
 <p><strong>Micro and small caps showed the biggest edge, and they're the ones that can't absorb much money.</strong> Micro caps scored 100 on everything, with or without a filter, because the alternative was minus 13.5% per year.</p>
 <p><img alt="Sector universes: version 3 scores" src="/assets/edge-study/fig6_cellmap_tierB.png" /></p>
 <p><em>Figure 8. Version 3's median return and drawdown scores for the 60 sector universes, about 200 strategies each. The growth row is technology plus communication services. Utilities and real estate were the only sectors below 55 on return in every combination.</em></p>
-<p>The sector universes split the same way. Technology, the technology-plus-communications group, healthcare, communication services, and energy scored 89 to 100 on return. Utilities and real estate scored 12 to 24 in three of their four combinations. Against the sector ETFs, no universe reached the 60% threshold. Technology picks beat XLK 11% of the time, because XLK compounded at 24% per year, and energy picks beat XLE 68% of the time in one of its four combinations but not consistently across all four. <strong>"Beats random stock picking inside the sector" and "beats the sector ETF" are different claims, and only the first one held.</strong></p>
+<p>The sector universes split the same way. Technology, the technology-plus-communications group, healthcare, communication services, and energy scored 89 to 100 on return. Utilities and real estate scored 12 to 24 in three of their four combinations. Against the sector ETFs, no single universe reached the 60% threshold. Pooled across their four universes, energy strategies beat XLE 68% of the time and industrials beat XLI 51% of the time, and at the other end technology strategies beat XLK 11% of the time because XLK compounded at 24% per year. Table 10 has every sector. <strong>"Beats random stock picking inside the sector" and "beats the sector ETF" are different claims, and only the first one held.</strong></p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Sector</th>
+<th>ETF</th>
+<th style="text-align: right;">ETF's annual return</th>
+<th style="text-align: right;">Median strategy's annual return</th>
+<th style="text-align: right;">Strategies ahead of the ETF</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Energy</td>
+<td>XLE</td>
+<td style="text-align: right;">10.9%</td>
+<td style="text-align: right;">13.6%</td>
+<td style="text-align: right;">68%</td>
+</tr>
+<tr>
+<td>Industrials</td>
+<td>XLI</td>
+<td style="text-align: right;">12.8%</td>
+<td style="text-align: right;">12.8%</td>
+<td style="text-align: right;">51%</td>
+</tr>
+<tr>
+<td>Healthcare</td>
+<td>XLV</td>
+<td style="text-align: right;">10.3%</td>
+<td style="text-align: right;">10.1%</td>
+<td style="text-align: right;">47%</td>
+</tr>
+<tr>
+<td>Basic Materials</td>
+<td>XLB</td>
+<td style="text-align: right;">9.3%</td>
+<td style="text-align: right;">8.8%</td>
+<td style="text-align: right;">46%</td>
+</tr>
+<tr>
+<td>Financial Services</td>
+<td>XLF</td>
+<td style="text-align: right;">12.3%</td>
+<td style="text-align: right;">10.2%</td>
+<td style="text-align: right;">33%</td>
+</tr>
+<tr>
+<td>Consumer Defensive</td>
+<td>XLP</td>
+<td style="text-align: right;">7.1%</td>
+<td style="text-align: right;">3.6%</td>
+<td style="text-align: right;">12%</td>
+</tr>
+<tr>
+<td>Consumer Cyclical</td>
+<td>XLY</td>
+<td style="text-align: right;">11.6%</td>
+<td style="text-align: right;">6.7%</td>
+<td style="text-align: right;">11%</td>
+</tr>
+<tr>
+<td>Technology</td>
+<td>XLK</td>
+<td style="text-align: right;">24.4%</td>
+<td style="text-align: right;">19.3%</td>
+<td style="text-align: right;">11%</td>
+</tr>
+<tr>
+<td>Real Estate</td>
+<td>XLRE</td>
+<td style="text-align: right;">5.5%</td>
+<td style="text-align: right;">1.6%</td>
+<td style="text-align: right;">10%</td>
+</tr>
+<tr>
+<td>Communication Services</td>
+<td>XLC</td>
+<td style="text-align: right;">12.7%</td>
+<td style="text-align: right;">7.0%</td>
+<td style="text-align: right;">6%</td>
+</tr>
+<tr>
+<td>Utilities</td>
+<td>XLU</td>
+<td style="text-align: right;">8.5%</td>
+<td style="text-align: right;">3.9%</td>
+<td style="text-align: right;">3%</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>Table 10. Each sector's strategies, its four size and filter universes pooled, against that sector's ETF over the ten years ending July 2026, before trading costs and taxes. The strategies' return is the median, with cash earning zero in any quarter a strategy held no stocks.</em></p>
 <p>One more result, reported because the rule said every universe gets reported. In one of the nine no-filter universes, small caps, switching the statistical test on cost 12 points of return score with a range clear of zero. One of nine at the 5% level is what chance predicts.</p>
 <h2 id="what-it-means-if-you-use-the-software">What it means if you use the software</h2>
 <p><strong>The library is the core product.</strong> Scoring companies on its metrics in their textbook directions, with no test choosing among them, took the median strategy from 2% per year to 11.4% and to the 97th percentile against random in the main universe. It scored above random in most of the 88 universes, cleared the strict threshold on return in 29 of them against the 8 that chance could produce, and held in every two-year window. That scoring runs inside every strategy you build, in the Static Builder as much as in adaptive strategies. It's the core of QuantAscent: the metric set, the directions, the financial-statement data for every US company, and the re-scoring at every rebalance, in one place.</p>
+<p><strong>With random settings it kept pace with the market.</strong> Half the strategies in the main universe finished ahead of the equal-weight S&amp;P 500, and 60% finished ahead of SPY when the same picks were weighted by market cap, before any user had chosen a universe or a structure on purpose. Most professional funds don't manage that against their index after fees.</p>
 <p><strong>Adaptive strategies did their work on drawdowns, not on return.</strong> At the same structures, the statistical test cut the share of strategies with a 40%-or-worse drawdown from 17% to 6%, cost about half a point of median return, and refused to run factors with no signal. It didn't find return, and in this design it can't, because it chooses within factors rather than between them.</p>
 <p><strong>Strategies that blended factors and held ten or more companies did about a point a year better.</strong> The gap over a single factor and five holdings was about a point of annual return and ten points of score. The product lets you choose it everywhere, and the defaults already do.</p>
 <p><strong>The other settings moved the result a point or two either way.</strong> The ones that tighten the test trade return for fewer deep drawdowns.</p>
@@ -818,7 +829,7 @@ article td:first-child { color:var(--text); }
 <h2 id="conclusion">Conclusion</h2>
 <p>I started this with one question: does scoring stocks on their financial statements give you an edge? After 31,000 strategies on 88 universes over ten years, the answer is yes against random stock picking, by a wide margin, and about even against the index that weights the way the product does.</p>
 <p>The edge comes from the library. Scoring companies on the metrics in their textbook directions took the typical strategy from 2% per year to 11% in the main universe, held in every two-year window, and cleared the strict threshold on return in 29 of the 88 universes against the 8 that chance could produce. It did that whether or not the statistical test was switched on. The test earned its place a different way: it removed the biggest losers and cut the deep drawdowns roughly in half, at a cost of about half a point of return. Diversification was worth about a point a year on top. And a strategy's backtest predicted its future risk, not its future return, which is why the software compares settings instead of ranking winners.</p>
-<p>Against the market, the typical strategy matched the equal-weight S&amp;P 500. The same picks weighted by market cap finished ahead of SPY in this decade, and whether that was the method or the decade is the first thing I'd test next.</p>
+<p>Against the market, the typical strategy kept pace with the equal-weight S&amp;P 500, which is more than most professional funds manage against their index, and it did it with settings chosen at random. The same picks weighted by market cap finished ahead of SPY in this decade, four times as often as those funds did, and whether that was the method or the decade is the first thing I'd test next.</p>
 <p>None of this is a promise about the next ten years. It's a record of what the software did over the last ten, with the thresholds set before the run and the parts that didn't pass reported next to the parts that did.</p>
 <p><strong>Am I launching?</strong> Yes. If the scoring had done no better than random picking, I would have shut this down. It did far better, and I can point to the part of the software that did it. But beating random isn't the point of the product. The point is that you can define a universe no ETF offers, with the sectors, company sizes, price floor, and filters in whatever combination you want, decide which companies you're willing to own, and test the idea against the past before you put money in it. What this study adds is that, in most of the 88 universes I tried, the scoring picked better stocks from that list than chance would have, with fewer deep drawdowns. That's the product I'm launching.</p>
 <hr />
