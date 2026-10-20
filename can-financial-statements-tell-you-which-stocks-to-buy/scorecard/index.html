@@ -148,7 +148,7 @@ article td:first-child { color:var(--text); }
 run. The git hash of the commit that first added it is the timestamp. Anything that
 changes after that commit is recorded under <strong>Amendments</strong> at the bottom, with the
 date and the reason. Results never change a hypothesis or a bar.</p>
-<h2>1. The question</h2>
+<h2 id="1-the-question">1. The question</h2>
 <p>Does scoring companies on their financial statements with statistical methods give a
 stock picker an edge over picking names at random from the same pool, and over owning
 the pool or the market as a whole?</p>
@@ -166,7 +166,7 @@ the pool or the market as a whole?</p>
 <li><strong>The market:</strong> the S&amp;P 500 cap-weighted (SPY), the S&amp;P 500 equal-weighted (RSP),
    and for single-sector pools the sector ETF.</li>
 </ol>
-<h2>2. What is being tested</h2>
+<h2 id="2-what-is-being-tested">2. What is being tested</h2>
 <p>The QuantAscent Adaptive Builder as shipped in the app, driven through the Sweep
 Explorer's design-space sampler, on a research panel built with the shipped panel
 builder on a longer history than the app's pack carries (section 3, Amendment 1).
@@ -184,7 +184,7 @@ In plain terms, at every quarter the engine:</p>
 <code>quant_engine/user_library.py</code> <code>run_walk_forward</code> and <code>derive_recipe</code>,
 <code>quant_engine/sweep_space.py</code> <code>sample_sweep</code>, <code>quant_engine/luck_band.py</code>
 <code>draw_returns</code>. The harness calls these; it does not reimplement them.</p>
-<h2>3. Data</h2>
+<h2 id="3-data">3. Data</h2>
 <div class="tbl"><table>
 <thead>
 <tr>
@@ -237,7 +237,7 @@ starts in 2011 (it needs eight panel dates of history), but no quarter before
 bias flatters the software's portfolios, the random portfolios, and the pool average
 alike, so comparisons 1 and 2 are largely unaffected; it flatters the software
 against the market (comparison 3). The write-up says this.</p>
-<h2>4. The universe matrix</h2>
+<h2 id="4-the-universe-matrix">4. The universe matrix</h2>
 <p>One sweep per cell. A universe is fixed for its sweep. Every cell carries a $5
 share-price floor (the panel itself already excludes sub-$1 names at build time)
 and the freshness rule <code>DaysSinceFiling &lt;= 135</code> as a metric filter (Amendment 2),
@@ -382,7 +382,7 @@ quarter from the panel. A cell whose pool averages fewer than 45 names (three ti
 the maximum holdings count) is marked <code>thin</code>, still run, but excluded from every
 verdict aggregate and listed by name in the write-up as "too thin to test." Pool
 counts are not outcome data, so this check does not break pre-registration.</p>
-<h2>5. The design space, identical for every cell</h2>
+<h2 id="5-the-design-space-identical-for-every-cell">5. The design space, identical for every cell</h2>
 <pre><code>structure: mode &quot;template&quot;, flavors_allowed = all seven (Momentum, Growth, Quality,
            Value, Financial Strength, Defensive, Equal Weighting),
            max_blend = 6 (the composer's full range), holdings = [5, 15]
@@ -440,7 +440,7 @@ cloud as the design-space arm, so the four rungs read as a ladder:</p>
 20-line substitute for <code>_fill_slots</code> that ignores the IC halves; everything else
 (universe, scoring, portfolio construction, walk-forward) is the shipped path.
 Placebo seed for a cell = 1001 + the cell's ordinal.</p>
-<h2>6. Spans and cut points</h2>
+<h2 id="6-spans-and-cut-points">6. Spans and cut points</h2>
 <p>Panel date indices in brackets (the extended panel, Amendment 1). The engine trades
 from index 8 (2011-09-xx) but quarters before 2016-08-31 [28] are survivors-only and
 are never scored. 41 scored quarters are available, 2016-08-31 [28] through
@@ -498,7 +498,7 @@ trailing window.</p>
 <p><strong>Refusals.</strong> A draw with fewer than 4 traded quarters in a span is refused for
 that span (product convention <code>REFUSED_MIN_Q</code>). Refused and errored counts are
 reported per cell and never dropped silently.</p>
-<h2>7. Metrics</h2>
+<h2 id="7-metrics">7. Metrics</h2>
 <p>Per draw, per span, from quarterly returns:</p>
 <div class="tbl"><table>
 <thead>
@@ -556,7 +556,7 @@ cross-draw median. The CI is on the cross-draw median percentile.</p>
 reweight by the panel's <code>MarketCap</code> at the as-of date and recompute the series.
 Its random cloud is cap-weighted too (same drawn tickers, cap weights). Reported in
 T5 against SPY only. This arm never decides a headline verdict.</p>
-<h2>8. Tests and verdict bars</h2>
+<h2 id="8-tests-and-verdict-bars">8. Tests and verdict bars</h2>
 <p>Each test returns one of three verdicts per cell and span, always printed with the
 median and its 95% interval (Amendment 2: the middle verdict is NOT DETECTED, not
 "no edge", because ten years of quarterly data cannot distinguish a small edge from
@@ -656,7 +656,7 @@ way the methodology page says," and it costs no extra draws.</p>
 <li><strong>F10</strong> Portfolio size: distribution of names actually held versus requested,
   per cell, with the stood-aside rate.</li>
 </ul>
-<h2>9. Headline and exploration</h2>
+<h2 id="9-headline-and-exploration">9. Headline and exploration</h2>
 <p><strong>The headline verdict</strong> comes from one cell, fixed now: <code>A-all-none</code> (all sectors,
 all caps, no gate, $5 floor), on the FULL span for T1, T2, T3, and T5, and across
 the four seams for T4, and (Amendment 2) the ladder on that cell: random stocks,
@@ -670,7 +670,7 @@ T3, and so on) and as the factor summaries F2 to F7. A single non-headline cell 
 never presented as a result on its own. The broad claim "the method works across
 pools" requires the share of non-thin cells returning EDGE on a test to exceed the
 upper 95% binomial bound of what chance predicts at the 5% level.</p>
-<h2>10. Compute plan</h2>
+<h2 id="10-compute-plan">10. Compute plan</h2>
 <ul>
 <li>Workers: 4 by default (the pool deadlocked at 8 inside the app); the headless
   harness may use up to 8 if the probe shows it stable. The panel costs 0.4 GB per
@@ -692,7 +692,7 @@ upper 95% binomial bound of what chance predicts at the 5% level.</p>
   draws). The harness writes <code>out/run_manifest.json</code> with panel hash, DB price max
   date, cell list, seeds, start and end times.</li>
 </ul>
-<h2>11. Known weaknesses, listed before the run</h2>
+<h2 id="11-known-weaknesses-listed-before-the-run">11. Known weaknesses, listed before the run</h2>
 <ol>
 <li>Survivorship: survivors-only before 2016 (training history only, 2009 to 2016),
    partial 2016 to 2018, thin 2019 and 2020, dense 2021 on. The engine therefore
@@ -731,7 +731,7 @@ upper 95% binomial bound of what chance predicts at the 5% level.</p>
     which for bankruptcies is usually above the ultimate recovery.</li>
 <li>Our figures are gross; the ETF series are net of their expense ratios.</li>
 </ol>
-<h2>12. Reporting rules for the write-up</h2>
+<h2 id="12-reporting-rules-for-the-write-up">12. Reporting rules for the write-up</h2>
 <ul>
 <li>Every number is an aggregate across draws. No draw is named as "the strategy."</li>
 <li>No stock is named. No prediction is made. No return is tied to subscribing.</li>
@@ -742,7 +742,7 @@ upper 95% binomial bound of what chance predicts at the 5% level.</p>
   results."</li>
 <li>The commit hash of this scorecard is cited in the piece.</li>
 </ul>
-<h2>Amendments</h2>
+<h2 id="amendments">Amendments</h2>
 <p><strong>Amendment 1, 2026-10-15, before any sweep draw was run.</strong> Original scorecard
 commit <code>af41393</code>. Changes, each made in place above and listed here:</p>
 <ol>
