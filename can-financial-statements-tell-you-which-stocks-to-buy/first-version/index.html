@@ -1,0 +1,938 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The first version, as published on October 20, 2026</title>
+<meta name="description" content="The QuantAscent edge study as first published, kept for the record. Its numbers were superseded on October 26, 2026 after the $5 price floor was corrected and the study re-run.">
+<link rel="canonical" href="https://quantascent.github.io/can-financial-statements-tell-you-which-stocks-to-buy/first-version/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="QuantAscent">
+<meta property="og:title" content="The first version, as published on October 20, 2026">
+<meta property="og:description" content="The QuantAscent edge study as first published, kept for the record. Its numbers were superseded on October 26, 2026 after the $5 price floor was corrected and the study re-run.">
+<meta property="og:url" content="https://quantascent.github.io/can-financial-statements-tell-you-which-stocks-to-buy/first-version/">
+<meta property="og:image" content="https://quantascent.github.io/assets/og-can-financial-statements-tell-you-which-stocks-to-buy.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The first version, as published on October 20, 2026">
+<meta name="twitter:description" content="The QuantAscent edge study as first published, kept for the record. Its numbers were superseded on October 26, 2026 after the $5 price floor was corrected and the study re-run.">
+<meta name="twitter:image" content="https://quantascent.github.io/assets/og-can-financial-statements-tell-you-which-stocks-to-buy.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.css">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body, {delimiters: [
+    {left: '$$', right: '$$', display: true},
+    {left: '\\(', right: '\\)', display: false}], throwOnError: false});"></script>
+<style>
+:root { --bg:#0d1117; --panel:#161b22; --line:#30363d; --text:#e6edf3; --body:#c9d1d9;
+        --muted:#8b949e; --accent:#00d4aa; }
+* { box-sizing:border-box; }
+html { -webkit-text-size-adjust:100%; }
+body { margin:0; background:var(--bg); color:var(--body); font-family:Inter, system-ui, -apple-system,
+       "Segoe UI", Roboto, sans-serif; font-size:18px; line-height:1.7; }
+a { color:var(--accent); text-underline-offset:3px; }
+a:hover { color:#5ff0cf; }
+.wrap { max-width:720px; margin:0 auto; padding:0 20px; }
+header.top { border-bottom:1px solid var(--line); }
+header.top .wrap { display:flex; align-items:center; justify-content:space-between; gap:16px;
+                   min-height:64px; flex-wrap:wrap; padding-top:10px; padding-bottom:10px; }
+.brand { font-size:20px; font-weight:600; color:var(--accent); text-decoration:none; letter-spacing:-0.01em; }
+.brand b { color:#fff; font-weight:600; }
+nav { display:flex; flex-wrap:wrap; gap:4px 18px; }
+nav a { color:var(--muted); text-decoration:none; font-size:15px; }
+nav a:hover { color:var(--text); }
+main { padding:48px 0 32px; }
+.eyebrow { font-family:"Intel One Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+           font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin:0 0 14px; }
+h1 { color:#fff; font-size:38px; line-height:1.18; letter-spacing:-0.02em; margin:0 0 16px; font-weight:700; }
+.subtitle { color:var(--muted); font-size:20px; line-height:1.5; margin:0 0 22px; }
+.meta { color:var(--muted); font-size:15px; margin:0 0 34px; padding-bottom:26px; border-bottom:1px solid var(--line); }
+.meta a { color:var(--muted); }
+.meta a:hover { color:var(--accent); }
+article h2 { color:#fff; font-size:25px; line-height:1.3; margin:44px 0 12px; letter-spacing:-0.01em; }
+article p { margin:0 0 20px; }
+article ul, article ol { margin:0 0 22px; padding-left:24px; }
+article li { margin:0 0 8px; }
+article li p { margin:0; }
+article em { color:var(--muted); font-size:16px; }
+.card { display:block; background:var(--panel); border:1px solid var(--line); border-radius:12px;
+        padding:24px 26px; text-decoration:none; color:var(--body); margin:0 0 18px; }
+.card:hover { border-color:var(--accent); color:var(--body); }
+.card .eyebrow { margin-bottom:10px; }
+.card h2 { color:#fff; font-size:23px; line-height:1.3; margin:0 0 10px; }
+.card p { margin:0; color:var(--muted); font-size:17px; }
+.intro { font-size:19px; color:var(--body); margin:0 0 36px; }
+footer { border-top:1px solid var(--line); color:var(--muted); font-size:14px; line-height:1.6; padding:28px 0 44px; }
+footer a { color:var(--muted); }
+footer .links { display:flex; flex-wrap:wrap; gap:6px 18px; }
+footer a:hover { color:var(--accent); }
+footer p { margin:0 0 10px; }
+@media (max-width:560px) {
+  body { font-size:17px; }
+  h1 { font-size:30px; }
+  .subtitle { font-size:18px; }
+  article h2 { font-size:22px; }
+  nav { gap:4px 14px; }
+}
+
+
+.wrap img { max-width: 100%; height: auto; display: block; margin: 1.4em auto; }
+article h3 { color:#fff; font-size:21px; margin:32px 0 10px; }
+article code { font-family:"Intel One Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+               font-size:0.92em; background:var(--panel); border:1px solid var(--line);
+               border-radius:5px; padding:1px 6px; color:var(--text); }
+article hr { border:0; border-top:1px solid var(--line); margin:40px 0; }
+article strong { color:#fff; }
+.katex { font-size:1.08em; }
+.katex-display { margin:14px 0 18px; overflow-x:auto; overflow-y:hidden; padding:4px 0; }
+article li .katex-display { margin:10px 0 12px; }
+.draft-note { background:var(--panel); border:1px solid var(--line); border-left:4px solid var(--accent);
+              border-radius:8px; padding:14px 18px; color:var(--muted); font-size:16px; margin:0 0 30px; }
+.tbl { overflow-x:auto; margin:22px 0 26px; }
+article table { width:100%; border-collapse:separate; border-spacing:0; background:var(--panel);
+                border:1px solid var(--line); border-radius:12px; overflow:hidden; font-size:15.5px;
+                font-variant-numeric:tabular-nums; line-height:1.4; }
+article th { text-align:left; font-size:12.5px; letter-spacing:0.08em; text-transform:uppercase; font-weight:600;
+             color:var(--accent); padding:12px 12px 10px; border-bottom:1px solid var(--line);
+             background:rgba(255,255,255,0.03); vertical-align:bottom; }
+article td { padding:10px 12px; border-top:1px solid rgba(48,54,61,0.55); color:var(--body); vertical-align:top; }
+article tr:first-child td { border-top:0; }
+article tbody tr:nth-child(even) td { background:rgba(255,255,255,0.025); }
+article td:first-child { color:var(--text); }
+.v { display:inline-block; padding:1px 8px; border-radius:999px; font-size:11.5px; letter-spacing:0.05em;
+     font-weight:600; margin-left:5px; vertical-align:1px; white-space:nowrap; }
+.v-good { color:#0d1117; background:var(--accent); }
+.v-mid { color:var(--text); background:#2d333b; border:1px solid var(--line); }
+.v-bad { color:#fff; background:#b23b3b; }
+@media print {
+  html, body, .wrap, article, main { background:#fff !important; color:#111 !important; }
+  body { font-size:12.5pt; }
+  article p, article li, article td, article th, article blockquote { color:#111 !important; }
+  h1, article h2, article h3, article strong, article th { color:#000 !important; }
+  .eyebrow, a { color:#0a7a62 !important; }
+  header.top, footer { display:none; }
+  article code { background:#f3f3f3 !important; border-color:#ddd !important; color:#000 !important; }
+  .draft-note { background:#f7f7f7 !important; border-color:#ccc !important; color:#333 !important; }
+  article em { color:#444 !important; }
+  article table { border-color:#ccc !important; }
+  article td, article th { border-color:#ddd !important; }
+  .wrap img { border:1px solid #ddd; }
+  article table { background:#fff !important; border-color:#ccc !important; }
+  article th { color:#0a7a62 !important; background:#f3f3f3 !important; border-bottom-color:#ccc !important; }
+  article td { color:#111 !important; border-top-color:#e6e6e6 !important; }
+  article tbody tr:nth-child(even) td { background:#fafafa !important; }
+  .v-good { background:#0a7a62 !important; color:#fff !important; }
+  .v-mid { background:#eee !important; color:#333 !important; border-color:#ccc !important; }
+  .v-bad { background:#b23b3b !important; color:#fff !important; }
+}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "The first version, as published on October 20, 2026", "description": "The QuantAscent edge study as first published, kept for the record. Its numbers were superseded on October 26, 2026 after the $5 price floor was corrected and the study re-run.", "url": "https://quantascent.github.io/can-financial-statements-tell-you-which-stocks-to-buy/first-version/", "isPartOf": "https://quantascent.github.io/can-financial-statements-tell-you-which-stocks-to-buy/", "datePublished": "2026-10-19", "author": {"@type": "Person", "name": "Brandon Wilson"}, "publisher": {"@type": "Organization", "name": "QuantAscent Technologies LLC", "url": "https://quantascent.io", "logo": "https://quantascent.github.io/assets/apple-touch-icon.png", "sameAs": ["https://www.linkedin.com/company/quantascent", "https://www.crunchbase.com/organization/quantascent", "https://www.youtube.com/@QuantAscent", "https://github.com/quantascent", "https://quantascent.substack.com"]}}</script>
+</head>
+<body>
+<header class="top"><div class="wrap">
+<a class="brand" href="/"><b>Quant</b>Ascent</a>
+<nav><a href="https://quantascent.io">Website</a><a href="https://docs.quantascent.io">Docs</a><a href="https://www.youtube.com/@QuantAscent">YouTube</a></nav>
+</div></header>
+<main><div class="wrap">
+<p class="eyebrow">QuantAscent &middot; Edge study data</p>
+<h1>The first version, as published on October 20, 2026</h1>
+<p class="meta">Published with <a href="/can-financial-statements-tell-you-which-stocks-to-buy/">Can financial statements tell you which stocks to buy? I tested 31,000 strategies to find out.</a> &middot; Brandon Wilson &middot; October 19, 2026</p>
+<article>
+<p><em>This is the article as I first published it on October 20, 2026, kept here for the record. On October 25 I audited the study and found that the $5 minimum share price had been applied to a split-adjusted price rather than to the price a stock traded at on the day. I re-ran all 88 universes with the floor on the as-traded price and amended the article. The numbers, tables, and charts below are the superseded ones. The amended article is at <a href="/can-financial-statements-tell-you-which-stocks-to-buy/">the main page</a>, and the change is recorded as Amendment 3 of the <a href="/can-financial-statements-tell-you-which-stocks-to-buy/scorecard/">scorecard</a>. The scored report and the per-run table linked at the end of this page were replaced by the re-run's on October 26, 2026.</em></p>
+<p>I created QuantAscent because I wanted to find an edge in the stock market by picking my own stocks, and I believed that edge was in a company's financial statements rather than in chart patterns or day trading. Reading filings one company at a time doesn't scale, so I built software that scores every company on the same financial measurements and buys the best scores. The way it works is:</p>
+<ul>
+<li>You choose a universe, which is the list of stocks the software is allowed to pick from, by sector, company size, and minimum share price.</li>
+<li>It scores every company in that universe on a set of financial measurements called "metrics," such as profit margins, debt levels, and growth rates.</li>
+<li>It buys the highest-scoring companies.</li>
+<li>It holds them until your next rebalance, then re-scores the universe, sells the companies that no longer score high enough, trims or adds to the ones that do, and buys the new top scorers.</li>
+<li>You can pick the metrics yourself, or let statistical tests pick them for you and re-pick at each rebalance.</li>
+<li>Before you use a strategy with real money, you can test how it would have done in the past, and you can run thousands of variations at once to compare them.</li>
+</ul>
+<p>A set of rules like that is what I mean by a strategy in this post.</p>
+<p>Before I could release this to the public and ask people to pay for it in good conscience, there was one question I had to answer:</p>
+<h2 id="does-scoring-stocks-on-their-financial-statements-actually-give-you-an-edge">Does scoring stocks on their financial statements actually give you an edge?</h2>
+<p>If the answer is no, an index fund beats anything I could sell and I should go do something else. If the answer is yes, I want to know which feature is doing it.</p>
+<p>So I used the software's sweep tool to build 31,000 adaptive strategies, the kind where the statistical tests pick the metrics, across 88 different universes from random combinations of settings, and I tested every one of them from 2016 to 2026. Each strategy was compared against two benchmarks: a random grouping of stocks from the same universe, and the ETF that matched its universe.</p>
+<h2 id="the-answer">The answer</h2>
+<p><strong>Yes.</strong> Scoring stocks with statistical methods on their financial data definitively beat picking stocks at random. The median strategy made about 11% per year and beat 97% of the random portfolios drawn from the same stocks. Random picking made 2% per year. That said, the last time I checked there wasn't an ETF, or a sane person, that picks stocks at random as an investment strategy. So how did the strategies compare to their respective ETF benchmarks?</p>
+<p>About as well as professional money managers do, and these strategies had every setting chosen at random. S&amp;P's SPIVA report finds that 14% of actively managed large-cap funds beat the S&amp;P 500 over the ten years to 2025. Here, 46% of the strategies finished ahead of the equal-weight S&amp;P 500, the index that weights stocks the way the software does, with the median strategy within half a point per year of it. Against the cap-weighted S&amp;P 500, the one those funds are measured against, 13% of the strategies finished ahead with their picks held in equal amounts, which is the professionals' rate. With the same picks weighted by market cap, the way the index and those funds are weighted, 60% finished ahead before trading costs and 53% after a one-point allowance for them, about four times the professionals' rate. The single-sector strategies faced a harder benchmark in their own sector's ETF: 27% finished ahead of it, from 3% in utilities to 68% in energy. Table 1 has each benchmark's annual return, the median strategy's compound annual growth rate (CAGR, i.e. the annual return), and the share of strategies that finished ahead.</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Benchmark</th>
+<th style="text-align: right;">Benchmark's annual return</th>
+<th style="text-align: right;">Median strategy's annual return</th>
+<th style="text-align: right;">Strategies ahead of it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RSP, the equal-weight S&amp;P 500</td>
+<td style="text-align: right;">11.3%</td>
+<td style="text-align: right;">11.0%</td>
+<td style="text-align: right;">46%</td>
+</tr>
+<tr>
+<td>SPY, the cap-weighted S&amp;P 500</td>
+<td style="text-align: right;">15.0%</td>
+<td style="text-align: right;">11.0%</td>
+<td style="text-align: right;">13%</td>
+</tr>
+<tr>
+<td>SPY, with the same picks weighted by market cap</td>
+<td style="text-align: right;">15.0%</td>
+<td style="text-align: right;">16.3%</td>
+<td style="text-align: right;">60%</td>
+</tr>
+<tr>
+<td>Own sector ETF, eleven sectors pooled</td>
+<td style="text-align: right;">5.5% to 24.4%</td>
+<td style="text-align: right;">1.6% to 19.3%</td>
+<td style="text-align: right;">27%, from 3% to 68% by sector</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>Table 1. The strategies against each benchmark over the ten years ending July 2026, before trading costs and taxes. The first three rows are the 489 strategies in the main universe, every US stock over $5. The sector row pools the 8,560 strategies from the eleven single-sector universes against each one's ETF, and Table 11 shows them sector by sector. The 14% figure for professional funds is from S&amp;P's SPIVA report, ten years to 2025, after fees.</em></p>
+<h3 id="why-use-this-instead-of-an-index-fund">Why use this instead of an index fund?</h3>
+<p>I had to do some serious soul searching after seeing the first results. My hope was that the strategies would have all crushed their benchmarks, and a coin flip against the equal-weight index isn't that. Then I put the numbers next to what professional managers achieve, and the picture changed. Most active funds trail their index after fees. Strategies with every setting chosen at random, with nobody choosing a universe or a structure on purpose, kept pace with the equal-weight index and finished ahead of the cap-weighted one at market-cap weight. Three more things matter here.</p>
+<ul>
+<li>People don't create strategies from random inputs. Every strategy in this study had its universe, its factors, and its settings drawn at random, which is the least thoughtful way anyone could use the software. The numbers in this post are what that produced.</li>
+<li>ETFs don't let you choose which individual companies you invest in, or which ones you avoid.</li>
+<li>Investing in individual stocks lets you diversify across sectors, market caps, share prices, and filters in any combination you want. For example, see if you can find an ETF that holds technology, energy, healthcare, and basic materials companies, where every company has a market cap over $200 million, a share price over $10, and a positive free cash flow yield. You can't. I've checked.</li>
+</ul>
+<h3 id="who-should-use-this-software">Who should use this software</h3>
+<p>QuantAscent is for people who want to own individual companies and want rules, not a hunch or a tip, deciding which ones. You decide the universe, the software scores every company in it on its financial statements and keeps the portfolio current at each rebalance, and you can test any idea against the past before you put money into it. The software is a poor fit if what you want is the market's return with no work, because an index fund gives you that.</p>
+<p>If you'd rather just buy an index fund, you can stop reading here. But if you want to create your own strategies and have complete control over the stocks you invest in, keep reading to learn how I tested this idea, see the results in detail, and find out which settings produced the higher returns.</p>
+<h2 id="how-i-tested-it">How I tested it</h2>
+<p>"Does it beat the market?" is the wrong first question. A portfolio of ten small companies and a cap-weighted index of the 500 largest companies aren't comparable, and the last decade was unusually good for the largest companies. So the first question was narrower: <strong>does the software pick better stocks than random chance would, from the same list?</strong></p>
+<p>That list is the universe. For every strategy, I drew 500 random portfolios from its universe, holding the same number of stocks the strategy held and redrawn every quarter, and counted how many of them the strategy beat. That count is its score. A strategy with no edge scores around 50. A strategy that beat 97% of the random portfolios scores 97.</p>
+<p>I scored three things, because they don't move together: return, as CAGR; risk, as the worst peak-to-trough drawdown and separately as volatility; and return per unit of risk, as the Sharpe ratio. A method that makes the same return with half the drawdown has an edge. A method that makes 1% more with twice the drawdown doesn't.</p>
+<p>The study ran on 88 universes so the answer wouldn't depend on any one choice: all eleven sectors together, each sector on its own, four sector groups, nine market-cap ranges from micro caps alone to all sizes together, and three filters, which were none, profitable companies only, or companies not in financial distress. One universe was chosen in advance as the main result: all sectors, all sizes, no filter. For each universe the sweep tool drew the settings at random, 500 times for the main universes and 200 times for the sector universes, and ran each draw as a complete strategy over the full ten years.</p>
+<p>Beating random would show the software did something, but not which feature did it. So the main universes got four versions, run on the same stocks over the same quarters:</p>
+<ol>
+<li><strong>Random picks</strong> used no financial data at all. This version scores 50 by definition, because it is the 500 random portfolios the others were measured against.</li>
+<li><strong>Library only</strong> scored companies on the software's metric library, one metric per factor chosen at random, with no statistical test. This stands in for the Static Builder, where you choose the metrics yourself.</li>
+<li><strong>Adaptive, any settings</strong> added the statistical test that chooses the metrics for you, with every setting sampled at random.</li>
+<li><strong>Adaptive, shipped settings</strong> was the same thing on the default settings and the preset structures the app ships with, which it calls templates. This is the product as a new user first sees it.</li>
+</ol>
+<p>A few terms come up in the results. The library's 77 metrics are grouped into 19 factors, such as margins, cash flow yields, valuation multiples, debt ratios, growth rates, and momentum, and each metric has a direction the textbook says it should work in: a higher return on capital is better, a higher debt-to-equity ratio is worse. A structure is the list of factors in a strategy and the weight on each. In an adaptive strategy you still choose the structure and how many companies to hold. The statistical test chooses the specific metric inside each factor and re-chooses it every quarter, using only data from before that date. If too few factors have a metric that qualifies, the strategy holds cash for the quarter.</p>
+<p>The pass and fail thresholds were written down and committed to the repo before anything ran. EDGE meant the median strategy scored at least 60 with the uncertainty range clear of 50. HARM meant 40 or below with the range clear of 50. The range is a 95% range from a bootstrap, which means the ten years were re-drawn a thousand times, four consecutive quarters at a time in a random order with repeats allowed, every strategy was re-scored on each re-drawn decade, and the range is where the score landed 95% of the time. It's wide, because ten years is only 41 quarters. Everything in between was NOT DETECTED, because ten years of quarterly data can't tell a small edge from none. With 88 universes, about four would pass by luck alone if the method did nothing, so a broad claim needed more than eight.</p>
+<p>The data covered about 6,700 US companies from 2009 to mid-2026, including roughly 2,000 that no longer exist, with the portfolio taking the loss when one was delisted mid-quarter. The ten years from August 2016 to July 2026 were scored. Every pick in this study was out of sample. At each rebalance, the statistical test used only data from before that date, and the following quarter's return was something it had never seen. The one thing that wasn't out of sample is the library itself. I chose which 77 metrics are in it, and which direction each one points, during the same years the study scores. The directions are the textbook ones, so there was little to fit, but it's still a bias in the software's favor that I can't remove. So every setting was drawn at random instead of chosen by me, and version 2 shows the library on its own, so you can see how much of the result rests on it.</p>
+<h2 id="results">Results</h2>
+<p>Everything below is an aggregate across strategies. No single run is "the strategy," no stock is named, and every number is before trading costs and taxes.</p>
+<p>Table 2 is what the median strategy did in the main universe, every US stock over $5, for each of the four versions.</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Median run</th>
+<th style="text-align: right;">1. Random picks</th>
+<th style="text-align: right;">2. Library only</th>
+<th style="text-align: right;">3. Adaptive, any settings</th>
+<th style="text-align: right;">4. Adaptive, shipped settings</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CAGR</td>
+<td style="text-align: right;">2.0%</td>
+<td style="text-align: right;">11.4%</td>
+<td style="text-align: right;">11.1%</td>
+<td style="text-align: right;">12.2%</td>
+</tr>
+<tr>
+<td>Max drawdown</td>
+<td style="text-align: right;">−47.4%</td>
+<td style="text-align: right;">−31.1%</td>
+<td style="text-align: right;">−25.4%</td>
+<td style="text-align: right;">−25.5%</td>
+</tr>
+<tr>
+<td>Volatility</td>
+<td style="text-align: right;">25.0%</td>
+<td style="text-align: right;">19.3%</td>
+<td style="text-align: right;">17.3%</td>
+<td style="text-align: right;">18.1%</td>
+</tr>
+<tr>
+<td>Sharpe</td>
+<td style="text-align: right;">0.20</td>
+<td style="text-align: right;">0.69</td>
+<td style="text-align: right;">0.70</td>
+<td style="text-align: right;">0.73</td>
+</tr>
+<tr>
+<td>Beta vs SPY</td>
+<td style="text-align: right;">1.26</td>
+<td style="text-align: right;">0.84</td>
+<td style="text-align: right;">0.87</td>
+<td style="text-align: right;">0.87</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>Table 2. The median strategy in the main universe for each version, August 2016 to July 2026. Random picking made 2% per year with a 47% worst fall. Every version that used the library made 11% to 12% per year with a worst fall of 25% to 31%. Beta is against SPY over the quarters each strategy was invested, a side calculation added after the run.</em></p>
+<p>Max drawdown is the worst fall from a previous high, and volatility is how much the portfolio's value moved from quarter to quarter. Beta is how much of that movement came from the market: SPY is 1.0 by definition, and a strategy at 0.87 moved, on average, 87% as far as SPY in the same direction each quarter, with the rest of its movement specific to its own stocks. Beta wasn't in the scorecard, so this row is a side calculation like the cap-weighted comparison later on, and it carries no verdict. It does explain the volatility row. SPY's own volatility on the same measure was 14%, so the strategies moved more than the index while moving less with it, which is what holding ten companies instead of five hundred does. Random picks moved more than the market, a beta of 1.26. Every version that used the library moved less, 0.84 to 0.87, which means it earned its 11% to 12% per year while carrying less market risk than an index fund. Adjusted for that lower exposure, the median library strategy matched SPY's return to within a point and beat the equal-weight index by 2.4 to 2.8 points per year.</p>
+<p>Each strategy was also scored against random, and Figure 1 shows the median score for each version.</p>
+<p><img alt="The four versions of the picker against 500 random portfolios" src="/assets/edge-study/first-version/fig1_ladder.png" /></p>
+<p><em>Figure 1. Each version's score against random in the main universe. The score is the share of 500 random portfolios the median strategy beat, so 50 means no better than random. The grey band is where the study called a result not detected, and the lines are the 95% range.</em></p>
+<p>The median strategy scored 97 on return, 99 on drawdown, and 100 on Sharpe. That means it earned a higher return than 97% of the 500 random portfolios, had a shallower worst fall than 99% of them, and had a better return per unit of risk than nearly all of them. Before I ran this, I wrote down what I expected: the library beating a little under 60% of the random portfolios, only a bit better than a coin flip. I never would have guessed it would beat 97% of them. Why it did is the first finding below, and I think it's the most useful thing in this post.</p>
+<h3 id="the-metric-library-did-almost-all-of-the-work">The metric library did almost all of the work</h3>
+<p>The library is the heart of the software. It's the 77 financial-statement metrics QuantAscent computes for every US company every quarter, each with the direction the textbook says it should work in, grouped into 19 factors. Every strategy you build, static or adaptive, scores companies on it. Version 2 used nothing else: one metric per factor, chosen at random, no statistical test. It still scored 97 on return, 95 on drawdown, and 100 on Sharpe.</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Version</th>
+<th style="text-align: right;">Runs</th>
+<th style="text-align: right;">Return</th>
+<th style="text-align: right;">Max drawdown</th>
+<th style="text-align: right;">Sharpe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Random picks</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">50</td>
+</tr>
+<tr>
+<td>2. Library only</td>
+<td style="text-align: right;">498</td>
+<td style="text-align: right;">97 (71–98)</td>
+<td style="text-align: right;">95 (80–99)</td>
+<td style="text-align: right;">100 (84–100)</td>
+</tr>
+<tr>
+<td>3. Adaptive, any settings</td>
+<td style="text-align: right;">489</td>
+<td style="text-align: right;">97 (67–99)</td>
+<td style="text-align: right;">99 (86–100)</td>
+<td style="text-align: right;">100 (85–100)</td>
+</tr>
+<tr>
+<td>4. Adaptive, shipped settings</td>
+<td style="text-align: right;">63</td>
+<td style="text-align: right;">98 (75–99)</td>
+<td style="text-align: right;">99 (84–100)</td>
+<td style="text-align: right;">100 (87–100)</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>Table 3. The scores from Figure 1 with their 95% ranges, written low to high, and the number of strategies behind each row. Every score in rows 2 to 4 met the EDGE threshold.</em></p>
+<p><strong>Random was this easy to beat because the universe was full of unprofitable companies.</strong> The main universe was about 3,700 companies per quarter, micro caps included. Owned in equal amounts, that whole universe compounded at 3.2% per year over the ten years, and the micro-cap portion alone lost 13.5% per year with an 82% drawdown. So a random ten-stock portfolio was mostly unprofitable companies, and scoring on the library avoided them. The profitable-only universes later in this post show what it did beyond that.</p>
+<p>In return terms, the median strategy in every version made 11% to 12% per year while the universe made 3%. <strong>Scoring companies on the library was worth about 8 points of annual return over random stock picking</strong>, and it didn't matter much which metric from a factor did the scoring. That's the biggest number in this study, and it comes from the part of the software every user runs, whether they build their strategies by hand or let the statistical test build them.</p>
+<h3 id="the-statistical-test-removed-the-biggest-losers">The statistical test removed the biggest losers</h3>
+<p>Switching the test on, with everything else held fixed, did nothing to the median return and a lot to the bad tail. Read left to right across versions 1 to 4, the return scores were 50 / 97 / 97 / 98, the drawdown scores 50 / 95 / 99 / 99, and the Sharpe scores 50 / 100 / 100 / 100. A score is a percentile and stops at 100, so the 5-point step I had set as the threshold for "the test adds something" couldn't be met from 97, and every step read NOT DETECTED. The fairer place to look is the median strategy's actual return and drawdown, which have no ceiling (Figure 2). The test took the median return from 11.4% to 11.1%, the worst fall from 31% to 25%, and volatility from 19% to 17%.</p>
+<p><img alt="What each step changed in the median run, with its 95% range" src="/assets/edge-study/first-version/fig8_gate_steps.png" /></p>
+<p><em>Figure 2. What each step changed in the median strategy, with its 95% range. The top row of each panel is the statistical test being switched on, and the bottom row is the shipped settings. The test took nothing off the return, made the worst fall about six points shallower, and cut volatility by two points.</em></p>
+<p>The flat return is what the design predicts. The statistical test decides which metric stands in for each factor, for example which of the value metrics a strategy uses that quarter. It never decides which factors the strategy uses, and two metrics from the same factor rank companies in much the same order, so swapping one for another moves the return very little. The test's job is risk, and that is where it showed up.</p>
+<p>Those numbers mix every kind of strategy the sweep built, including single-factor strategies and five-stock portfolios. A fairer test is to compare like with like: the same kind of strategy, blends of two or more factors holding 8 to 12 stocks, with the statistical test off and then on. Table 4 does that. <strong>The test cost about half a point of median return and cut the share of strategies with a 40%-or-worse drawdown from 17% to 6%.</strong> Its stricter settings pushed the same way: strict stability, the universe floor, and a higher signal floor each cut the share of deep drawdowns or low returns further, at a small cost in return. (Those settings are described in the method details near the end.)</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Same structures</th>
+<th style="text-align: right;">Runs</th>
+<th style="text-align: right;">Median CAGR</th>
+<th style="text-align: right;">Median max drawdown</th>
+<th style="text-align: right;">Runs with a drawdown of 40% or worse</th>
+<th style="text-align: right;">Runs making under 5% per year</th>
+<th style="text-align: right;">Runs beating the equal-weight S&amp;P 500</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2. Library only</td>
+<td style="text-align: right;">176</td>
+<td style="text-align: right;">12.5%</td>
+<td style="text-align: right;">−27%</td>
+<td style="text-align: right;">17%</td>
+<td style="text-align: right;">8%</td>
+<td style="text-align: right;">65%</td>
+</tr>
+<tr>
+<td>3. Adaptive, any settings</td>
+<td style="text-align: right;">176</td>
+<td style="text-align: right;">11.9%</td>
+<td style="text-align: right;">−24%</td>
+<td style="text-align: right;">6%</td>
+<td style="text-align: right;">7%</td>
+<td style="text-align: right;">54%</td>
+</tr>
+<tr>
+<td>4. Adaptive, shipped settings</td>
+<td style="text-align: right;">57</td>
+<td style="text-align: right;">12.2%</td>
+<td style="text-align: right;">−25%</td>
+<td style="text-align: right;">5%</td>
+<td style="text-align: right;">2%</td>
+<td style="text-align: right;">60%</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>Table 4. Test off against test on at the same structures in the main universe. The last column is the share of strategies that beat RSP, the equal-weight S&amp;P 500 ETF.</em></p>
+<p>The other thing the test did was refuse to trade. Eleven strategies in version 3 never held a single stock in ten years, all of them on the pure "financial strength" template, because none of its metrics ever met the floor. Version 2 traded them and lost on them. Across every structure, the share of strategies that lost to random fell from 7.8% to 3.7%, the share making under 5% per year from 15.7% to 10.0%, and the share with a 40%-or-worse drawdown from 23.1% to 11.2%.</p>
+<p><img alt="Per-run return score, versions 2 and 3" src="/assets/edge-study/first-version/fig2_pct_hist.png" /></p>
+<p><em>Figure 3. The return score of every strategy in the main universe for versions 2 and 3. A method with no edge would sit flat along the dotted line. Both versions pile up above 90, and the difference is at the far left, where version 2 has a small group of strategies that lost to almost every random portfolio and version 3 doesn't.</em></p>
+<p><strong>The statistical test didn't improve the best strategies. It removed the worst ones.</strong> 5% of version 2's strategies scored below the 12th percentile. 5% of version 3's scored below the 58th, and 5% of version 4's below the 81st.</p>
+<h3 id="diversification-was-worth-a-point-a-year">Diversification was worth a point a year</h3>
+<p>Table 5 pools version 3 across the 28 main universes and shows the median return score for each setting.</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Choice</th>
+<th style="text-align: right;">Setting</th>
+<th style="text-align: right;">Return score</th>
+<th style="text-align: right;">Median CAGR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Factors in the blend</td>
+<td style="text-align: right;">1 / 2 / 3 / 4 / 5 / 6</td>
+<td style="text-align: right;">79 / 86 / 90 / 90 / 91 / 93</td>
+<td style="text-align: right;">11.2% to 12.8%</td>
+</tr>
+<tr>
+<td>Holdings</td>
+<td style="text-align: right;">5–7 / 8–11 / 12–15</td>
+<td style="text-align: right;">85 / 89 / 92</td>
+<td style="text-align: right;">11.7% to 12.4%</td>
+</tr>
+<tr>
+<td>Training window</td>
+<td style="text-align: right;">expanding / 12 / 16 / 20 / 24 quarters</td>
+<td style="text-align: right;">90 / 91 / 89 / 89 / 89</td>
+<td style="text-align: right;">about 12% throughout</td>
+</tr>
+<tr>
+<td>How often the statistical test re-chooses</td>
+<td style="text-align: right;">quarterly / every two years</td>
+<td style="text-align: right;">90 / 89</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr>
+<td>Stability</td>
+<td style="text-align: right;">standard / strict</td>
+<td style="text-align: right;">90 / 88</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr>
+<td>Signal floor</td>
+<td style="text-align: right;">0.01 / 0.02 / 0.03</td>
+<td style="text-align: right;">90 / 89 / 88</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr>
+<td>Universe floor</td>
+<td style="text-align: right;">on / off</td>
+<td style="text-align: right;">90 / 89</td>
+<td style="text-align: right;"></td>
+</tr>
+</tbody>
+</table></div>
+<p><em>Table 5. The median return score for each setting. More factors in the blend and more holdings each added about ten points. Every other setting moved the score by one or two.</em></p>
+<p>Two rows move the score by about ten points, and the rest move it by one or two. The two are diversification: a blend of factors instead of one, and ten or more holdings instead of five. On the main universe, single-factor strategies made 10.4% per year and beat the equal-weight S&amp;P 500 35% of the time, while blends made 11.2% and beat it 49% of the time. Strategies holding 5 to 7 companies made 10.1%, and strategies holding 8 to 15 made 11.3%. Both together, which is what the shipped defaults do, made 11.6% and beat it 53% of the time. <strong>Diversification had the second-largest effect in the study after the library itself, and it's your choice everywhere in the product.</strong></p>
+<p>The other rows are risk preference. The settings that tighten the statistical test cost a point of score and reduced deep drawdowns, and the training window and the re-choosing frequency changed almost nothing. The shipped defaults already use the settings that did best.</p>
+<h3 id="backtests-predicted-risk-not-return">Backtests predicted risk, not return</h3>
+<p>Choose a date and treat it as the present. Every strategy's record up to that date is its backtest, and the two years after it are its future. Rank the strategies by backtest, rank them by future, and check whether the two rankings agree. I did this at four dates.</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Future window</th>
+<th style="text-align: right;">Runs</th>
+<th style="text-align: right;">Return: rank correlation</th>
+<th style="text-align: right;">Drawdown: rank correlation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Aug 2018 to May 2020</td>
+<td style="text-align: right;">485</td>
+<td style="text-align: right;">+0.34</td>
+<td style="text-align: right;">+0.32</td>
+</tr>
+<tr>
+<td>Aug 2020 to May 2022</td>
+<td style="text-align: right;">478</td>
+<td style="text-align: right;">−0.08</td>
+<td style="text-align: right;">+0.22</td>
+</tr>
+<tr>
+<td>Jul 2022 to Apr 2024</td>
+<td style="text-align: right;">485</td>
+<td style="text-align: right;">−0.09</td>
+<td style="text-align: right;">+0.22</td>
+</tr>
+<tr>
+<td>Jul 2024 to Jul 2026</td>
+<td style="text-align: right;">489</td>
+<td style="text-align: right;">+0.14</td>
+<td style="text-align: right;">+0.27</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>Table 6. Whether a strategy's backtest predicted its next two years. A rank correlation of +1 would mean the backtest ranking held exactly, and 0 would mean it carried no information. Return reached the +0.20 threshold at one date of four. Drawdown reached it at all four.</em></p>
+<p><img alt="Backtest CAGR against the next two years' CAGR, one dot per run, four windows" src="/assets/edge-study/first-version/fig4_t4.png" /></p>
+<p><em>Figure 4. The same test with one dot per strategy, its backtest CAGR across the bottom and its CAGR over the next two years up the side. Only the first window has a visible slope. In the other three, a better backtest did not mean a better future.</em></p>
+<p>Four dates is a thin test, so after the run I repeated it at every quarter, 33 dates from August 2018 on, with the next quarter alone as the future. The rank correlation for return averaged +0.02 with a standard error of 0.03, and ranking by Sharpe instead, or keeping only the diversified strategies with at least two factor families and ten or more holdings, gave the same answer. That settles the return side at four dates and at thirty-three: a strategy's past return doesn't rank it against the other strategies in the family. The useful question is what a backtest does carry forward, so I checked every property it reports the same way, against the next two years at the four dates. Table 7 ranks them.</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Rank correlation at the four dates</th>
+<th style="text-align: right;">Mean</th>
+<th style="text-align: right;">Dates at or above +0.20</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Turnover</td>
+<td>+0.71, +0.55, +0.71, +0.78</td>
+<td style="text-align: right;">+0.69</td>
+<td style="text-align: right;">4 of 4</td>
+</tr>
+<tr>
+<td>Stood-aside share</td>
+<td>n/a, +0.31, +0.88, n/a</td>
+<td style="text-align: right;">+0.60</td>
+<td style="text-align: right;">2 of 2</td>
+</tr>
+<tr>
+<td>Tracking error vs SPY</td>
+<td>+0.46, +0.59, +0.52, +0.56</td>
+<td style="text-align: right;">+0.53</td>
+<td style="text-align: right;">4 of 4</td>
+</tr>
+<tr>
+<td>Volatility</td>
+<td>+0.25, +0.42, +0.44, +0.50</td>
+<td style="text-align: right;">+0.40</td>
+<td style="text-align: right;">4 of 4</td>
+</tr>
+<tr>
+<td>Max drawdown</td>
+<td>+0.32, +0.22, +0.22, +0.27</td>
+<td style="text-align: right;">+0.26</td>
+<td style="text-align: right;">4 of 4</td>
+</tr>
+<tr>
+<td>Correlation with SPY</td>
+<td>+0.10, +0.13, +0.16, +0.29</td>
+<td style="text-align: right;">+0.17</td>
+<td style="text-align: right;">1 of 4</td>
+</tr>
+<tr>
+<td>Sharpe</td>
+<td>+0.35, +0.01, −0.01, +0.23</td>
+<td style="text-align: right;">+0.14</td>
+<td style="text-align: right;">2 of 4</td>
+</tr>
+<tr>
+<td>CAGR</td>
+<td>+0.34, −0.08, −0.09, +0.14</td>
+<td style="text-align: right;">+0.08</td>
+<td style="text-align: right;">1 of 4</td>
+</tr>
+<tr>
+<td>Excess CAGR vs universe average</td>
+<td>+0.33, −0.08, −0.07, +0.13</td>
+<td style="text-align: right;">+0.08</td>
+<td style="text-align: right;">1 of 4</td>
+</tr>
+<tr>
+<td>Alpha vs SPY</td>
+<td>+0.07, −0.04, −0.08, −0.03</td>
+<td style="text-align: right;">−0.02</td>
+<td style="text-align: right;">0 of 4</td>
+</tr>
+<tr>
+<td>Beta vs SPY</td>
+<td>−0.20, −0.01, +0.06, +0.04</td>
+<td style="text-align: right;">−0.03</td>
+<td style="text-align: right;">0 of 4</td>
+</tr>
+<tr>
+<td>Return in SPY-down quarters</td>
+<td>n/a, −0.15, −0.10, +0.05</td>
+<td style="text-align: right;">−0.07</td>
+<td style="text-align: right;">0 of 3</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>Table 7. Which properties of a strategy's backtest persisted into its next two years, at the four dates of Table 6, ranked by the mean rank correlation. Turnover is the share of holdings replaced at each rebalance, tracking error is how much the strategy's quarterly return differed from SPY's, and the stood-aside share is the fraction of quarters the strategy held cash. n/a marks a date where no strategy stood aside, or no quarter fell, in one of the two windows. The quarterly test and this table were added after the run and carry no verdict.</em></p>
+<p>The top of that table is the part of a backtest you can act on, and it's what the software is built around. How much a strategy trades, how far its returns differ from the index's, how often it stands aside, how much it swings, and how deep it falls all carried forward into the next two years. The sweep tool lists every run with its worst fall, its Sharpe, and its standing against luck, and the backtest page reports its volatility and its turnover, and Table 7 says those are the numbers that will still describe the strategy two years later. So decide the worst fall and the amount of trading you can live with, and choose a strategy whose record stays within those limits. Rank the runs by drawdown and the ranking holds. The return side is settled at the level of the method rather than the single run: scored picks beat random picks in every two-year window (Figure 7), so every strategy that clears the luck cutoff draws on that edge, and the risk you choose decides how smoothly it gets there.</p>
+<p>Return <strong>DID NOT PERSIST</strong> and drawdown <strong>PERSISTED</strong>. If you had taken the top 10% of strategies by backtest return at each date and followed them for the next two years, they finished behind or level with the strategies they had outranked at three of the four dates, and ahead only in the first. <strong>This is why the sweep tool doesn't rank strategies by return.</strong> It's for seeing how a whole range of settings behaved, not for choosing a winner.</p>
+<p>The app also shows every sweep run against a luck cutoff, which it calls the luck bar, and tells you two things: discard anything that doesn't clear it, and prefer the lower-risk runs. I applied both rules mechanically at each date and checked the next two years. Neither met the 5-point threshold at three of four dates, though the lower-drawdown runs did keep their lower drawdowns, just not strongly enough to count. The luck cutoff stays anyway, because its job is to stop you from treating a lucky run as a good one, not to find winners.</p>
+<h3 id="it-kept-pace-with-the-sp-500">It kept pace with the S&amp;P 500</h3>
+<p>The product holds every pick in equal amounts, so the fair index to compare it with is RSP, the equal-weight S&amp;P 500 ETF, which made 11.3% per year over the ten years. The median strategy on the shipped settings made 12.2%, and the median sweep strategy made 11.0%. Depending on the version, 46% to 59% of the strategies finished ahead of RSP. By the rule I set before the run, which needed 60% or more ahead with the uncertainty range clear of 50%, that's a tie. In plain terms, the typical strategy did about what the equal-weight index did, and it did it with settings a random number generator chose. S&amp;P's SPIVA report finds that about 14% of actively managed large-cap funds beat the S&amp;P 500 over the ten years to 2025, after fees. Half of these strategies kept pace with the equal-weight index before anyone had chosen anything on purpose.</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Picks weighted</th>
+<th>Version</th>
+<th style="text-align: right;">Mean CAGR</th>
+<th style="text-align: right;">Median CAGR</th>
+<th style="text-align: right;">Matched index</th>
+<th style="text-align: right;">Runs ahead</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Equal</td>
+<td>2. Library only</td>
+<td style="text-align: right;">10.1%</td>
+<td style="text-align: right;">11.4%</td>
+<td style="text-align: right;">RSP, 11.3%</td>
+<td style="text-align: right;">50% <span class="v v-mid">TIES</span></td>
+</tr>
+<tr>
+<td>Equal</td>
+<td>3. Adaptive, any settings</td>
+<td style="text-align: right;">10.7%</td>
+<td style="text-align: right;">11.0%</td>
+<td style="text-align: right;">RSP, 11.3%</td>
+<td style="text-align: right;">46% <span class="v v-mid">TIES</span></td>
+</tr>
+<tr>
+<td>Equal</td>
+<td>4. Adaptive, shipped settings</td>
+<td style="text-align: right;">11.8%</td>
+<td style="text-align: right;">12.2%</td>
+<td style="text-align: right;">RSP, 11.3%</td>
+<td style="text-align: right;">59% <span class="v v-mid">TIES</span></td>
+</tr>
+<tr>
+<td>Cap</td>
+<td>2. Library only</td>
+<td style="text-align: right;">12.1%</td>
+<td style="text-align: right;">12.6%</td>
+<td style="text-align: right;">SPY, 15.0%</td>
+<td style="text-align: right;">37% <span class="v v-mid">TIES</span></td>
+</tr>
+<tr>
+<td>Cap</td>
+<td>3. Adaptive, any settings</td>
+<td style="text-align: right;">15.5%</td>
+<td style="text-align: right;">16.3%</td>
+<td style="text-align: right;">SPY, 15.0%</td>
+<td style="text-align: right;">60% <span class="v v-mid">TIES</span></td>
+</tr>
+<tr>
+<td>Cap</td>
+<td>4. Adaptive, shipped settings</td>
+<td style="text-align: right;">14.8%</td>
+<td style="text-align: right;">15.3%</td>
+<td style="text-align: right;">SPY, 15.0%</td>
+<td style="text-align: right;">54% <span class="v v-mid">TIES</span></td>
+</tr>
+</tbody>
+</table></div>
+<p><em>Table 8. Each version against the index that weights the same way it does, on ten-year CAGR with cash earning zero in any quarter a strategy held no stocks. "Runs ahead" is the share of strategies that beat the index, and TIES means that share couldn't be told apart from 50%.</em></p>
+<p>The comparison everyone asks about is against the regular cap-weighted S&amp;P 500, and SPY made 15.0% per year by holding the giant companies in giant size. With the picks held in equal amounts, 13% to 25% of the strategies beat it, which is the professionals' rate. So as a side calculation I re-weighted the same picks by market cap and compared them with SPY. That brought the median strategy to 16.3% per year, and 60% of them finished ahead of SPY (Figure 5). In the large-cap universes, the ones a large-cap fund would actually hold, 56% to 67% finished ahead, with the median strategy 1 to 2.4 points per year ahead of SPY. The professionals' 14% is after fees, so take a point off every strategy for trading costs, the estimate in the cost paragraph below: 50% to 61% still finished ahead. That is four times the professionals' rate on the same footing, with the caveats below about what one decade and this data can prove.</p>
+<p><img alt="Every run's ten-year CAGR next to the benchmarks" src="/assets/edge-study/first-version/fig3_t5.png" /></p>
+<p><em>Figure 5. Every version 3 strategy's ten-year CAGR in the main universe, with the benchmarks as vertical lines. In the top panel the picks are held in equal amounts, the way the product works, and the strategies center on RSP. In the bottom panel the same picks are weighted by market cap, and most strategies sit to the right of SPY.</em></p>
+<p>So why does Table 8 still say TIES for that row? Because SPY's 15% came from a few enormous quarters, and the test asks whether the result would hold in a different ten years. The bootstrap, the same one behind every range in this post, re-drew the decade a thousand times. In the draws that included those big quarters twice, 23% of the strategies beat SPY. In the draws that missed them, 80% did. That range includes 50%, so the rule calls it a tie. The 60% is real for the decade that happened. Whether it was the method or the decade's mix of quarters, ten years can't say.</p>
+<p>Cap weighting was also where the statistical test mattered most. Switching it on moved the cap-weighted median from 12.6% to 16.3% per year and the share beating SPY from 37% to 60%. The ranges on those steps reached just below zero, and the cap-weighted comparison was registered as secondary before the run, so it can't carry a verdict on its own. It's the first thing I'd test next. The product holds every pick in equal amounts today. I'm considering a market-cap weighting option for a future release, which would make this comparison the product's own number instead of a side calculation.</p>
+<p>Two caveats on this section. Dead-company coverage in the data is a handful of companies per year before 2016, which is why the scoring starts there, and only partial from 2016 to 2020. Missing dead companies raise the software's returns but not the index's, so this comparison leans in the software's favor. Trading isn't free, and none of the numbers in this post include its cost. The typical strategy sold and replaced about seven of its ten stocks every quarter, which comes to roughly 60 trades a year. Using the app's default assumptions of $1 per trade plus a small price concession on each one, that costs about 1% of a $10,000 account per year, and about two thirds of 1% on a $100,000 account. So knock up to a point off every return in this post, depending on your account size.</p>
+<p>Two more costs the study doesn't model, because they depend on your account. The subscription is $171 a year, which is 1.7% of a $10,000 account and 0.17% of $100,000. On a $10,000 account the software plus its trading comes to about 2.7% a year that an index fund doesn't charge, so the typical strategy, which landed 0.4 points behind the equal-weight index before costs, would trail it by about three points after them. On $100,000 the two together are under 1%. Taxes are the larger cost in a taxable account. Replacing seven of ten stocks every quarter means nearly every gain is realized within a year and taxed as ordinary income. At a 24% federal rate that is roughly 2.5 points of an 11% year, where an index ETF taxes you on its dividends and defers the rest until you sell, at the lower long-term rate. Actively managed mutual funds pass their managers' trading on to you the same way, through yearly capital-gains distributions, so a fund investor in a taxable account pays this cost too; it isn't in the 14% figure, which is before the investor's taxes. In an IRA or a 401(k) the tax difference disappears.</p>
+<p>For completeness, every version also beat owning every stock in the universe in equal amounts, which made 3.2% per year. 89% to 97% of the strategies finished ahead of that, and all three versions read BEATS.</p>
+<h3 id="the-edge-held-in-every-two-year-window">The edge held in every two-year window</h3>
+<p><img alt="The three main tests per two-year window, version 3" src="/assets/edge-study/first-version/fig7_holdouts.png" /></p>
+<p><em>Figure 6. Version 3's return, drawdown, and Sharpe scores in the main universe for each two-year window on its own, with 95% ranges. The grey band is the not-detected zone. The only dot inside it is return in the window beginning August 2020.</em></p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Window</th>
+<th style="text-align: right;">Runs</th>
+<th style="text-align: right;">Return</th>
+<th style="text-align: right;">Max drawdown</th>
+<th style="text-align: right;">Sharpe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Aug 2018 to May 2020</td>
+<td style="text-align: right;">485</td>
+<td style="text-align: right;">78 (65–87)</td>
+<td style="text-align: right;">82 (67–93)</td>
+<td style="text-align: right;">79 (59–92)</td>
+</tr>
+<tr>
+<td>Aug 2020 to May 2022</td>
+<td style="text-align: right;">478</td>
+<td style="text-align: right;">59 (19–92) <span class="v v-mid">n.d.</span></td>
+<td style="text-align: right;">90 (66–94)</td>
+<td style="text-align: right;">76 (53–91)</td>
+</tr>
+<tr>
+<td>Jul 2022 to Apr 2024</td>
+<td style="text-align: right;">485</td>
+<td style="text-align: right;">95 (78–96)</td>
+<td style="text-align: right;">98 (79–98)</td>
+<td style="text-align: right;">98 (83–98)</td>
+</tr>
+<tr>
+<td>Jul 2024 to Jul 2026</td>
+<td style="text-align: right;">489</td>
+<td style="text-align: right;">81 (57–91)</td>
+<td style="text-align: right;">95 (82–97)</td>
+<td style="text-align: right;">92 (76–94)</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>Table 9. The scores in Figure 6 as numbers. Eleven of the twelve cells met the EDGE threshold. The one that didn't is marked n.d., for not detected.</em></p>
+<p><strong>Eleven of the twelve cells in Table 9 met the EDGE threshold.</strong> The one that didn't was return in the window that began in August 2020, during the rally in unprofitable small companies, when random portfolios of micro caps did well for a while. Risk held in every window. That was the pattern of the whole study in one window.</p>
+<h3 id="where-it-worked-and-where-it-didnt-88-universes">Where it worked and where it didn't: 88 universes</h3>
+<p>This is version 3 on all 88 universes over the full ten years. Chance alone would have produced EDGE on about 4 of them, with an upper bound of 8.</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Test</th>
+<th style="text-align: right;">EDGE</th>
+<th style="text-align: right;">NOT DETECTED</th>
+<th style="text-align: right;">HARM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Return</td>
+<td style="text-align: right;">29</td>
+<td style="text-align: right;">57</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr>
+<td>Max drawdown</td>
+<td style="text-align: right;">43</td>
+<td style="text-align: right;">45</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>Volatility</td>
+<td style="text-align: right;">52</td>
+<td style="text-align: right;">36</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>Sharpe</td>
+<td style="text-align: right;">43</td>
+<td style="text-align: right;">43</td>
+<td style="text-align: right;">2</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>Table 10. Verdicts across all 88 universes. EDGE meant the median strategy scored at least 60 with the range clear of 50, HARM meant 40 or below, and everything else was NOT DETECTED. Return reached 29 universes, and the other three measures reached 43 to 52.</em></p>
+<p>Return met the threshold, and risk passed it by a wider margin. The two HARM universes on return were both utilities with the profitability filter on.</p>
+<p><img alt="27 size and filter universes, all sectors: version 3 scores" src="/assets/edge-study/first-version/fig5_cellmap_tierA.png" /></p>
+<p><em>Figure 7. Version 3's median score in each of the 27 size and filter universes drawn from all sectors. Rows are company-size ranges and columns are the universe filter. Darker green is a higher score, and n.d. marks a universe that didn't meet the EDGE threshold.</em></p>
+<p>Three results in Figure 7 were worth the whole study to me.</p>
+<p><strong>Filtering to profitable companies first showed what the library does on its own.</strong> Every size band was run a second time with the universe limited to companies with positive net income. That filter lifted the universe's average return from 3% per year to about 10%, because most of what random picking lost was unprofitable companies, and avoiding them is the first thing the library does without being told to. The scored strategies landed in the same place either way, 11% to 14% per year with the filter and 9% to 14% without it, so they had already captured that on their own. Among profitable companies they kept their edge in three of the five bands: the median strategy beat 88% of random profitable portfolios in large caps, 82% in mid caps, and 86% in micro caps, and 59%, 50%, and 65% of them finished ahead of the equal-weight S&amp;P 500. In small caps the edge went away, with a score of 40, and in the all-cap universe it shrank to 60. Each of those is one universe with a wide range, so only micro caps met the EDGE rule; the Sharpe score stayed above 50 in all five bands and the drawdown score in four. As a side calculation added after the run, a cap-weighted quality ETF, QUAL, made 14.1% per year over the same quarters, and the scored picks among profitable large caps weighted by market cap made 16.0% and finished ahead of it 63% of the time. If you only want profitable companies, the library gets you most of the way there on its own, and filtering the universe first is a setting you can add in the software.</p>
+<p><strong>Large caps showed no risk edge.</strong> The drawdown scores were 40 to 47 across the three filters. Random portfolios of large companies were already diversified and solvent, and the software's picks had drawdowns about as deep as theirs.</p>
+<p><strong>Micro and small caps showed the biggest edge, and they're the ones that can't absorb much money.</strong> Micro caps scored 100 on everything, with or without a filter, because the alternative was minus 13.5% per year.</p>
+<p><img alt="Sector universes: version 3 scores" src="/assets/edge-study/first-version/fig6_cellmap_tierB.png" /></p>
+<p><em>Figure 8. Version 3's median return and drawdown scores for the 60 sector universes, about 200 strategies each. The growth row is technology plus communication services. Utilities and real estate were the only sectors below 55 on return in every combination.</em></p>
+<p>The sector universes split the same way. Technology, the technology-plus-communications group, healthcare, communication services, and energy scored 89 to 100 on return. Utilities and real estate scored 12 to 24 in three of their four combinations. Against the sector ETFs, no single universe reached the 60% threshold. Pooled across their four universes, energy strategies beat XLE 68% of the time and industrials beat XLI 51% of the time, and at the other end technology strategies beat XLK 11% of the time because XLK compounded at 24% per year. Table 11 has every sector. <strong>"Beats random stock picking inside the sector" and "beats the sector ETF" are different claims, and only the first one held.</strong></p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Sector</th>
+<th>ETF</th>
+<th style="text-align: right;">ETF's annual return</th>
+<th style="text-align: right;">Median strategy's annual return</th>
+<th style="text-align: right;">Strategies ahead of the ETF</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Energy</td>
+<td>XLE</td>
+<td style="text-align: right;">10.9%</td>
+<td style="text-align: right;">13.6%</td>
+<td style="text-align: right;">68%</td>
+</tr>
+<tr>
+<td>Industrials</td>
+<td>XLI</td>
+<td style="text-align: right;">12.8%</td>
+<td style="text-align: right;">12.8%</td>
+<td style="text-align: right;">51%</td>
+</tr>
+<tr>
+<td>Healthcare</td>
+<td>XLV</td>
+<td style="text-align: right;">10.3%</td>
+<td style="text-align: right;">10.1%</td>
+<td style="text-align: right;">47%</td>
+</tr>
+<tr>
+<td>Basic Materials</td>
+<td>XLB</td>
+<td style="text-align: right;">9.3%</td>
+<td style="text-align: right;">8.8%</td>
+<td style="text-align: right;">46%</td>
+</tr>
+<tr>
+<td>Financial Services</td>
+<td>XLF</td>
+<td style="text-align: right;">12.3%</td>
+<td style="text-align: right;">10.2%</td>
+<td style="text-align: right;">33%</td>
+</tr>
+<tr>
+<td>Consumer Defensive</td>
+<td>XLP</td>
+<td style="text-align: right;">7.1%</td>
+<td style="text-align: right;">3.6%</td>
+<td style="text-align: right;">12%</td>
+</tr>
+<tr>
+<td>Consumer Cyclical</td>
+<td>XLY</td>
+<td style="text-align: right;">11.6%</td>
+<td style="text-align: right;">6.7%</td>
+<td style="text-align: right;">11%</td>
+</tr>
+<tr>
+<td>Technology</td>
+<td>XLK</td>
+<td style="text-align: right;">24.4%</td>
+<td style="text-align: right;">19.3%</td>
+<td style="text-align: right;">11%</td>
+</tr>
+<tr>
+<td>Real Estate</td>
+<td>XLRE</td>
+<td style="text-align: right;">5.5%</td>
+<td style="text-align: right;">1.6%</td>
+<td style="text-align: right;">10%</td>
+</tr>
+<tr>
+<td>Communication Services</td>
+<td>XLC</td>
+<td style="text-align: right;">12.7%</td>
+<td style="text-align: right;">7.0%</td>
+<td style="text-align: right;">6%</td>
+</tr>
+<tr>
+<td>Utilities</td>
+<td>XLU</td>
+<td style="text-align: right;">8.5%</td>
+<td style="text-align: right;">3.9%</td>
+<td style="text-align: right;">3%</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>Table 11. Each sector's strategies, its four size and filter universes pooled, against that sector's ETF over the ten years ending July 2026, before trading costs and taxes. The strategies' return is the median, with cash earning zero in any quarter a strategy held no stocks.</em></p>
+<p>One more result, reported because the rule said every universe gets reported. In one of the nine no-filter universes, small caps, switching the statistical test on cost 12 points of return score with a range clear of zero. One of nine at the 5% level is what chance predicts.</p>
+<h2 id="what-it-means-if-you-use-the-software">What it means if you use the software</h2>
+<p><strong>The library is the core product.</strong> Scoring companies on its metrics in their textbook directions, with no test choosing among them, took the median strategy from 2% per year to 11.4% and to the 97th percentile against random in the main universe. It scored above random in most of the 88 universes, cleared the strict threshold on return in 29 of them against the 8 that chance could produce, and held in every two-year window. That scoring runs inside every strategy you build, in the Static Builder as much as in adaptive strategies. It's the core of QuantAscent: the metric set, the directions, the financial-statement data for every US company, and the re-scoring at every rebalance, in one place.</p>
+<p><strong>With random settings it kept pace with the market.</strong> Half the strategies in the main universe finished ahead of the equal-weight S&amp;P 500, and 60% finished ahead of SPY when the same picks were weighted by market cap, before any user had chosen a universe or a structure on purpose. Most professional funds don't manage that against their index after fees.</p>
+<p><strong>Adaptive strategies did their work on drawdowns, not on return.</strong> At the same structures, the statistical test cut the share of strategies with a 40%-or-worse drawdown from 17% to 6%, cost about half a point of median return, and refused to run factors with no signal. It didn't find return, and in this design it can't, because it chooses within factors rather than between them.</p>
+<p><strong>Strategies that blended factors and held ten or more companies did about a point a year better.</strong> The gap over a single factor and five holdings was about a point of annual return and ten points of score. The product lets you choose it everywhere, and the defaults already do.</p>
+<p><strong>The other settings moved the result a point or two either way.</strong> The ones that tighten the test trade return for fewer deep drawdowns.</p>
+<p><strong>The backtest tells you the risk you'll take, and that holds.</strong> How much a strategy trades, how much it swings, and how deep it falls all carried forward into the next two years, at four dates and at thirty-three. Past return didn't rank the strategies, so the app lists every run with its worst fall, its Sharpe, and its standing against luck instead of ranking them by return. Use the backtest to choose how much risk you take, not how much you'll make.</p>
+<h2 id="method-details">Method details</h2>
+<p><strong>How the 88 universes were built.</strong> A universe came from three choices: which sectors, which company sizes, and whether to apply a filter. The size bands were micro caps under $300 million, small caps from $300 million to $2 billion, mid caps from $2 billion to $10 billion, and large caps at $10 billion and up with no upper limit, so the mega caps were in the large band. The main set crossed every size range with every filter on all sectors, which made 27 universes, plus one reference universe with the textbook distress threshold. The sector set took each sector and sector group at two sizes, with and without the profitability filter, which made 60 universes. The minimum share price was $5 throughout.</p>
+<p><strong>How the settings were sampled.</strong> For each universe, the settings were drawn at random from every factor, blends of one to six factors, 5 to 15 holdings, every training window and re-choosing frequency the app offers, both stability options, signal floors of 0.01, 0.02, and 0.03, and the universe floor on or off. The app allows more in places, and the study's ranges were chosen to cover what a typical user would set. Samples that came out identical were merged, which is why some universes show 494 to 500 runs rather than exactly 500. The study covered only the library's own directions. Reversing a direction is allowed in the software, and the study did not grade it.</p>
+<p><strong>What an adaptive strategy's settings are.</strong> The training window is all available history or the trailing 12, 16, 20, or 24 quarters. The test re-chooses its metrics every quarter or about every two years. The signal floor is the minimum average strength a metric needs to qualify. The stability setting decides whether each half of the training window must meet the floor on its own. The universe floor, when on, lets the test remove the weaker half of the universe before scoring, using the one metric whose top and bottom halves had the biggest gap in returns over the training window. All of them ship with defaults, and the exact rules are in the math section.</p>
+<p><strong>How the random portfolios were drawn.</strong> Each random portfolio held the same number of companies the strategy actually held that quarter, and was redrawn every quarter from the strategy's own universe. The 2.0% in Table 2 is the median over the 244,500 random portfolios the strategies were graded against. It's below the 3.2% universe average because a ten-stock random portfolio has the same average return as the universe but much more variation, and the median outcome of a volatile portfolio is below its mean.</p>
+<p><strong>How the backtest-predicts-future test was set up.</strong> The four dates had futures ending May 2020, May 2022, April 2024, and July 2026. The threshold was a rank correlation of +0.20 or better at three of the four dates. The app's two pieces of advice, discard anything below the luck cutoff and prefer the lower-risk runs, were applied mechanically at the same four dates, with a 5-point lead at three of four dates as the threshold. The quarterly version and Table 7 were added after the run. In both, the backtest is the record from August 2016 up to the date, with at least eight quarters behind it, on traded quarters as everywhere else, and strategies with fewer than four traded quarters in either window are left out. Tracking error is the annualized standard deviation of the strategy's quarterly return minus SPY's, turnover is the share of holdings replaced at each rebalance averaged over the window, and beta and alpha come from the regression of quarterly returns on SPY's with the risk-free rate at zero.</p>
+<p><strong>The data.</strong> About 6,700 US companies, 3,000 to 5,000 in any given quarter, quarterly from 2009 to mid-2026, from a commercial fundamentals vendor. The scored quarters were August 2016 through July 2026, 41 in all, and 2009 to 2016 was training history only. The roughly 2,000 dead companies were found through exchange delisting filings. Coverage of those delistings was dense from 2021 on, partial from 2016 to 2018, thin in 2019 and 2020, and essentially absent before 2016, which is why nothing before 2016 was scored. That gap, which I call the survivorship gap elsewhere in this post, raised the returns of the software, the random portfolios, and the universe average equally, so the comparison against random was clean. It raised the software's returns against the market, and I say so where it matters. Companies trading under $1 today were missing entirely, history included, and both sides shared that gap.</p>
+<p><strong>Costs.</strong> Every number was before trading costs and taxes. The app's backtester applies a cost model, but the records of adaptive strategies come from the walk-forward engine the study ran, which the app's own record cards label as gross. Turnover was measured so the cost could be estimated, and the estimate is in the market section above.</p>
+<h2 id="the-math-for-anyone-checking">The math, for anyone checking</h2>
+<p>Nothing above depends on this section. It is here so that "edge," "risk," and "beats random" are exact, and so that the work can be checked. Every equation is followed by a list of what each symbol means.</p>
+<p><strong>Every portfolio produced one return per quarter,</strong> \(r_t\): the equal-weight average of its holdings' 90-day total returns, dividends included, with each company's return capped at plus or minus 100%. Compounding those returns gave a wealth path \(W_t\).</p>
+<p>$$ r_t = \frac{1}{N_t}\sum_{i \in P_t} \min\!\big(1,\;\max(-1,\; R_{i,t})\big), \qquad W_0 = 1, \quad W_t = W_{t-1}\,(1 + r_t) $$</p>
+<p>where:</p>
+<ul>
+<li>\(t\) is the quarter, counting from 1 to \(T\), the number of quarters in the span</li>
+<li>\(i\) is a company</li>
+<li>\(P_t\) is the set of companies held in quarter \(t\), and \(N_t\) is how many</li>
+<li>\(R_{i,t}\) is company \(i\)'s dividend-adjusted return over the 90 days after the rebalance date, and the min and max cap it at plus or minus 100%</li>
+<li>\(W_t\) is the wealth path: what one dollar invested at the start had grown to after quarter \(t\)</li>
+</ul>
+<p><strong>Three measures were defined on that path over \(T\) quarters:</strong></p>
+<ul>
+<li>Return, as compound annual growth rate: $$ \mathrm{CAGR} = \left(\frac{W_T}{W_0}\right)^{4/T} - 1 $$ Excess return, when a benchmark was involved, was the portfolio's CAGR minus the benchmark's over the same \(T\) quarters.</li>
+<li>Max drawdown, the worst fall from the highest point the wealth path had reached so far. First find that running high, then take the worst drop below it: $$ \mathrm{Peak}_t = \max(W_0, W_1, \dots, W_t), \qquad \mathrm{MaxDD} = \min_{1 \le t \le T} \left( \frac{W_t}{\mathrm{Peak}_t} - 1 \right) $$</li>
+<li>Volatility: the sample standard deviation of the quarterly returns (how far each quarter's return \(r_t\) is from the average return \(\bar{r}\), squared, averaged with the usual \(T - 1\) correction, square-rooted), then annualized by the square-root-of-time rule, which for 4 quarters per year is \(\sqrt{4}\): $$ \sigma_{q} = \sqrt{\frac{1}{T - 1} \sum_{t=1}^{T} \left( r_t - \bar{r} \right)^2 }, \qquad \sigma = \sqrt{4}\;\sigma_{q} $$ Returns are simple returns, not log returns, because they are what the wealth path compounds.</li>
+<li>Sharpe ratio: the average quarterly return divided by the quarterly volatility, annualized by the same \(\sqrt{4}\), with the risk-free rate set to 0 (the app's convention): $$ \mathrm{Sharpe} = \sqrt{4}\;\frac{\bar{r}}{\sigma_{q}} $$</li>
+</ul>
+<p><strong>Each measure was scored as a percentile against the random portfolios.</strong> With \(m\) the run's value of a measure and \(m_k\) the value for the \(k\)-th of 500 random portfolios over the same quarters:</p>
+<p>$$ p = \frac{100}{500} \sum_{k=1}^{500} \mathbf{1}\big[\, m \text{ beats } m_k \,\big] $$</p>
+<p>where:</p>
+<ul>
+<li>\(k\) counts the random portfolios, 1 to 500</li>
+<li>\(\mathbf{1}[\,\cdot\,]\) is the indicator function: 1 when the statement inside is true, 0 when it is false, so the sum is a count of random portfolios beaten</li>
+<li>"beats" means higher for CAGR and Sharpe, shallower for max drawdown, and lower for volatility, so higher is always better, and 50 always means "indistinguishable from random"</li>
+</ul>
+<p><strong>Every interval came from a block bootstrap.</strong> Runs within a universe share quarters, so they are nowhere near independent. Every interval was a 4-quarter circular block bootstrap over the span's quarters, with 1,000 resamples: resample blocks of four consecutive quarters, recompute every run's and every random portfolio's measure on the resampled path, then recompute the scores and the cross-run median. The backtest-predicts-future test was the Spearman rank correlation across runs between CAGR over the backtest period and CAGR over the two years after, and separately for max drawdown. The comparison between versions was the difference in cross-run median scores, with a 5-point minimum difference and a bootstrap interval on the difference, computed on identical resampled paths for both versions.</p>
+<p><strong>An adaptive strategy repeated the following at every rebalance date.</strong> Take a rebalance date. The training window \(\mathcal{T}\) is the set of past quarters the training-window setting allows (all of them, or the trailing 12 to 24). Split it into an early half \(\mathcal{T}_1\) and a late half \(\mathcal{T}_2\). Everything below was computed from those quarters only.</p>
+<p><strong>Step 1 measured each metric.</strong> The question for metric \(j\) on a past date \(t\) was: if you had sorted every company in the universe by this metric on that date, how closely would that order have matched the order of their returns over the next 90 days? That is a Spearman rank correlation across the companies on that date, written \(\mathrm{IC}_{j,t}\) (the information coefficient). A metric's signal in each half of the window was the average of its per-date correlations:</p>
+<p>$$ \mathrm{IC}_{j,t} = \rho_{\mathrm{S}}\!\left( x_{j,i,t},\; R_{i,t} \right)_{i \in U_t}, \qquad \overline{\mathrm{IC}}_{j,h} = \frac{1}{|\mathcal{T}_h|} \sum_{t \in \mathcal{T}_h} \mathrm{IC}_{j,t}, \quad h \in \{1, 2\} $$</p>
+<p>where:</p>
+<ul>
+<li>\(j\) is the metric and \(t\) is the date</li>
+<li>\(U_t\) is the universe on date \(t\), the set of companies the process could choose from, and \(i \in U_t\) says the correlation runs across those companies</li>
+<li>\(x_{j,i,t}\) is company \(i\)'s value of metric \(j\) on date \(t\), and \(R_{i,t}\) is its return over the next 90 days</li>
+<li>\(\rho_{\mathrm{S}}\) is the Spearman rank correlation: rank the companies by the metric, rank them by the return, and measure how well the two rankings agree, from \(-1\) to \(+1\)</li>
+<li>\(h\) is the half of the training window, 1 for early or 2 for late; \(\mathcal{T}_h\) is the set of dates in that half and \(|\mathcal{T}_h|\) is how many dates it holds</li>
+<li>\(\overline{\mathrm{IC}}_{j,h}\) is the metric's average IC over that half</li>
+</ul>
+<p>\(\rho_{\mathrm{S}}\) is itself a calculation, and everything in it happens on one date. Nothing looks across time. The averaging over dates happens one level up, in \(\overline{\mathrm{IC}}_{j,h}\). This is what statisticians call cross-sectional: a single snapshot of all the companies side by side. On that date, give every company in the universe two ranks, \(a_i\) for where it ranks on the metric and \(b_i\) for where it ranks on the return, with 1 the best. Spearman's correlation is the ordinary correlation of those two rank lists:</p>
+<p>$$ \rho_{\mathrm{S}} = \frac{\sum_{i} (a_i - \bar{a})(b_i - \bar{b})}{\sqrt{\sum_{i} (a_i - \bar{a})^2 \;\cdot\; \sum_{i} (b_i - \bar{b})^2}} $$</p>
+<p>where:</p>
+<ul>
+<li>\(i\) is a company, and the sums run over the \(n\) companies in the universe on that one date</li>
+<li>\(a_i\) is company \(i\)'s rank by the metric among those \(n\) companies, and \(b_i\) its rank by the return among the same companies</li>
+<li>\(\bar{a}\) is the average of the metric ranks across the companies on that date, and \(\bar{b}\) the average of the return ranks. With \(n\) companies ranked 1 to \(n\), both averages equal \((n+1)/2\), the middle rank. So \(a_i - \bar{a}\) is how far above or below the middle company \(i\) is on the metric that day, and \(b_i - \bar{b}\) the same for its return; they are not comparisons with the company's own history</li>
+</ul>
+<p>A company that is above the middle on both lists, or below the middle on both, adds a positive term to the numerator. A company high on the metric but low on the return adds a negative one. The denominator only scales the result to run from \(-1\) to \(+1\).</p>
+<p>You may recognize the shortcut version from a textbook, \(\rho_{\mathrm{S}} = 1 - 6 \sum_i d_i^2 / \big(n (n^2 - 1)\big)\), with \(d_i = a_i - b_i\) and \(n\) the number of companies. It gives the same number as the formula above only when no two companies tie, and ties happen on every date in this data, so the software always uses the general form above, with tied companies given the average of the ranks they span. The shortcut is here for recognition only. Identical rankings give \(+1\), reversed rankings give \(-1\), and no relationship gives about 0. On real data a single metric on a single date was usually between \(-0.1\) and \(+0.1\). The signal is faint, which is why the floor in the next step is as low as 0.02. The question is whether it is faint in the same direction, consistently.</p>
+<p>Averaging the per-date correlations, instead of running one big correlation over all dates at once, matters. It stops a bull quarter from outweighing a bear quarter, and it stops a date with 4,000 companies from outweighing one with 400.</p>
+<p><strong>Step 2 decided which metrics qualified.</strong> Every metric comes with a direction the textbook says it should work in, \(d_j = +1\) (higher is better, like return on capital) or \(d_j = -1\) (lower is better, like debt to equity). That direction is fixed and was never fit to the data. A metric qualified when three things were true: its average IC had the textbook sign in the early half, it had the textbook sign in the late half, and its average strength was at or above a floor \(\mathrm{IC}_{\min}\), a setting between 0.01 and 0.03:</p>
+<p>$$ d_j\,\overline{\mathrm{IC}}_{j,1} &gt; 0, \qquad d_j\,\overline{\mathrm{IC}}_{j,2} &gt; 0, \qquad \tfrac{1}{2}\left| \overline{\mathrm{IC}}_{j,1} + \overline{\mathrm{IC}}_{j,2} \right| \ge \mathrm{IC}_{\min} $$</p>
+<p>where the vertical bars are absolute value, so the third condition reads "the average of the two halves, ignoring sign, is at least the floor." It also needed at least 500 valid company-dates in the window. The strict setting required each half on its own to meet the floor, not just the average.</p>
+<p><strong>Step 3 filled the slots.</strong> A structure is a list of slots. Each slot names a factor (margins, momentum, leverage, and so on) and has a weight \(w_c\). Each slot took the qualifying metric from its factor with the strongest average signal, \(\tfrac{1}{2}\left|\overline{\mathrm{IC}}_{j,1} + \overline{\mathrm{IC}}_{j,2}\right|\). If fewer than two slots could be filled, the process held cash that quarter rather than trade on a rule it could not build. Version 2 replaced only this step: each slot took a uniformly random metric from its factor, scored in the library's direction, with no test and no floor.</p>
+<p><strong>Step 4 scored the companies and picked the portfolio.</strong> On the current date, each chosen metric was turned into a 0 to 100 percentile rank across the universe, with 100 being the best in that metric's direction. The composite score was the weighted average of those ranks:</p>
+<p>$$ S_i = \sum_{c} w_c \; \mathrm{pct}_{c,i} $$</p>
+<p>where:</p>
+<ul>
+<li>\(c\) is a slot in the structure</li>
+<li>\(w_c\) is the slot's weight, after the weights have been scaled so they add up to 1</li>
+<li>\(\mathrm{pct}_{c,i}\) is company \(i\)'s percentile rank on the metric that fills slot \(c\)</li>
+<li>\(S_i\) is company \(i\)'s composite score, so a company at the 90th percentile on every slot scores 90</li>
+</ul>
+<p>Buy the top \(N\) by \(S_i\), equal weight, hold one quarter.</p>
+<p><strong>The universe floor was an optional step before scoring.</strong> With this setting on, the universe was cut in half on one metric before scoring. The metric was chosen like this: for each candidate metric and each training date, split the universe at that date's median value of the metric, and take the average return of the companies above the median minus the average return of those below it. Average that gap over the training dates (requiring at least 8 dates, each with at least 40 companies and 15 on each side):</p>
+<p>$$ L_j = \frac{1}{|\mathcal{T}|} \sum_{t \in \mathcal{T}} \left( \overline{R}_{\,x_{j} &gt; \mathrm{med}_t(x_j)} - \overline{R}_{\,x_{j} \le \mathrm{med}_t(x_j)} \right) $$</p>
+<p>where:</p>
+<ul>
+<li>\(\mathcal{T}\) is the training window and \(|\mathcal{T}|\) is the number of dates in it</li>
+<li>\(\mathrm{med}_t(x_j)\) is the median value of metric \(j\) across the universe on date \(t\)</li>
+<li>\(\overline{R}_{\,x_j &gt; \mathrm{med}_t(x_j)}\) is the average next-quarter return of the companies above that median, and \(\overline{R}_{\,x_j \le \mathrm{med}_t(x_j)}\) the average for those at or below it</li>
+<li>\(L_j\) is the metric's average gap between the two halves, the lift</li>
+</ul>
+<p>The floor metric was the one with the biggest gap \(|L_j|\) whose sign agreed with its textbook direction. At deployment, the universe kept the companies on the better side of that quarter's median of that metric. It never removed more than half.</p>
+<p><strong>All of this was redone at every rebalance date</strong> using only the quarters before it. That is what made every scored quarter out of sample: the rule in force on a date was built without seeing that date's returns.</p>
+<p><strong>The cap-weighted comparison against SPY, in more detail.</strong> The median cap-weighted run's tracking error against SPY, meaning how far its return differed from SPY's in an average year, was about 13% per year. At that tracking error a ten-year CAGR gap has to be about 8 points to be two standard errors, and the observed gap was 1.3. Most runs beat SPY in 66% of the resampled decades, and the share reached the 60% threshold in 44% of them. Put another way, if you had held every cap-weighted run at once, that combined portfolio would have beaten SPY in 22 of the 41 quarters, about even quarter by quarter, and would have finished two points per year ahead because its good quarters were slightly bigger than its bad ones. With a lead that small relative to the quarter-to-quarter variation, it would take about eighty years to reach two standard errors.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>I started this with one question: does scoring stocks on their financial statements give you an edge? After 31,000 strategies on 88 universes over ten years, the answer is yes against random stock picking, by a wide margin, and about even against the index that weights the way the product does.</p>
+<p>The edge comes from the library. Scoring companies on the metrics in their textbook directions took the typical strategy from 2% per year to 11% in the main universe, held in every two-year window, and cleared the strict threshold on return in 29 of the 88 universes against the 8 that chance could produce. It did that whether or not the statistical test was switched on. The test earned its place a different way: it removed the biggest losers and cut the deep drawdowns roughly in half, at a cost of about half a point of return. Diversification was worth about a point a year on top. And a strategy's backtest predicted its future risk, not its future return, which is why the software compares settings instead of ranking winners.</p>
+<p>Against the market, the typical strategy kept pace with the equal-weight S&amp;P 500, which is more than most professional funds manage against their index, and it did it with settings chosen at random. The same picks weighted by market cap finished ahead of SPY in this decade, four times as often as those funds did, and whether that was the method or the decade is the first thing I'd test next.</p>
+<p>None of this is a promise about the next ten years. It's a record of what the software did over the last ten, with the thresholds set before the run and the parts that didn't pass reported next to the parts that did.</p>
+<p><strong>Am I launching?</strong> Yes. If the scoring had done no better than random picking, I would have shut this down. It did far better, and I can point to the part of the software that did it. But beating random isn't the point of the product. The point is that you can define a universe no ETF offers, with the sectors, company sizes, price floor, and filters in whatever combination you want, decide which companies you're willing to own, and test the idea against the past before you put money in it. What this study adds is that, in most of the 88 universes I tried, the scoring picked better stocks from that list than chance would have, with fewer deep drawdowns. That's the product I'm launching.</p>
+<hr />
+<p><em>Hypothetical backtested research statistics about our software, gross of costs and taxes; not investment, financial, or tax advice. Past or simulated performance does not predict future results.</em></p>
+<p>The <a href="https://quantascent.github.io/can-financial-statements-tell-you-which-stocks-to-buy/scorecard/">scorecard with its amendments</a>, committed before the run, the <a href="https://quantascent.github.io/can-financial-statements-tell-you-which-stocks-to-buy/report/">full scored report</a>, and the <a href="https://quantascent.github.io/can-financial-statements-tell-you-which-stocks-to-buy/runs.csv.gz">per-run table</a>, one row per strategy per time span as a 15 MB gzip CSV with no tickers in it, are published alongside this article.</p></article>
+</div></main>
+<footer><div class="wrap">
+<p class="links"><a href="https://quantascent.io">quantascent.io</a><a href="https://docs.quantascent.io">Documentation</a><a href="https://www.youtube.com/@QuantAscent">YouTube</a><a href="https://quantascent.substack.com">Substack</a><a href="https://www.linkedin.com/company/quantascent">LinkedIn</a><a href="https://github.com/quantascent">GitHub</a></p>
+<p>&copy; 2026 QuantAscent Technologies LLC. QuantAscent is portfolio management and strategy backtesting software for self-directed investors. It is a software company, not an investment adviser, and nothing here is investment, financial, or tax advice.</p>
+</div></footer>
+</body>
+</html>
