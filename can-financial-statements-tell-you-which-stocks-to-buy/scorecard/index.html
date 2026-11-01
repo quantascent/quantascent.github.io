@@ -143,7 +143,7 @@ article td:first-child { color:var(--text); }
 <h1>The scorecard, as committed before the run</h1>
 <p class="meta">Published with <a href="/can-financial-statements-tell-you-which-stocks-to-buy/">Can financial statements tell you which stocks to buy? I tested 31,000 strategies to find out.</a> &middot; Brandon Wilson &middot; October 19, 2026</p>
 <article>
-<p><em>Public copy of the scorecard committed to the QuantAscent repository on 2026-10-15 (commit af41393), with Amendments 1 and 2 (commits 80730ad and 8d95e9c) added the same day, before any strategy was drawn, and Amendment 3 (commit 4b56ccd) added on 2026-10-25, after the run and after the first publication, recording the price-floor correction and the re-run. The first run started on 2026-10-15 at 21:21; the re-run on 2026-10-24 at 11:14. Two changes were made for publication: the data vendor's name is replaced with "the data vendor", and this note is added. Nothing else is edited. In this file the three arms carry the study's internal labels. They map to the article as follows: "placebo" is version 2, Library only; "design space" or "sweep" is version 3, Adaptive, any settings; "as designed" is version 4, Adaptive, default settings.</em></p>
+<p><em>Public copy of the scorecard committed to the QuantAscent repository on 2026-10-15 (commit af41393), with Amendments 1 and 2 (commits 80730ad and 8d95e9c) added the same day, before any strategy was drawn, and Amendment 3 (commit 4b56ccd) added on 2026-10-25, after the run and after the first publication, recording the price-floor correction and the re-run, and Amendment 4 (commit 06df636) added on 2026-11-01, withdrawing the chance count across the 88 cells. The first run started on 2026-10-15 at 21:21; the re-run on 2026-10-24 at 11:14. Two changes were made for publication: the data vendor's name is replaced with "the data vendor", and this note is added. Nothing else is edited. In this file the three arms carry the study's internal labels. They map to the article as follows: "placebo" is version 2, Library only; "design space" or "sweep" is version 3, Adaptive, any settings; "as designed" is version 4, Adaptive, default settings.</em></p>
 <p>Pre-registered 2026-10-15. This file was written and committed before any draw was
 run. The git hash of the commit that first added it is the timestamp. Anything that
 changes after that commit is recorded under <strong>Amendments</strong> at the bottom, with the
@@ -846,6 +846,31 @@ verdict word, or reporting rule:</p>
    published beside it. The public report and per-run table are replaced by the
    re-run's. Re-run harness, panel graft, comparison scripts, logs, and both
    scoring attempts' records are in <code>out/rerun_2026_10_24/</code>.</li>
+</ol>
+<p><strong>Amendment 4, 2026-11-01, after the run and after publication.</strong> Section 9's yardstick
+for the broad claim, the upper 95% binomial bound of what chance predicts across the 88
+cells, treated the cells as independent tests. They are not: the cells overlap in
+companies (every size band is a subset of all sizes, every sector pool a subset of its
+group) and share the same 41 quarters, so their scores move together. A reader raised it
+on 2026-11-01. The joint behaviour was already in the scoring: the bootstrap draws the
+same 4-quarter blocks for every cell (one seed, one date grid), so each resample is one
+re-drawn decade applied to all 88 cells at once (<code>scripts/joint_cells.py</code> reads it back
+from <code>boot.npz</code>). On the published run, across the 1,000 re-drawn decades the per-cell
+median scores had an average pairwise correlation of 0.36 on T1 CAGR, 0.20 on T2 max
+drawdown, 0.32 on T2 volatility and 0.25 on T3 Sharpe; the number of cells whose median
+draw finished ahead of random (score above 50) was 64 of 88 on T1 with a joint 95% range
+of 33 to 78, 66 (44 to 80) on T2 max drawdown, 78 (52 to 84) on volatility and 70 (47 to
+79) on T3. Changes, none of them to a bar, span, cell, verdict word or per-cell rule:</p>
+<ol>
+<li><strong>The binomial yardstick is withdrawn.</strong> "About 4 would clear a 5% threshold by luck
+   alone" and the upper 95% binomial bound assumed independence and are no longer the
+   test of the broad claim. The claim "the method works across pools" is not asserted
+   from the count of EDGE cells; the counts are reported as description, with the joint
+   ranges above beside them.</li>
+<li><strong>Every verdict stands.</strong> The headline cell, the ladder, T4 to T7 and the per-cell
+   verdicts are unchanged; only the sentence that compared the count with chance goes.</li>
+<li><strong>Reporting.</strong> The write-up is amended in place with a dated notice at the top and
+   the five sentences that cited the chance count rewritten.</li>
 </ol></article>
 </div></main>
 <footer><div class="wrap">
